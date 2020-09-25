@@ -1,0 +1,37 @@
+@import '../vars'
+
+button
+    padding: 10px 50px
+    margin: 0.5%
+    width: 10%
+    max-width: 10%
+    outline: none
+    border: none
+    border-radius: 100px
+    border-width: 0.6px
+    border-style: solid
+    border-color: $purple
+    cursor: pointer
+    text-transform: uppercase
+    font-weight: bold
+    &[class=primary]
+        background-color: $purple 
+        color: $white
+        &:hover
+            background-color: $orange
+            border-color: $orange
+        &:active
+            background-color: $white
+            border-color: $purple
+            color: $purple
+    &[class=secondary]
+        background-color: $dark-green
+        border-color: $dark-green
+        color: $white
+        &:hover
+            background-color: $green
+            border-color: $green
+        &:active
+            background-color: $white
+            border-color: $dark-green
+            color: $dark-green

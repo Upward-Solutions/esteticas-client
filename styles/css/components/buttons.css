@@ -1,0 +1,44 @@
+button {
+  padding: 10px 50px;
+  margin: 0.5%;
+  width: 10%;
+  max-width: 10%;
+  outline: none;
+  border: none;
+  border-radius: 100px;
+  border-width: 0.6px;
+  border-style: solid;
+  border-color: #3E014E;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+button[class=primary] {
+  background-color: #3E014E;
+  color: #FFFDFD;
+}
+button[class=primary]:hover {
+  background-color: #D75D48;
+  border-color: #D75D48;
+}
+button[class=primary]:active {
+  background-color: #FFFDFD;
+  border-color: #3E014E;
+  color: #3E014E;
+}
+button[class=secondary] {
+  background-color: #0B3C49;
+  border-color: #0B3C49;
+  color: #FFFDFD;
+}
+button[class=secondary]:hover {
+  background-color: #9AA27D;
+  border-color: #9AA27D;
+}
+button[class=secondary]:active {
+  background-color: #FFFDFD;
+  border-color: #0B3C49;
+  color: #0B3C49;
+}
+
+/*# sourceMappingURL=buttons.css.map */
