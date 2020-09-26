@@ -1,0 +1,48 @@
+input {
+  border-radius: 100px;
+  padding: 5px;
+  border: 1px solid rgba(62, 1, 78, 0.2);
+  text-indent: 15px;
+  outline: none;
+  margin: 0.5%;
+  background-position: 145px 2.5px;
+  background-repeat: no-repeat;
+  color: #3E014E;
+  opacity: 1;
+}
+input::placeholder {
+  color: #3E014E;
+  opacity: 0.5;
+}
+input:hover {
+  border: 1px solid rgba(62, 1, 78, 0.5);
+}
+input:focus, input:active {
+  border: 1px solid #3e014e;
+}
+input:disabled {
+  background-color: #EAEAEA;
+  border: 1px solid rgba(62, 1, 78, 0.2);
+}
+input.search {
+  background-image: url("../assets/search-icon.svg");
+}
+input.success {
+  background-image: url("../assets/success-icon.svg");
+  border-color: #9AA27D;
+}
+input.error {
+  background-image: url("../assets/error-icon.svg");
+  border-color: #EB5757;
+}
+input.search, input.success, input.error {
+  color: #685879;
+}
+input.search::placeholder, input.success::placeholder, input.error::placeholder {
+  color: #685879;
+}
+input[type=password] {
+  background-image: url("../assets/eyeClose-icon.svg");
+}
+
+/*# sourceMappingURL=inputs.css.map */
