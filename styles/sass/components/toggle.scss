@@ -1,0 +1,23 @@
+@import '../vars';
+
+span.toggle{
+    border-radius: 100px;
+    border-width: 0.6px;
+    border-style: solid;
+    border-color: $purple;
+    opacity: 0.5;
+    padding: 0px 10px;
+    &:hover { 
+        opacity: 1;
+        cursor: pointer;
+    }
+}
+
+
+div.toggle-item{
+    width: 5px;
+    height: 5px;
+    background: $purple;
+    border-radius: 50%;
+}
+

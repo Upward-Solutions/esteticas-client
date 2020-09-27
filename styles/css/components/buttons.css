@@ -31,11 +31,11 @@ button[class=secondary] {
   border-color: #0B3C49;
   color: #FFFDFD;
 }
-button[class=secondary]:hover {
+button:hover {
   background-color: #9AA27D;
   border-color: #9AA27D;
 }
-button[class=secondary]:active {
+button:active {
   background-color: #FFFDFD;
   border-color: #0B3C49;
   color: #0B3C49;

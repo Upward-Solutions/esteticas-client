@@ -1,0 +1,89 @@
+@import '../vars';
+
+input {
+    outline: none;
+    margin: 0.5%;
+    border-style: solid;
+    border-width: 1px;
+    &[type=text], &[type=datetime-local], &[type=password]{
+        border-radius: 100px;
+        padding: 5px;
+        border-color: rgb(62, 1, 78, 0.2) ;
+        text-indent: 15px;
+        background-position: right 10px center;
+        background-repeat: no-repeat;
+        color: $purple;
+        opacity: 1;
+        &::placeholder {
+            color: $purple;
+            opacity: 0.5;
+        }
+        &:hover {
+            border: 1px solid rgb(62, 1, 78, 0.5);
+        }
+        &:focus, &:active {
+            border: 1px solid rgb(62, 1, 78, 1);
+        }
+        &:disabled {
+            background-color: $background-disabled;
+            border: 1px solid rgb(62, 1, 78, 0.2);
+        }
+        &.search {
+            background-image: url("../assets/search-icon.svg");
+        }
+        &.success {
+            background-image: url("../assets/success-icon.svg");
+            border-color: $green;
+        }
+        &.error {
+            background-image: url("../assets/error-icon.svg");
+            border-color: $red;
+        }
+        &.search, &.success, &.error {
+            color: $input-text-color-action;
+            &::placeholder {
+                color: $input-text-color-action;
+            }
+        }
+        &[type=password] {
+            background-image: url("../assets/eyeClose-icon.svg");
+        }
+    }
+    &[type=checkbox] {
+        -webkit-appearance: none;
+        background-color: $white;
+        border-color: $purple;
+        opacity: 0.5;
+        padding: 9px;
+        border-radius: 5px;
+        &:hover {
+            opacity: 1;
+        }
+        &:disabled {
+            opacity: 0.5;
+            background-color: $background-disabled;
+        }
+        &:selected {
+            opacity: 1;
+            border-color: $orange;
+            background-color: $orange;
+        }
+    }
+}
+
+result {
+    border-radius: 100px;
+    padding: 10px 35px;
+    margin: 0.5%;
+    background-position: center;
+    background-repeat: no-repeat;
+    max-width: 5%;
+    &[class=success] {
+        background-image: url("../assets/span-success-icon.svg");
+        background-color: $dark-green;
+    }
+    &[class=error] {
+        background-image: url("../assets/span-error-icon.svg");
+        background-color: $orange;
+    }
+}

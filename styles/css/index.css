@@ -119,14 +119,34 @@ button[class=secondary] {
   border-color: #0B3C49;
   color: #FFFDFD;
 }
-button[class=secondary]:hover {
+button:hover {
   background-color: #9AA27D;
   border-color: #9AA27D;
 }
-button[class=secondary]:active {
+button:active {
   background-color: #FFFDFD;
   border-color: #0B3C49;
   color: #0B3C49;
+}
+
+span.toggle {
+  border-radius: 100px;
+  border-width: 0.6px;
+  border-style: solid;
+  border-color: #3E014E;
+  opacity: 0.5;
+  padding: 0px 10px;
+}
+span.toggle:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+div.toggle-item {
+  width: 5px;
+  height: 5px;
+  background: #3E014E;
+  border-radius: 50%;
 }
 
 /*# sourceMappingURL=index.css.map */
