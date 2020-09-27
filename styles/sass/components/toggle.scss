@@ -1,23 +1,88 @@
-@import '../vars';
+@import "../vars";
 
-span.toggle{
-    border-radius: 100px;
-    border-width: 0.6px;
-    border-style: solid;
-    border-color: $purple;
-    opacity: 0.5;
-    padding: 0px 10px;
-    &:hover { 
-        opacity: 1;
-        cursor: pointer;
-    }
-}
-
-
-div.toggle-item{
-    width: 5px;
-    height: 5px;
-    background: $purple;
+div.toggle {
+  border-radius: 100px;
+  border-color: $purple;
+  border-style: solid;
+  border-width: 1px;
+  opacity: 0.6;
+  margin: 10px;
+  max-width: 55px;
+  max-height: 25px;
+  padding: 2px 5px;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.8;
+  }
+  div.selector {
+    width: 20px;
+    height: 20px;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
     border-radius: 50%;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 20px;
+    background: $purple;
+  }
+  div.selector::after {
+    content: "OFF";
+    color: $purple;
+    margin-left: 25px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  &.toggle-on {
+    border-color: $orange;
+    background-color: $orange;
+    opacity: 1;
+    div.selector {
+      background-color: $white;
+      margin-left: 35px;
+    }
+    div.selector::before {
+      content: "ON";
+      color: $white;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      margin-left: -35px;
+    }
+    div.selector::after {
+      display: none;
+    }
+    &.disabled {
+      background-color: $background-disabled;
+      border-color: $purple;
+      opacity: 0.3;
+      cursor: no-drop;
+      div.selector {
+        background-color: $purple;
+        opacity: 0.7;
+      }
+      div.selector::before {
+        background-color: $background-disabled;
+        color: $purple;
+        opacity: 0.7;
+      }
+    }
+  }
+  &.disabled {
+    background-color: $background-disabled;
+    border-color: $purple;
+    opacity: 0.3;
+    cursor: no-drop;
+    div.selector {
+      background-color: $purple;
+      opacity: 0.7;
+    }
+    div.selector::after {
+      background-color: $background-disabled;
+      color: $purple;
+      opacity: 0.7;
+    }
+  }
 }
-

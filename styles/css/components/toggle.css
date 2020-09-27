@@ -1,21 +1,88 @@
-span.toggle {
+div.toggle {
   border-radius: 100px;
-  border-width: 0.6px;
-  border-style: solid;
   border-color: #3E014E;
-  opacity: 0.5;
-  padding: 0px 10px;
-}
-span.toggle:hover {
-  opacity: 1;
+  border-style: solid;
+  border-width: 1px;
+  opacity: 0.6;
+  margin: 10px;
+  max-width: 55px;
+  max-height: 25px;
+  padding: 2px 5px;
   cursor: pointer;
 }
-
-div.toggle-item {
-  width: 5px;
-  height: 5px;
-  background: #3E014E;
+div.toggle:hover {
+  opacity: 0.8;
+}
+div.toggle div.selector {
+  width: 20px;
+  height: 20px;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
   border-radius: 50%;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-right: 20px;
+  background: #3E014E;
+}
+div.toggle div.selector::after {
+  content: "OFF";
+  color: #3E014E;
+  margin-left: 25px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+div.toggle.toggle-on {
+  border-color: #D75D48;
+  background-color: #D75D48;
+  opacity: 1;
+}
+div.toggle.toggle-on div.selector {
+  background-color: #FFFDFD;
+  margin-left: 35px;
+}
+div.toggle.toggle-on div.selector::before {
+  content: "ON";
+  color: #FFFDFD;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  margin-left: -35px;
+}
+div.toggle.toggle-on div.selector::after {
+  display: none;
+}
+div.toggle.toggle-on.disabled {
+  background-color: #EAEAEA;
+  border-color: #3E014E;
+  opacity: 0.3;
+  cursor: no-drop;
+}
+div.toggle.toggle-on.disabled div.selector {
+  background-color: #3E014E;
+  opacity: 0.7;
+}
+div.toggle.toggle-on.disabled div.selector::before {
+  background-color: #EAEAEA;
+  color: #3E014E;
+  opacity: 0.7;
+}
+div.toggle.disabled {
+  background-color: #EAEAEA;
+  border-color: #3E014E;
+  opacity: 0.3;
+  cursor: no-drop;
+}
+div.toggle.disabled div.selector {
+  background-color: #3E014E;
+  opacity: 0.7;
+}
+div.toggle.disabled div.selector::after {
+  background-color: #EAEAEA;
+  color: #3E014E;
+  opacity: 0.7;
 }
 
 /*# sourceMappingURL=toggle.css.map */
