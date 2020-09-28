@@ -119,5 +119,4 @@ export const REG_EX_EMAIL = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)
 
 /* API */
 
-export const API_URL = "http://localhost:8282/api/v1";
-export const EXAMPLE_API_SUCCES = "https://swapi.dev/api";
+export const API_URL = "https://esteticas-api.herokuapp.com";
