@@ -1,0 +1,64 @@
+div.radio {
+  border-radius: 100px;
+  border-color: #3E014E;
+  border-style: solid;
+  border-width: 1px;
+  opacity: 0.6;
+  margin: 10px;
+  width: 20px;
+  height: 20px;
+  padding: 2px;
+  cursor: pointer;
+}
+div.radio.radio-on {
+  background-color: #D75D48;
+  border-color: #D75D48;
+  display: grid;
+  align-content: center;
+  align-items: center;
+  opacity: 1;
+}
+div.radio.radio-on div.selector {
+  margin-left: 5px;
+  width: 10px;
+  height: 10px;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-right: 20px;
+  background: #FFFDFD;
+}
+div.radio.radio-on.disabled {
+  background-color: #3E014E;
+  border-color: #3E014E;
+  opacity: 0.3;
+  cursor: no-drop;
+}
+div.radio.radio-on.disabled div.selector {
+  background-color: #FFFDFD;
+  opacity: 1;
+}
+div.radio.radio-off {
+  background-color: #FFFDFD;
+  border-color: #3E014E;
+  opacity: 0.6;
+}
+div.radio.radio-off div.selector {
+  display: none;
+}
+div.radio.radio-off:hover {
+  opacity: 0.7;
+}
+div.radio.radio-off.disabled {
+  background-color: #EAEAEA;
+  border-color: rgba(62, 1, 78, 0.5);
+  opacity: 1;
+  cursor: no-drop;
+}
+div.radio.radio-off.disabled div.selector {
+  display: none;
+}
+
+/*# sourceMappingURL=radio.css.map */

@@ -27,6 +27,7 @@ export const getInnerHTML = (element) => element.innerHTML;
 export const setInnerText = (element, content) => (element.innerText = content);
 export const setInnerHTML = (element, content) => (element.innerHTML = content);
 export const getToggleValue = (id) => getById(id).classList.contains('toggle-on');
+export const getRadioValue = (id) => getById(id).classList.contains('radio-on');
 
 /* Form */
 

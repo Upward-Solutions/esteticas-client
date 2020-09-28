@@ -1,0 +1,64 @@
+@import "../vars";
+
+div.radio {
+  border-radius: 100px;
+  border-color: $purple;
+  border-style: solid;
+  border-width: 1px;
+  opacity: 0.6;
+  margin: 10px;
+  width: 20px;
+  height: 20px;
+  padding: 2px;
+  cursor: pointer;
+  &.radio-on {
+    background-color: $orange;
+    border-color: $orange;
+    display: grid;
+    align-content: center;
+    align-items: center;
+    opacity: 1;
+    div.selector {
+      margin-left: 5px;
+      width: 10px;
+      height: 10px;
+      -moz-border-radius: 50%;
+      -webkit-border-radius: 50%;
+      border-radius: 50%;
+      margin-top: auto;
+      margin-bottom: auto;
+      margin-right: 20px;
+      background: $white;
+    }
+    &.disabled {
+      background-color: $purple;
+      border-color: $purple;
+      opacity: 0.3;
+      cursor: no-drop;
+      div.selector {
+        background-color: $white;
+        opacity: 1;
+      }
+    }
+  }
+  &.radio-off {
+    background-color: $white;
+    border-color: $purple;
+    opacity: 0.6;
+    div.selector {
+      display: none;
+    }
+    &:hover {
+      opacity: 0.7;
+    }
+    &.disabled {
+      background-color: $background-disabled;
+      border-color: $border-purple-disabled;
+      opacity: 1;
+      cursor: no-drop;
+      div.selector {
+        display: none;
+      }
+    }
+  }
+}
