@@ -9,8 +9,10 @@ export const IS_MOBILE = screen.width < 800;
 export const CURRENT_URL = document.location.pathname;
 export const IS_INDEX = CURRENT_URL.includes("index") || CURRENT_URL === "/";
 export const IS_OPERA = navigator.userAgent.toLowerCase().indexOf("opera");
-export const IS_FIREFOX = navigator.userAgent.toLowerCase().indexOf("firefox") > -1;
-export const IS_CHROME = navigator.userAgent.toLowerCase().indexOf("chrome") > -1;
+export const IS_FIREFOX =
+  navigator.userAgent.toLowerCase().indexOf("firefox") > -1;
+export const IS_CHROME =
+  navigator.userAgent.toLowerCase().indexOf("chrome") > -1;
 
 /* DOM Functions */
 
@@ -26,8 +28,13 @@ export const getInnerText = (element) => element.innerText;
 export const getInnerHTML = (element) => element.innerHTML;
 export const setInnerText = (element, content) => (element.innerText = content);
 export const setInnerHTML = (element, content) => (element.innerHTML = content);
-export const getToggleValue = (id) => getById(id).classList.contains('toggle-on');
-export const getRadioValue = (id) => getById(id).classList.contains('radio-on');
+export const getToggleValue = (id) =>
+  getById(id).classList.contains("toggle-on");
+export const getRadioValue = (id) => getById(id).classList.contains("radio-on");
+export const getCheckboxValue = (id) => getById(id).classList[1].split("-")[1];
+export const IS_SELECTED = (id) => getCheckboxValue(id) === 'selected';
+export const IS_OFF = (id) => getCheckboxValue(id) === 'off';
+export const UNDETERMINATED = (id) => getCheckboxValue(id) === 'undeterminated';
 
 /* Form */
 
@@ -100,7 +107,7 @@ export const FORM_ERROR =
   "Alguno de los campos no cumple con los requisitos esperados";
 
 export const showNotification = (status, title) => {
-  alert(`${status}: ${title}`)
+  alert(`${status}: ${title}`);
 };
 
 /* Codes */

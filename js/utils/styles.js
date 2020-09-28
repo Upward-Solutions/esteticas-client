@@ -3,7 +3,7 @@ import { getByClass, IS_FIREFOX } from "./constants.js";
 export const applyCustomStyles = () => {
   createToggle();
   createRadio();
-  createRadioGroups();
+  createCheckbox();
 };
 
 const createToggle = () => {
@@ -48,20 +48,47 @@ const createRadio = () => {
       });
     }
   }
+  createRadioGroups();
 };
 
 const createRadioGroups = () => {
   const radios = getByClass("radio-group");
+
   for (const radio of radios) {
     const childrens = radio.children;
     for (const children of childrens) {
       children.addEventListener("click", (event) => {
         for (const children of childrens) {
           if (children !== event.target) {
-            children.classList.remove('radio-on');
-            children.classList.add('radio-off');
+            children.classList.remove("radio-on");
+            children.classList.add("radio-off");
           }
         }
+      });
+    }
+  }
+};
+
+const createCheckbox = () => {
+  const checkboxes = getByClass("checkbox");
+
+  for (const checkbox of checkboxes) {
+    if (!checkbox.classList.contains("disabled")) {
+      checkbox.addEventListener("click", () => {
+        const currentCheck = event.target.classList.contains("checkbox")
+          ? event.target
+          : event.target.parentNode;
+
+          if (currentCheck.classList.contains("checkbox-off")) {
+            currentCheck.classList.remove("checkbox-off")
+            currentCheck.classList.add("checkbox-selected")
+          } else if (currentCheck.classList.contains("checkbox-selected")) {
+            currentCheck.classList.remove("checkbox-selected")
+            currentCheck.classList.add("checkbox-undeterminated")
+          } else {
+            currentCheck.classList.remove("checkbox-undeterminated")
+            currentCheck.classList.add("checkbox-off")
+          }
       });
     }
   }

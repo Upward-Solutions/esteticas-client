@@ -1,0 +1,45 @@
+div.checkbox {
+  border-radius: 25%;
+  border-color: #3E014E;
+  border-style: solid;
+  border-width: 1px;
+  opacity: 0.6;
+  margin: 10px;
+  width: 15px;
+  height: 15px;
+  padding: 2px;
+  cursor: pointer;
+}
+div.checkbox:hover {
+  opacity: 0.8;
+}
+div.checkbox.checkbox-selected {
+  border-color: #D75D48;
+  background-color: #D75D48;
+  opacity: 1;
+  background-image: url("../assets/success-white-icon.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+div.checkbox.checkbox-undeterminated {
+  border-color: #D75D48;
+  background-color: #D75D48;
+  opacity: 1;
+  background-image: url("../assets/undeterminated-checkbox.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+div.checkbox.disabled {
+  background-color: #EAEAEA;
+  border-color: rgba(62, 1, 78, 0.5);
+  opacity: 0.9;
+  cursor: no-drop;
+}
+div.checkbox.disabled.undeterminated {
+  background-image: url("../assets/undeterminated-disabled-checkbox.svg");
+}
+div.checkbox.disabled.selected {
+  background-image: url("../assets/success-disabled-icon.svg");
+}
+
+/*# sourceMappingURL=checkbox.css.map */
