@@ -7,27 +7,23 @@ div.radio {
   border-width: 1px;
   opacity: 0.6;
   margin: 10px;
-  width: 20px;
-  height: 20px;
+  width: 10px;
+  height: 10px;
   padding: 2px;
   cursor: pointer;
   &.radio-on {
     background-color: $orange;
     border-color: $orange;
-    display: grid;
-    align-content: center;
-    align-items: center;
     opacity: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     div.selector {
-      margin-left: 5px;
-      width: 10px;
-      height: 10px;
+      width: 7px;
+      height: 7px;
       -moz-border-radius: 50%;
       -webkit-border-radius: 50%;
       border-radius: 50%;
-      margin-top: auto;
-      margin-bottom: auto;
-      margin-right: 20px;
       background: $white;
     }
     &.disabled {
@@ -38,6 +34,9 @@ div.radio {
       div.selector {
         background-color: $white;
         opacity: 1;
+        label {
+          visibility: visible;
+        }
       }
     }
   }
@@ -49,9 +48,6 @@ div.radio {
       visibility: hidden;
       label {
         visibility: visible;
-        position: relative;
-        top: 0px;
-        left: 35px;
       }
     }
     &:hover {

@@ -20,12 +20,25 @@
         border-radius: 2%;
         height: 200px;
         width: 500px;
+        display: block;
+        margin: 10px 0px;
       }
-      body{
-        background-color: #F3F3F3;
+      body {
+        background-color: #f3f3f3;
       }
-      #big-image{
+      #big-image {
         height: 500px;
+      }
+      .copy {
+        text-decoration: none;
+        cursor: pointer;
+        background-color: #4f73fc;
+        color: white;
+        padding: 1px 5px;
+        border-radius: 10%;
+        position: relative;
+        top: 43px;
+        left: 454px;
       }
     </style>
     <title>Proyecto Estéticas</title>
@@ -34,6 +47,10 @@
   <body>
     <a href="../../index.html">Back</a>
     <h1>Fonts</h1>
+    <span
+      >Las tipografías están setteadas a las etiquetas por lo que no necesitan
+      ningún HTML específico ni clases ni id.</span
+    >
     <h1>h1</h1>
     <h2>h2</h2>
     <h3>h3</h3>
@@ -41,95 +58,112 @@
     <h5>h5</h5>
     <h6>h6</h6>
 
-    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, quas? Velit officiis error itaque similique aliquam, omnis neque laudantium nihil, dolor quis, veniam aspernatur molestias consequuntur at reiciendis non doloremque.</p>
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis,
+      quas? Velit officiis error itaque similique aliquam, omnis neque
+      laudantium nihil, dolor quis, veniam aspernatur molestias consequuntur at
+      reiciendis non doloremque.
+    </p>
 
     <h1>Checkbox</h1>
     <div class="checkbox checkbox-off">
       <label>Checkbox off</label>
     </div>
-    <img src="../images/checkbox-of.png">
-    
+    <a onclick="copy(this)" class="copy">copy</a>
+    <img src="../images/checkbox-of.png" />
+
     <div class="checkbox checkbox-selected">
       <label>Selected</label>
     </div>
-    <img src="../images/checkbox-on.png">
-    
+    <a onclick="copy(this)" class="copy">copy</a>
+    <img src="../images/checkbox-on.png" />
+
     <div class="checkbox checkbox-undeterminated">
       <label>Undeterminated</label>
     </div>
-    <img src="../images/checkbox-undeterminated.png">
-    
-    
+    <a onclick="copy(this)" class="copy">copy</a>
+    <img src="../images/checkbox-undeterminated.png" />
+
     <div class="checkbox checkbox-undeterminated disabled">
       <label>Disabled Undeterminated</label>
     </div>
-    <img src="../images/checkbox-undeterminated-disabled.png">
-    
+    <a onclick="copy(this)" class="copy">copy</a>
+    <img src="../images/checkbox-undeterminated-disabled.png" />
+
     <div class="checkbox checkbox-off disabled">
       <label>Disabled OFF</label>
     </div>
-    <img src="../images/checkbox-off-disabled.png">
-    
-    
+    <a onclick="copy(this)" class="copy">copy</a>
+    <img src="../images/checkbox-off-disabled.png" />
+
     <div class="checkbox checkbox-selected disabled">
       <label>Disabled Selected</label>
     </div>
-    <img src="../images/checkbox-on-disabled.png">
-    
+    <a onclick="copy(this)" class="copy">copy</a>
+    <img src="../images/checkbox-on-disabled.png" />
+
     <h1>Toggle</h1>
     <h4>OFF</h4>
     <div class="toggle toggle-off">
       <div class="selector"></div>
     </div>
-    <img src="../images/toggle-off.png">
-    
+    <a onclick="copy(this)" class="copy">copy</a>
+    <img src="../images/toggle-off.png" />
+
     <h4>ON</h4>
     <div class="toggle toggle-on">
       <div class="selector"></div>
     </div>
-    <img src="../images/toggle-on.png">
-    
+    <a onclick="copy(this)" class="copy">copy</a>
+    <img src="../images/toggle-on.png" />
+
     <h4>Disabled ON</h4>
     <div class="toggle toggle-on disabled">
       <div class="selector"></div>
     </div>
-    <img src="../images/toggle-on-disabled.png">
-    
+    <a onclick="copy(this)" class="copy">copy</a>
+    <img src="../images/toggle-on-disabled.png" />
+
     <h4>Disabled OFF</h4>
     <div class="toggle toggle-off disabled">
       <div class="selector"></div>
     </div>
-    <img src="../images/toggle-off-disabled.png">
-    
+    <a onclick="copy(this)" class="copy">copy</a>
+    <img src="../images/toggle-off-disabled.png" />
+
     <h1>Radio buttons</h1>
     <div class="radio radio-on">
       <div class="selector">
         <label value="radio-on">Radio ON</label>
       </div>
     </div>
-    <img src="../images/radio-on.png">
-    
+    <a onclick="copy(this)" class="copy">copy</a>
+    <img src="../images/radio-on.png" />
+
     <div class="radio radio-off">
       <div class="selector">
         <label value="radio-off">Radio OFF</label>
       </div>
     </div>
-    <img src="../images/radio-off.png">
-    
+    <a onclick="copy(this)" class="copy">copy</a>
+    <img src="../images/radio-off.png" />
+
     <div class="radio radio-on disabled">
-      <div class="selector">        
+      <div class="selector">
         <label value="radio-on">Radio ON Disabled</label>
       </div>
     </div>
-    <img src="../images/radio-on-disabled.png">
-    
+    <a onclick="copy(this)" class="copy">copy</a>
+    <img src="../images/radio-on-disabled.png" />
+
     <div class="radio radio-off disabled">
       <div class="selector">
         <label value="radio-off">Radio OFF Disabled</label>
       </div>
     </div>
-    <img src="../images/radio-off-disabled.png">
-    
+    <a onclick="copy(this)" class="copy">copy</a>
+    <img src="../images/radio-off-disabled.png" />
+
     <h4>Radio group</h4>
     <div class="radio-group">
       <div class="radio radio-on">
@@ -153,8 +187,9 @@
         </div>
       </div>
     </div>
-    <img src="../images/radio-group.png" id="big-image">
-    
+    <a onclick="copy(this)" class="copy">copy</a>
+    <img src="../images/radio-group.png" id="big-image" />
+
     <h1>Inputs</h1>
     <h4>Normal</h4>
     <input type="text" placeholder="palceholder" />
@@ -193,11 +228,24 @@
 
     <h1>Span</h1>
     <result class="success"></result>
-    <code>result class="success" result</code>
+    <a onclick="copy(this)" class="copy">copy</a>
+    <img src="../images/result-success.png" />
 
     <result class="error"></result>
-    <code>result class="error" result</code>
+    <a onclick="copy(this)" class="copy">copy</a>
+    <img src="../images/result-error.png" />
 
     <script type="module" src="../../js/index.js"></script>
+    <script>
+      const copy = (element) => {
+        const aux = document.createElement("input");
+        const text = element.previousSibling.previousElementSibling.outerHTML;
+        aux.setAttribute("value", text);
+        document.body.appendChild(aux);
+        aux.select();
+        document.execCommand("copy");
+        document.body.removeChild(aux);
+      };
+    </script>
   </body>
 </html>
