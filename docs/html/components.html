@@ -15,128 +15,146 @@
       href="../../js/utils/plugins/loader/loaders.min.css"
     />
     <link rel="stylesheet" href="../../styles/css/index.css" />
-
+    <style>
+      img {
+        border-radius: 2%;
+        height: 200px;
+        width: 500px;
+      }
+      body{
+        background-color: #F3F3F3;
+      }
+      #big-image{
+        height: 500px;
+      }
+    </style>
     <title>Proyecto Estéticas</title>
   </head>
 
   <body>
     <a href="../../index.html">Back</a>
+    <h1>Fonts</h1>
+    <h1>h1</h1>
+    <h2>h2</h2>
+    <h3>h3</h3>
+    <h4>h4</h4>
+    <h5>h5</h5>
+    <h6>h6</h6>
+
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, quas? Velit officiis error itaque similique aliquam, omnis neque laudantium nihil, dolor quis, veniam aspernatur molestias consequuntur at reiciendis non doloremque.</p>
 
     <h1>Checkbox</h1>
-    <h4>OFF</h4>
-    <div class="checkbox checkbox-off"></div>
-    <code>< div class="checkbox checkbox-off">< /div ></code>
-
-    <h4>Selected</h4>
-    <div class="checkbox checkbox-selected"></div>
-    <code>< div class="checkbox checkbox-selected">< /div ></code>
-
-    <h4>Undeterminated</h4>
-    <div class="checkbox checkbox-undeterminated"></div>
-    <code>< div class="checkbox checkbox-undeterminated">< /div ></code>
-
-    <h4>Disabled Undeterminated</h4>
-    <div class="checkbox checkbox-undeterminated disabled"></div>
-    <code
-      >< div class="checkbox checkbox-undeterminated disabled">< /div ></code
-    >
-
-    <h4>Disabled OFF</h4>
-    <div class="checkbox checkbox-off disabled"></div>
-    <code>< div class="checkbox checkbox-off disabled">< /div ></code>
-
-    <h4>Disabled Selected</h4>
-    <div class="checkbox checkbox-selected disabled"></div>
-    <code>< div class="checkbox checkbox-selected disabled">< /div ></code>
+    <div class="checkbox checkbox-off">
+      <label>Checkbox off</label>
+    </div>
+    <img src="../images/checkbox-of.png">
+    
+    <div class="checkbox checkbox-selected">
+      <label>Selected</label>
+    </div>
+    <img src="../images/checkbox-on.png">
+    
+    <div class="checkbox checkbox-undeterminated">
+      <label>Undeterminated</label>
+    </div>
+    <img src="../images/checkbox-undeterminated.png">
+    
+    
+    <div class="checkbox checkbox-undeterminated disabled">
+      <label>Disabled Undeterminated</label>
+    </div>
+    <img src="../images/checkbox-undeterminated-disabled.png">
+    
+    <div class="checkbox checkbox-off disabled">
+      <label>Disabled OFF</label>
+    </div>
+    <img src="../images/checkbox-off-disabled.png">
+    
+    
+    <div class="checkbox checkbox-selected disabled">
+      <label>Disabled Selected</label>
+    </div>
+    <img src="../images/checkbox-on-disabled.png">
+    
     <h1>Toggle</h1>
     <h4>OFF</h4>
     <div class="toggle toggle-off">
       <div class="selector"></div>
     </div>
-    <code
-      >< div class="toggle toggle-off"> < div class="selector"> < /div > < /div
-      ></code
-    >
-
+    <img src="../images/toggle-off.png">
+    
     <h4>ON</h4>
     <div class="toggle toggle-on">
       <div class="selector"></div>
     </div>
-    <code
-      >< div class="toggle toggle-on"> < div class="selector"> < /div > < /div
-      ></code
-    >
-
+    <img src="../images/toggle-on.png">
+    
     <h4>Disabled ON</h4>
     <div class="toggle toggle-on disabled">
       <div class="selector"></div>
     </div>
-    <code
-      >< div class="toggle toggle-on disabled"> < div class="selector"> < /div >
-      < /div ></code
-    >
-
+    <img src="../images/toggle-on-disabled.png">
+    
     <h4>Disabled OFF</h4>
     <div class="toggle toggle-off disabled">
       <div class="selector"></div>
     </div>
-    <code
-      >< div class="toggle toggle-off disabled"> < div class="selector"> < /div
-      > < /div ></code
-    >
+    <img src="../images/toggle-off-disabled.png">
+    
     <h1>Radio buttons</h1>
-    <h4>ON</h4>
     <div class="radio radio-on">
-      <div class="selector"></div>
+      <div class="selector">
+        <label value="radio-on">Radio ON</label>
+      </div>
     </div>
-    <code
-      >< div class="radio radio-on"> < div class="selector"> < /div > < /div
-      ></code
-    >
-
-    <h4>OFF</h4>
-    <div class="radio radio-off" id="my-radio">
-      <div class="selector"></div>
+    <img src="../images/radio-on.png">
+    
+    <div class="radio radio-off">
+      <div class="selector">
+        <label value="radio-off">Radio OFF</label>
+      </div>
     </div>
-    <code
-      >< div class="radio radio-off"> < div class="selector"> < /div > < /div
-      ></code
-    >
-
-    <h4>Disabled ON</h4>
+    <img src="../images/radio-off.png">
+    
     <div class="radio radio-on disabled">
-      <div class="selector"></div>
+      <div class="selector">        
+        <label value="radio-on">Radio ON Disabled</label>
+      </div>
     </div>
-    <code
-      >< div class="radio radio-on disabled"> < div class="selector"> < /div > <
-      /div ></code
-    >
-
-    <h4>Disabled OFF</h4>
+    <img src="../images/radio-on-disabled.png">
+    
     <div class="radio radio-off disabled">
-      <div class="selector"></div>
+      <div class="selector">
+        <label value="radio-off">Radio OFF Disabled</label>
+      </div>
     </div>
-    <code
-      >< div class="radio radio-off disabled"> < div class="selector"> < /div >
-      < /div ></code
-    >
-
+    <img src="../images/radio-off-disabled.png">
+    
     <h4>Radio group</h4>
     <div class="radio-group">
-      <div class="radio radio-off">
-        <div class="selector"></div>
+      <div class="radio radio-on">
+        <div class="selector">
+          <label value="1">Value 1</label>
+        </div>
       </div>
       <div class="radio radio-off">
-        <div class="selector"></div>
+        <div class="selector">
+          <label value="2">Value 2</label>
+        </div>
       </div>
       <div class="radio radio-off">
-        <div class="selector"></div>
+        <div class="selector">
+          <label value="3">Value 3</label>
+        </div>
       </div>
       <div class="radio radio-off">
-        <div class="selector"></div>
+        <div class="selector">
+          <label value="4">Value 4</label>
+        </div>
       </div>
     </div>
-    <code>< div class="radio-group">< /div ></code>
+    <img src="../images/radio-group.png" id="big-image">
+    
     <h1>Inputs</h1>
     <h4>Normal</h4>
     <input type="text" placeholder="palceholder" />
