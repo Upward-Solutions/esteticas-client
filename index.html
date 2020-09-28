@@ -27,6 +27,79 @@
     <h1>Centro de estéticas</h1>
     <h3>Login</h3>
     <h3>Registro</h3>
+    <form id="register">
+      <p>
+        <label class="userName">Nombre de usuario:</label>
+        <input
+          id="usernamesignup"
+          name="usernamesignup"
+          required="required"
+          type="text"
+          placeholder="Usuario"
+        />
+      </p>
+      <p>
+        <label class="name">Nombre completo:</label>
+        <input
+          id="usernamesignup"
+          name="usernamesignup"
+          required="required"
+          type="text"
+          placeholder="Nombre"
+        />
+      </p>
+      <p>
+        <label class="youmail"> Tu email</label>
+        <input
+          id="emailsignup"
+          name="emailsignup"
+          required="required"
+          type="email"
+          placeholder="ejemplo@mail.com"
+        />
+      </p>
+      <p>
+        <label class="phone">Teléfono:</label>
+        <input
+          id="usernamesignup"
+          name="usernamesignup"
+          required="required"
+          type="text"
+          placeholder="11 99999999"
+        />
+      </p>
+      <p>
+        <label class="password">Tu password </label>
+        <input
+          id="passwordsignup"
+          name="passwordsignup"
+          required="required"
+          type="password"
+          placeholder="eg. X8df!90EO"
+          pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+          title="Debe contener al menos un número y una letra minúscula y mayúscula, y al menos 8 o más caracteres"
+        />
+      </p>
+      <p>
+        <label for="passwordsignup_confirm" class="password"
+          >Confirma tu password
+        </label>
+        <input
+          id="passwordsignup_confirm"
+          name="passwordsignup_confirm"
+          required="required"
+          type="password"
+          placeholder="eg. X8df!90EO"
+        />
+      </p>
+      <p class="signin button">
+        <button type="submit"> Registro </button>
+      </p>
+      <p class="change_link">
+        Ya eres miembro
+        <a href="#tologin" class="to_register"> Login </a>
+      </p>
+    </form>
     <h3>Recupero de contraseña</h3>
     <script type="module" src="js/index.js"></script>
   </body>
