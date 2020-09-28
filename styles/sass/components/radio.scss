@@ -46,7 +46,13 @@ div.radio {
     border-color: $purple;
     opacity: 0.6;
     div.selector {
-      display: none;
+      visibility: hidden;
+      label {
+        visibility: visible;
+        position: relative;
+        top: 0px;
+        left: 35px;
+      }
     }
     &:hover {
       opacity: 0.7;
@@ -60,5 +66,17 @@ div.radio {
         display: none;
       }
     }
+  }
+  label {
+    color: $text-primary;
+    position: relative;
+    top: -5px;
+    left: 30px;
+    display: inline-block;
+    width: max-content;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
   }
 }

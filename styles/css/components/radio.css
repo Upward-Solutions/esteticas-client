@@ -46,7 +46,13 @@ div.radio.radio-off {
   opacity: 0.6;
 }
 div.radio.radio-off div.selector {
-  display: none;
+  visibility: hidden;
+}
+div.radio.radio-off div.selector label {
+  visibility: visible;
+  position: relative;
+  top: 0px;
+  left: 35px;
 }
 div.radio.radio-off:hover {
   opacity: 0.7;
@@ -59,6 +65,18 @@ div.radio.radio-off.disabled {
 }
 div.radio.radio-off.disabled div.selector {
   display: none;
+}
+div.radio label {
+  color: #190134;
+  position: relative;
+  top: -5px;
+  left: 30px;
+  display: inline-block;
+  width: max-content;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 /*# sourceMappingURL=radio.css.map */

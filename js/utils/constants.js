@@ -31,6 +31,9 @@ export const setInnerHTML = (element, content) => (element.innerHTML = content);
 export const getToggleValue = (id) =>
   getById(id).classList.contains("toggle-on");
 export const getRadioValue = (id) => getById(id).classList.contains("radio-on");
+export const getRadioGroupValue = (id) => {
+  
+}
 export const getCheckboxValue = (id) => getById(id).classList[1].split("-")[1];
 export const IS_SELECTED = (id) => getCheckboxValue(id) === 'selected';
 export const IS_OFF = (id) => getCheckboxValue(id) === 'off';

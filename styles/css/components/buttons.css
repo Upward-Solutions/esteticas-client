@@ -11,7 +11,6 @@ button {
   border-color: #3E014E;
   cursor: pointer;
   text-transform: uppercase;
-  font-weight: bold;
 }
 button[class=primary] {
   background-color: #3E014E;

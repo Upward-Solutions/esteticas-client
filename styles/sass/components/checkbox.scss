@@ -42,4 +42,16 @@ div.checkbox {
       background-image: url("../assets/success-disabled-icon.svg");
     }
   }
+  label {
+    color: $text-primary;
+    position: relative;
+    top: -5px;
+    left: 30px;
+    display: inline-block;
+    width: max-content;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
 }

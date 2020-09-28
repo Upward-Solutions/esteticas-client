@@ -41,5 +41,17 @@ div.checkbox.disabled.undeterminated {
 div.checkbox.disabled.selected {
   background-image: url("../assets/success-disabled-icon.svg");
 }
+div.checkbox label {
+  color: #190134;
+  position: relative;
+  top: -5px;
+  left: 30px;
+  display: inline-block;
+  width: max-content;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
 
 /*# sourceMappingURL=checkbox.css.map */

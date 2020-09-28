@@ -22,12 +22,14 @@ div.toggle div.selector {
   margin-top: auto;
   margin-bottom: auto;
   margin-right: 20px;
-  background: #3E014E;
+  background-color: #3E014E;
 }
 div.toggle div.selector::after {
   content: "OFF";
   color: #3E014E;
   margin-left: 25px;
+  position: relative;
+  top: -3.5px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -45,6 +47,8 @@ div.toggle.toggle-on div.selector {
 div.toggle.toggle-on div.selector::before {
   content: "ON";
   color: #FFFDFD;
+  position: relative;
+  top: -3.5px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -65,7 +69,6 @@ div.toggle.toggle-on.disabled div.selector {
   opacity: 0.7;
 }
 div.toggle.toggle-on.disabled div.selector::before {
-  background-color: #EAEAEA;
   color: #3E014E;
   opacity: 0.7;
 }
@@ -80,7 +83,6 @@ div.toggle.disabled div.selector {
   opacity: 0.7;
 }
 div.toggle.disabled div.selector::after {
-  background-color: #EAEAEA;
   color: #3E014E;
   opacity: 0.7;
 }
