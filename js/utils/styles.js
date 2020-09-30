@@ -1,9 +1,11 @@
-import { getByClass, IS_FIREFOX } from "./constants.js";
+import { getByClass, getByTag, IS_FIREFOX } from "./constants.js";
 
 export const applyCustomStyles = () => {
   createToggle();
   createRadio();
   createCheckbox();
+  createPasswordInput();
+  createDateInput();
 };
 
 const createToggle = () => {
@@ -79,17 +81,65 @@ const createCheckbox = () => {
           ? event.target
           : event.target.parentNode;
 
-          if (currentCheck.classList.contains("checkbox-off")) {
-            currentCheck.classList.remove("checkbox-off")
-            currentCheck.classList.add("checkbox-selected")
-          } else if (currentCheck.classList.contains("checkbox-selected")) {
-            currentCheck.classList.remove("checkbox-selected")
-            currentCheck.classList.add("checkbox-undeterminated")
-          } else {
-            currentCheck.classList.remove("checkbox-undeterminated")
-            currentCheck.classList.add("checkbox-off")
-          }
+        if (currentCheck.classList.contains("checkbox-off")) {
+          currentCheck.classList.remove("checkbox-off");
+          currentCheck.classList.add("checkbox-selected");
+        } else if (currentCheck.classList.contains("checkbox-selected")) {
+          currentCheck.classList.remove("checkbox-selected");
+          currentCheck.classList.add("checkbox-undeterminated");
+        } else {
+          currentCheck.classList.remove("checkbox-undeterminated");
+          currentCheck.classList.add("checkbox-off");
+        }
       });
     }
   }
+};
+
+const createPasswordInput = () => {
+  const inputs = getByClass("input");
+  for (const input of inputs) {
+    if (input.children[1].className === "password-icon") {
+      const button = input.lastElementChild;
+      const inputTag = input.firstElementChild;
+
+      button.addEventListener("click", () => {
+        if (inputTag.type === "text") {
+          inputTag.type = "password";
+          button.style.backgroundImage =
+            "url('../../styles/assets/eyeClose-icon.svg')";
+        } else {
+          inputTag.type = "text";
+          button.style.backgroundImage =
+            "url('../../styles/assets/eyeOpen-icon.svg')";
+        }
+      });
+    }
+  }
+};
+
+const createDateInput = () => {
+  if (IS_FIREFOX) {
+    const inputs = getByTag("input");
+    for (const input of inputs) {
+      if (input.attributes[0].value === "datetime-local") {
+        const newInput = createInputDateTimeForMozilla();
+        input.parentNode.
+        insertBefore(newInput, input);
+        input.remove();
+      }
+    }
+  }
+};
+
+const createInputDateTimeForMozilla = () => {
+  let div = document.createElement("div");
+  div.className = "input-date";
+  let inputDate = document.createElement("input");
+  inputDate.type = "date";
+  let inputTime = document.createElement("input");
+  inputTime.type = "time";
+  div.appendChild(inputDate);
+  div.appendChild(inputTime);
+  return div;
 };

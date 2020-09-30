@@ -3,8 +3,9 @@ input {
   margin: 0.5%;
   border-style: solid;
   border-width: 1px;
+  width: 20%;
 }
-input[type=text], input[type=datetime-local], input[type=password] {
+input[type=text], input[type=datetime-local], input[type=password], input[type=date], input[type=time] {
   border-radius: 100px;
   padding: 5px;
   border-color: rgba(62, 1, 78, 0.2);
@@ -14,39 +15,36 @@ input[type=text], input[type=datetime-local], input[type=password] {
   color: #3E014E;
   opacity: 1;
 }
-input[type=text]::placeholder, input[type=datetime-local]::placeholder, input[type=password]::placeholder {
+input[type=text]::placeholder, input[type=datetime-local]::placeholder, input[type=password]::placeholder, input[type=date]::placeholder, input[type=time]::placeholder {
   color: #3E014E;
   opacity: 0.5;
 }
-input[type=text]:hover, input[type=datetime-local]:hover, input[type=password]:hover {
+input[type=text]:hover, input[type=datetime-local]:hover, input[type=password]:hover, input[type=date]:hover, input[type=time]:hover {
   border: 1px solid rgba(62, 1, 78, 0.5);
 }
-input[type=text]:focus, input[type=text]:active, input[type=datetime-local]:focus, input[type=datetime-local]:active, input[type=password]:focus, input[type=password]:active {
+input[type=text]:focus, input[type=text]:active, input[type=datetime-local]:focus, input[type=datetime-local]:active, input[type=password]:focus, input[type=password]:active, input[type=date]:focus, input[type=date]:active, input[type=time]:focus, input[type=time]:active {
   border: 1px solid #3e014e;
 }
-input[type=text]:disabled, input[type=datetime-local]:disabled, input[type=password]:disabled {
+input[type=text]:disabled, input[type=datetime-local]:disabled, input[type=password]:disabled, input[type=date]:disabled, input[type=time]:disabled {
   background-color: #EAEAEA;
   border: 1px solid rgba(62, 1, 78, 0.2);
 }
-input[type=text].search, input[type=datetime-local].search, input[type=password].search {
-  background-image: url("../assets/search-icon.svg");
-}
-input[type=text].success, input[type=datetime-local].success, input[type=password].success {
+input[type=text].success, input[type=datetime-local].success, input[type=password].success, input[type=date].success, input[type=time].success {
   background-image: url("../assets/success-icon.svg");
   border-color: #9AA27D;
 }
-input[type=text].error, input[type=datetime-local].error, input[type=password].error {
+input[type=text].error, input[type=datetime-local].error, input[type=password].error, input[type=date].error, input[type=time].error {
   background-image: url("../assets/error-icon.svg");
   border-color: #EB5757;
 }
-input[type=text].search, input[type=text].success, input[type=text].error, input[type=datetime-local].search, input[type=datetime-local].success, input[type=datetime-local].error, input[type=password].search, input[type=password].success, input[type=password].error {
+input[type=text].search, input[type=text].success, input[type=text].error, input[type=datetime-local].search, input[type=datetime-local].success, input[type=datetime-local].error, input[type=password].search, input[type=password].success, input[type=password].error, input[type=date].search, input[type=date].success, input[type=date].error, input[type=time].search, input[type=time].success, input[type=time].error {
   color: #685879;
 }
-input[type=text].search::placeholder, input[type=text].success::placeholder, input[type=text].error::placeholder, input[type=datetime-local].search::placeholder, input[type=datetime-local].success::placeholder, input[type=datetime-local].error::placeholder, input[type=password].search::placeholder, input[type=password].success::placeholder, input[type=password].error::placeholder {
+input[type=text].search::placeholder, input[type=text].success::placeholder, input[type=text].error::placeholder, input[type=datetime-local].search::placeholder, input[type=datetime-local].success::placeholder, input[type=datetime-local].error::placeholder, input[type=password].search::placeholder, input[type=password].success::placeholder, input[type=password].error::placeholder, input[type=date].search::placeholder, input[type=date].success::placeholder, input[type=date].error::placeholder, input[type=time].search::placeholder, input[type=time].success::placeholder, input[type=time].error::placeholder {
   color: #685879;
 }
-input[type=text][type=password], input[type=datetime-local][type=password], input[type=password][type=password] {
-  background-image: url("../assets/eyeClose-icon.svg");
+input[type=date], input[type=time] {
+  width: auto;
 }
 input[type=checkbox] {
   -webkit-appearance: none;
@@ -84,6 +82,25 @@ result[class=success] {
 result[class=error] {
   background-image: url("../assets/span-error-icon.svg");
   background-color: #D75D48;
+}
+
+.input {
+  display: flex;
+}
+.input span {
+  position: relative;
+  left: -40px;
+  cursor: pointer;
+  z-index: 1;
+  width: 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.input span.search-icon {
+  background-image: url("../assets/search-icon.svg");
+}
+.input span.password-icon {
+  background-image: url("../assets/eyeClose-icon.svg");
 }
 
 /*# sourceMappingURL=inputs.css.map */

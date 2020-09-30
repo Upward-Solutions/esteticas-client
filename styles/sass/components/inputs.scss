@@ -5,7 +5,8 @@ input {
     margin: 0.5%;
     border-style: solid;
     border-width: 1px;
-    &[type=text], &[type=datetime-local], &[type=password]{
+    width: 20%;
+    &[type=text], &[type=datetime-local], &[type=password], &[type=date], &[type=time]{
         border-radius: 100px;
         padding: 5px;
         border-color: rgb(62, 1, 78, 0.2) ;
@@ -28,9 +29,6 @@ input {
             background-color: $background-disabled;
             border: 1px solid rgb(62, 1, 78, 0.2);
         }
-        &.search {
-            background-image: url("../assets/search-icon.svg");
-        }
         &.success {
             background-image: url("../assets/success-icon.svg");
             border-color: $green;
@@ -45,9 +43,9 @@ input {
                 color: $input-text-color-action;
             }
         }
-        &[type=password] {
-            background-image: url("../assets/eyeClose-icon.svg");
-        }
+    }
+    &[type=date], &[type=time] {
+        width: auto;
     }
     &[type=checkbox] {
         -webkit-appearance: none;
@@ -85,5 +83,24 @@ result {
     &[class=error] {
         background-image: url("../assets/span-error-icon.svg");
         background-color: $orange;
+    }
+}
+
+.input{
+    display: flex;
+    span{
+        position: relative;
+        left: -40px;
+        cursor: pointer;
+        z-index: 1;
+        width: 20px;
+        background-repeat: no-repeat;
+        background-position: center;
+        &.search-icon{
+            background-image: url("../assets/search-icon.svg");
+        }
+        &.password-icon{
+            background-image: url("../assets/eyeClose-icon.svg");
+        }
     }
 }

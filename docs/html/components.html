@@ -40,6 +40,9 @@
         top: 43px;
         left: 10px;
       }
+      .copy:active{
+        background-color: #405DCC;
+      }
     </style>
     <title>Proyecto Estéticas</title>
   </head>
@@ -65,6 +68,48 @@
       reiciendis non doloremque.
     </p>
 
+    <h1>Inputs</h1>
+    <h4>Normal</h4>
+    <input type="text" placeholder="palceholder" />
+    <a onclick="copy(this)" class="copy">copy</a>
+    <img src="../images/input-text.png" />
+    
+    <h4>Disabled</h4>
+    <input type="text" placeholder="palceholder" disabled />
+    <a onclick="copy(this)" class="copy">copy</a>
+    <img src="../images/input-disabled.png" />
+    
+    <h4>Search</h4>
+    <div class="input">
+      <input type="text" placeholder="palceholder" class="search" />
+      <span class="search-icon"></span>
+    </div>
+    <a onclick="copy(this)" class="copy">copy</a>
+    <img src="../images/input-search.png" />
+    
+    <h4>Error</h4>
+    <input type="text" placeholder="palceholder" class="error" />
+    <a onclick="copy(this)" class="copy">copy</a>
+    <img src="../images/input-error.png" />
+    
+    <h4>Success</h4>
+    <input type="text" placeholder="palceholder" class="success" />
+    <a onclick="copy(this)" class="copy">copy</a>
+    <img src="../images/input-success.png" />
+    
+    <h4>Password</h4>
+    <div class="input">
+      <input type="password" placeholder="palceholder" class="search" />
+      <span class="password-icon"></span>
+    </div>
+    <a onclick="copy(this)" class="copy">copy</a>
+    <img src="../images/input-password.png" />
+    
+    <h4>Date</h4>
+    <input type="datetime-local" />
+    <a onclick="copy(this)" class="copy">copy</a>
+    <img src="../images/input-date.png" />
+    
     <h1>Checkbox</h1>
     <div class="checkbox checkbox-off">
       <label>Checkbox off</label>
@@ -189,35 +234,6 @@
     </div>
     <a onclick="copy(this)" class="copy">copy</a>
     <img src="../images/radio-group.png" id="big-image" />
-
-    <h1>Inputs</h1>
-    <h4>Normal</h4>
-    <input type="text" placeholder="palceholder" />
-    <code>input type="text" placeholder="palceholder"</code>
-
-    <h4>Disabled</h4>
-    <input type="text" placeholder="palceholder" disabled />
-    <code>input type="text" placeholder="palceholder" disabled</code>
-
-    <h4>Search</h4>
-    <input type="text" placeholder="palceholder" class="search" />
-    <code>input type="text" placeholder="palceholder" class="search"</code>
-
-    <h4>Error</h4>
-    <input type="text" placeholder="palceholder" class="error" />
-    <code>input type="text" placeholder="palceholder" class="error"</code>
-
-    <h4>Success</h4>
-    <input type="text" placeholder="palceholder" class="success" />
-    <code>input type="text" placeholder="palceholder" class="success"</code>
-
-    <h4>Password</h4>
-    <input type="password" placeholder="palceholder" />
-    <code>input type="password" placeholder="palceholder"</code>
-
-    <h4>Date</h4>
-    <input type="datetime-local" />
-    <code>input type="datetime-local"</code>
 
     <h1>Botones</h1>
     <button class="primary">Primary</button>
