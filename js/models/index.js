@@ -1,53 +1,92 @@
-import { _Response } from '../utils/factory.js'
-import { API_URL, GENERAL_ERROR, SUCCES_CODE } from '../utils/constants.js'
+import { _Response } from "../utils/factory.js";
+import { API_URL, GENERAL_ERROR, SUCCES_CODE } from "../utils/constants.js";
 
+const getHeaders = () => {
+  const headers = new Headers();
+  headers.append("Content-Type", "application/json");
+  headers.append('Access-Control-Allow-Origin', '*');
+  return headers;
+};
+
+const getRequestOptions = (request) =>
+  ({
+    method: request.method,
+    headers: getHeaders(),
+    body: JSON.stringify(request.data),
+  });
 
 export const fetchData = (request, setView) => {
-    let response
-    fetch(`${API_URL}${request.endpoint}`, {
-        method: request.method,
-        mode: 'no-cors',
-        cache: 'no-cache',
-        credentials: 'same-origin',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        referrerPolicy: 'same-origin',
-        body: request.data
+  let response;
+  fetch(`${API_URL}${request.endpoint}`, {
+    method: request.method,
+    mode: "no-cors",
+    cache: "no-cache",
+    credentials: "same-origin",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    referrerPolicy: "same-origin",
+    body: request.data,
+  })
+    .then((res) => {
+      if (!res.ok) {
+        response = _Response("Network response was not ok", {}, GENERAL_ERROR);
+        return response;
+      } else {
+        return res.json();
+      }
     })
-        .then(res => {
-            if (!res.ok) {
-                response = _Response('Network response was not ok', {}, GENERAL_ERROR)
-                return response
-            } else {
-                return res.json();
-            }
-        })
-        .then(data => {
-            response = _Response(data.message, data.data, data.code)
-            if (setView) {
-                setView(response)
-            }
-        });
-    if (!response) {
-        response = _Response('Network response was not ok', {}, GENERAL_ERROR)
-    }
-    return response
-}
+    .then((data) => {
+      response = _Response(data.message, data.data, data.code);
+      if (setView) {
+        setView(response);
+      }
+    });
+  if (!response) {
+    response = _Response("Network response was not ok", {}, GENERAL_ERROR);
+  }
+  return response;
+};
 
 export const justFetch = (request) => {
-    let response
-    fetch(`${API_URL}${request.endpoint}`)
-    .then(res => {
-        if (!res.ok) {
-            response = _Response('Network response was not ok', {}, GENERAL_ERROR)
-            return response
-        } else {
-            return res.json();
-        }
+  let response;
+  fetch(`${API_URL}${request.endpoint}`)
+    .then((res) => {
+      if (!res.ok) {
+        response = _Response("Network response was not ok", {}, GENERAL_ERROR);
+        return response;
+      } else {
+        return res.json();
+      }
     })
-    .then(data => {
-        response = _Response('Transacción realizada con éxito', data, SUCCES_CODE)
+    .then((data) => {
+      response = _Response(
+        "Transacción realizada con éxito",
+        data,
+        SUCCES_CODE
+      );
     });
-    return response;
-}
+  return response;
+};
+
+export const justFetchWithData = (request) => {
+  let response;
+  fetch(`${API_URL}${request.endpoint}`, getRequestOptions(request))
+    .then((res) => {
+      if (!res.ok) {
+        response = _Response("Network response was not ok", {}, GENERAL_ERROR);
+        return response;
+      } else {
+        return res.json();
+      }
+    })
+    .then((data) => {
+      response = _Response(
+        "Transacción realizada con éxito",
+        data,
+        SUCCES_CODE
+      );
+    })
+    .catch((error) => console.error("Error:", error));
+  return response;
+};
