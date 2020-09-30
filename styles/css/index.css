@@ -90,10 +90,7 @@ result[class=error] {
 button {
   padding: 10px 50px;
   margin: 0.5%;
-  width: 10%;
-  max-width: 10%;
   outline: none;
-  border: none;
   border-radius: 100px;
   border-width: 0.6px;
   border-style: solid;
@@ -225,29 +222,25 @@ div.radio {
   border-width: 1px;
   opacity: 0.6;
   margin: 10px;
-  width: 20px;
-  height: 20px;
+  width: 10px;
+  height: 10px;
   padding: 2px;
   cursor: pointer;
 }
 div.radio.radio-on {
   background-color: #D75D48;
   border-color: #D75D48;
-  display: grid;
-  align-content: center;
-  align-items: center;
   opacity: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 div.radio.radio-on div.selector {
-  margin-left: 5px;
-  width: 10px;
-  height: 10px;
+  width: 7px;
+  height: 7px;
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   border-radius: 50%;
-  margin-top: auto;
-  margin-bottom: auto;
-  margin-right: 20px;
   background: #FFFDFD;
 }
 div.radio.radio-on.disabled {
@@ -260,6 +253,9 @@ div.radio.radio-on.disabled div.selector {
   background-color: #FFFDFD;
   opacity: 1;
 }
+div.radio.radio-on.disabled div.selector label {
+  visibility: visible;
+}
 div.radio.radio-off {
   background-color: #FFFDFD;
   border-color: #3E014E;
@@ -270,9 +266,6 @@ div.radio.radio-off div.selector {
 }
 div.radio.radio-off div.selector label {
   visibility: visible;
-  position: relative;
-  top: 0px;
-  left: 35px;
 }
 div.radio.radio-off:hover {
   opacity: 0.7;
