@@ -1,24 +1,17 @@
 div.radio {
-  border-radius: 100px;
+  border-radius: 100%;
   border-color: #3E014E;
   border-style: solid;
   border-width: 1px;
   opacity: 0.6;
   margin: 10px;
-  width: 10px;
-  height: 10px;
+  width: 7px;
   padding: 2px;
   cursor: pointer;
-}
-div.radio.radio-on {
-  background-color: #D75D48;
-  border-color: #D75D48;
-  opacity: 1;
   display: flex;
-  align-items: center;
   justify-content: center;
 }
-div.radio.radio-on div.selector {
+div.radio div.selector {
   width: 7px;
   height: 7px;
   -moz-border-radius: 50%;
@@ -26,29 +19,35 @@ div.radio.radio-on div.selector {
   border-radius: 50%;
   background: #FFFDFD;
 }
+div.radio div.selector label {
+  visibility: visible;
+  color: #190134;
+  position: relative;
+  top: -9px;
+  left: 25px;
+  display: block;
+  width: max-content;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+div.radio.radio-on {
+  background-color: #D75D48;
+  border-color: #D75D48;
+  opacity: 1;
+}
 div.radio.radio-on.disabled {
   background-color: #3E014E;
   border-color: #3E014E;
   opacity: 0.3;
   cursor: no-drop;
 }
-div.radio.radio-on.disabled div.selector {
-  background-color: #FFFDFD;
-  opacity: 1;
-}
-div.radio.radio-on.disabled div.selector label {
-  visibility: visible;
-}
 div.radio.radio-off {
   background-color: #FFFDFD;
-  border-color: #3E014E;
-  opacity: 0.6;
 }
 div.radio.radio-off div.selector {
   visibility: hidden;
-}
-div.radio.radio-off div.selector label {
-  visibility: visible;
 }
 div.radio.radio-off:hover {
   opacity: 0.7;
@@ -60,19 +59,7 @@ div.radio.radio-off.disabled {
   cursor: no-drop;
 }
 div.radio.radio-off.disabled div.selector {
-  display: none;
-}
-div.radio label {
-  color: #190134;
-  position: relative;
-  top: -5px;
-  left: 30px;
-  display: inline-block;
-  width: max-content;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+  visibility: hidden;
 }
 
 /*# sourceMappingURL=radio.css.map */
