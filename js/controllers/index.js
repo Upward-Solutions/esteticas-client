@@ -1,7 +1,7 @@
 import createNewUser from './NewUser.js'
-import exampleSwapi from './Swapi.js'
+import Login from './Login.js'
 
 export default { 
     createNewUser,
-    exampleSwapi,
+    Login,
 }

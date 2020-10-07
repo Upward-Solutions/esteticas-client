@@ -13,6 +13,7 @@ export const IS_FIREFOX =
   navigator.userAgent.toLowerCase().indexOf("firefox") > -1;
 export const IS_CHROME =
   navigator.userAgent.toLowerCase().indexOf("chrome") > -1;
+export const redirect = (url) => (document.location.pathname = url);
 
 /* DOM Functions */
 
@@ -31,22 +32,24 @@ export const setInnerHTML = (element, content) => (element.innerHTML = content);
 export const getToggleValue = (id) =>
   getById(id).classList.contains("toggle-on");
 export const getRadioValue = (id) => getById(id).classList.contains("radio-on");
-export const getRadioGroupValue = (id) => {
-  
-}
+export const getRadioGroupValue = (id) => {};
 export const getCheckboxValue = (id) => getById(id).classList[1].split("-")[1];
-export const IS_SELECTED = (id) => getCheckboxValue(id) === 'selected';
-export const IS_OFF = (id) => getCheckboxValue(id) === 'off';
-export const UNDETERMINATED = (id) => getCheckboxValue(id) === 'undeterminated';
+export const IS_SELECTED = (id) => getCheckboxValue(id) === "selected";
+export const IS_OFF = (id) => getCheckboxValue(id) === "off";
+export const UNDETERMINATED = (id) => getCheckboxValue(id) === "undeterminated";
 
 /* Form */
 
 export const getInputsFromForm = (form) => {
-  let childrens = Array.from(form.children);
-  let inputs = childrens.filter(
-    (children) =>
-      children.tagName === "INPUT" || children.tagName === "TEXTAREA"
-  );
+  const childrens = Array.from(form.children);
+  let inputs = [];
+
+  for (const children of childrens) {
+    if (children.tagName === "INPUT" || children.tagName === "TEXTAREA")
+      inputs.push(children);
+    if (children.tagName === "DIV" && children.className === "input")
+      inputs.push(children.firstElementChild);
+  }
 
   return inputs;
 };
@@ -54,10 +57,16 @@ export const getInputsFromForm = (form) => {
 export const createData = (inputs) => {
   let data = {};
   inputs.forEach((input) => {
+    data[input.name] = {};
     if (input.type === "checkbox") {
-      data[input.name] = input.checked;
+      data[input.name].name = input.name;
+      data[input.name].value = input.checked;
+      data["required"] = input.required;
     } else {
-      data[input.name] = input.value;
+      data[input.name].name = input.name;
+      data[input.name].value = input.value;
+      data[input.name].type = input.type;
+      data[input.name].required = input.required;
     }
   });
 
@@ -72,9 +81,10 @@ export const createData = (inputs) => {
 
 export const isValid = (data) => {
   let valid = true;
+
   for (const key in data) {
-    let type = key.split("-")[1];
-    let value = data[key];
+    let type = data[key].type;
+    let value = data[key].value;
     switch (type) {
       case "text":
         valid = REG_EX_TEXT.test(value);
@@ -88,13 +98,14 @@ export const isValid = (data) => {
       case "email":
         valid = REG_EX_EMAIL.test(value);
         break;
-      case "checkbox":
-        valid = value;
+      case "password":
+        valid = REG_EX_PASS.test(value);
         break;
       default:
         break;
     }
   }
+
   return valid;
 };
 
@@ -110,19 +121,21 @@ export const FORM_ERROR =
   "Alguno de los campos no cumple con los requisitos esperados";
 
 export const showNotification = (status, title) => {
-  alert(`${status}: ${title}`);
+  if (title) alert(`${status}: ${title}`);
+  else alert(status);
 };
 
 /* Codes */
 
 export const ERROR_CODE = "ERROR";
-export const SUCCES_CODE = "SUCCESS";
+export const SUCCESS_CODE = "SUCCESS";
 export const WARNING_CODE = "WARNING";
 export const INFO_CODE = "INFO";
 
 /* Regular Expressions */
 
 export const REG_EX_TEXT = /^[A-Za-z0-9]*$/;
+export const REG_EX_PASS = /^[A-Za-z0-9]*$/;
 export const REG_EX_NUMBER = /^[0-9]*$/;
 export const REG_EX_TEXTAREA = /^[A-Za-z0-9]*$/;
 export const REG_EX_EMAIL = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;

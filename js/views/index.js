@@ -1,7 +1,8 @@
 import newUserForm from "./newUser.js";
-import getExampleSwapi from "./swapi.js";
+import login, { validateCapitalLetter } from "./login.js";
 
 export default { 
     newUserForm, 
-    getExampleSwapi,
+    login,
+    validateCapitalLetter,
 };

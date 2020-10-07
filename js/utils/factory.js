@@ -10,7 +10,7 @@
 export const _Response = (message, data, code) => {
     let Response = new Object()
     Response.message = message
-    Response.data = data
+    Response.data = {data}
     Response.code = code
 
     return Response
