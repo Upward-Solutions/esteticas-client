@@ -127,3 +127,8 @@ export const INFO_CODE = 'INFO';
 
 export const API_URL = 'http://localhost:8282/api/v1';
 export const EXAMPLE_API_SUCCES = 'https://swapi.dev/api';
+
+/* STORAGE */
+
+export const editStorageItem = (item, newValue) => localStorage.setItem(item, JSON.stringify(newValue));
+export const getStorageItem = item => JSON.parse(localStorage.getItem(item));
