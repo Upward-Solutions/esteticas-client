@@ -1,15 +1,11 @@
-import { _Request, _Response } from '../utils/factory.js'
-import { setSwapiView } from '../views/swapi.js'
-import { justFetch } from '../models/index.js'
+import { _Request } from '../utils/factory.js';
+import { justFetch } from '../models/index.js';
 
-const exampleSwapi = () => {
-    let request
-    let response
+const exampleSwapi = (setSwapiView) => {
+  const request = _Request({}, 'people/1/', 'GET');
+  const response = justFetch(request, setSwapiView);
 
-    request = _Request({}, 'people/1/', 'GET')
-    response = justFetch(request, setSwapiView)
-
-    return response;
-}
+  return response;
+};
 
 export default exampleSwapi;

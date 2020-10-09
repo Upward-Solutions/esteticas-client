@@ -1,7 +1,7 @@
-import newUserForm from "./newUser.js";
-import getExampleSwapi from "./swapi.js";
+import newUserForm from './newUser.js';
+import getExampleSwapi from './swapi.js';
 
-export default { 
-    newUserForm, 
-    getExampleSwapi,
+export default {
+  newUserForm,
+  getExampleSwapi,
 };
