@@ -1,0 +1,57 @@
+@import "../vars";
+
+div.checkbox {
+  border-radius: 25%;
+  border-color: $purple;
+  border-style: solid;
+  border-width: 1px;
+  opacity: 0.6;
+  margin: 10px;
+  width: 15px;
+  height: 15px;
+  padding: 2px;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.8;
+  }
+  &.checkbox-selected {
+    border-color: $orange;
+    background-color: $orange;
+    opacity: 1;
+    background-image: url("../assets/success-white-icon.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  &.checkbox-undeterminated {
+    border-color: $orange;
+    background-color: $orange;
+    opacity: 1;
+    background-image: url("../assets/undeterminated-checkbox.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  &.disabled {
+    background-color: $background-disabled;
+    border-color: $border-purple-disabled;
+    opacity: 0.9;
+    cursor: no-drop;
+    &.undeterminated {
+      background-image: url("../assets/undeterminated-disabled-checkbox.svg");
+    }
+    &.selected {
+      background-image: url("../assets/success-disabled-icon.svg");
+    }
+  }
+  label {
+    color: $text-primary;
+    position: relative;
+    top: -5px;
+    left: 30px;
+    display: inline-block;
+    width: max-content;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+}
