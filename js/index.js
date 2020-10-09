@@ -1,5 +1,6 @@
 import { createEvents } from './utils/events.js'
-import { applyCustomStyles } from './utils/styles.js'
+import { setInitialLocalStorage } from './utils/storage.js'
 
-applyCustomStyles()
-createEvents()
+setInitialLocalStorage();
+applyCustomStyles();
+createEvents();

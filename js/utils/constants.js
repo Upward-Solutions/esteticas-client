@@ -131,3 +131,8 @@ export const REG_EX_EMAIL = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)
 
 export const API_URL = "http://localhost:8282/api/v1";
 export const EXAMPLE_API_SUCCES = "https://swapi.dev/api";
+
+/* STORAGE */
+
+export const editStorageItem = (item, newValue) => localStorage.setItem(item, JSON.stringify(newValue));
+export const getStorageItem = item => JSON.parse(localStorage.getItem(item));
