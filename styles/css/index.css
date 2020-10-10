@@ -5,8 +5,9 @@ input {
   border-style: solid;
   border-width: 1px;
   width: 20%;
+  display: block;
 }
-input[type=text], input[type=datetime-local], input[type=password], input[type=date], input[type=time] {
+input[type=text], input[type=email], input[type=datetime-local], input[type=password], input[type=date], input[type=time] {
   border-radius: 100px;
   padding: 5px;
   border-color: rgba(62, 1, 78, 0.2);
@@ -16,32 +17,32 @@ input[type=text], input[type=datetime-local], input[type=password], input[type=d
   color: #3E014E;
   opacity: 1;
 }
-input[type=text]::placeholder, input[type=datetime-local]::placeholder, input[type=password]::placeholder, input[type=date]::placeholder, input[type=time]::placeholder {
+input[type=text]::placeholder, input[type=email]::placeholder, input[type=datetime-local]::placeholder, input[type=password]::placeholder, input[type=date]::placeholder, input[type=time]::placeholder {
   color: #3E014E;
   opacity: 0.5;
 }
-input[type=text]:hover, input[type=datetime-local]:hover, input[type=password]:hover, input[type=date]:hover, input[type=time]:hover {
+input[type=text]:hover, input[type=email]:hover, input[type=datetime-local]:hover, input[type=password]:hover, input[type=date]:hover, input[type=time]:hover {
   border: 1px solid rgba(62, 1, 78, 0.5);
 }
-input[type=text]:focus, input[type=text]:active, input[type=datetime-local]:focus, input[type=datetime-local]:active, input[type=password]:focus, input[type=password]:active, input[type=date]:focus, input[type=date]:active, input[type=time]:focus, input[type=time]:active {
+input[type=text]:focus, input[type=text]:active, input[type=email]:focus, input[type=email]:active, input[type=datetime-local]:focus, input[type=datetime-local]:active, input[type=password]:focus, input[type=password]:active, input[type=date]:focus, input[type=date]:active, input[type=time]:focus, input[type=time]:active {
   border: 1px solid #3e014e;
 }
-input[type=text]:disabled, input[type=datetime-local]:disabled, input[type=password]:disabled, input[type=date]:disabled, input[type=time]:disabled {
+input[type=text]:disabled, input[type=email]:disabled, input[type=datetime-local]:disabled, input[type=password]:disabled, input[type=date]:disabled, input[type=time]:disabled {
   background-color: #EAEAEA;
   border: 1px solid rgba(62, 1, 78, 0.2);
 }
-input[type=text].success, input[type=datetime-local].success, input[type=password].success, input[type=date].success, input[type=time].success {
+input[type=text].success, input[type=email].success, input[type=datetime-local].success, input[type=password].success, input[type=date].success, input[type=time].success {
   background-image: url("../assets/success-icon.svg");
   border-color: #9AA27D;
 }
-input[type=text].error, input[type=datetime-local].error, input[type=password].error, input[type=date].error, input[type=time].error {
+input[type=text].error, input[type=email].error, input[type=datetime-local].error, input[type=password].error, input[type=date].error, input[type=time].error {
   background-image: url("../assets/error-icon.svg");
   border-color: #EB5757;
 }
-input[type=text].search, input[type=text].success, input[type=text].error, input[type=datetime-local].search, input[type=datetime-local].success, input[type=datetime-local].error, input[type=password].search, input[type=password].success, input[type=password].error, input[type=date].search, input[type=date].success, input[type=date].error, input[type=time].search, input[type=time].success, input[type=time].error {
+input[type=text].search, input[type=text].success, input[type=text].error, input[type=email].search, input[type=email].success, input[type=email].error, input[type=datetime-local].search, input[type=datetime-local].success, input[type=datetime-local].error, input[type=password].search, input[type=password].success, input[type=password].error, input[type=date].search, input[type=date].success, input[type=date].error, input[type=time].search, input[type=time].success, input[type=time].error {
   color: #685879;
 }
-input[type=text].search::placeholder, input[type=text].success::placeholder, input[type=text].error::placeholder, input[type=datetime-local].search::placeholder, input[type=datetime-local].success::placeholder, input[type=datetime-local].error::placeholder, input[type=password].search::placeholder, input[type=password].success::placeholder, input[type=password].error::placeholder, input[type=date].search::placeholder, input[type=date].success::placeholder, input[type=date].error::placeholder, input[type=time].search::placeholder, input[type=time].success::placeholder, input[type=time].error::placeholder {
+input[type=text].search::placeholder, input[type=text].success::placeholder, input[type=text].error::placeholder, input[type=email].search::placeholder, input[type=email].success::placeholder, input[type=email].error::placeholder, input[type=datetime-local].search::placeholder, input[type=datetime-local].success::placeholder, input[type=datetime-local].error::placeholder, input[type=password].search::placeholder, input[type=password].success::placeholder, input[type=password].error::placeholder, input[type=date].search::placeholder, input[type=date].success::placeholder, input[type=date].error::placeholder, input[type=time].search::placeholder, input[type=time].success::placeholder, input[type=time].error::placeholder {
   color: #685879;
 }
 input[type=date], input[type=time] {

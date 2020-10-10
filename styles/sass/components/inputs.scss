@@ -6,7 +6,8 @@ input {
     border-style: solid;
     border-width: 1px;
     width: 20%;
-    &[type=text], &[type=datetime-local], &[type=password], &[type=date], &[type=time]{
+    display: block;
+    &[type=text], &[type=email], &[type=datetime-local], &[type=password], &[type=date], &[type=time]{
         border-radius: 100px;
         padding: 5px;
         border-color: rgb(62, 1, 78, 0.2) ;
