@@ -11,7 +11,7 @@
     <script src="./js/utils/plugins/chart/chart.min.js"></script>
     <script src="./js/utils/plugins/popper/popper.min.js"></script>
     <link rel="stylesheet" href="./js/utils/plugins/loader/loaders.min.css" />
-    <link rel="stylesheet" href="styles/css/index.css">
+    <link rel="stylesheet" href="styles/css/index.css" />
 
     <title>Proyecto Estéticas</title>
   </head>
@@ -22,76 +22,50 @@
     <h3>Login</h3>
     <h3>Registro</h3>
     <form id="register">
-      <p>
-        <label class="userName">Nombre de usuario:</label>
-        <input id="usernamesignup" name="usernamesignup" required="required" type="text"
-          placeholder="Usuario"
-        />
-      </p>
-      <p>
-        <label class="name">Nombre completo:</label>
+      <label>Nombre de usuario:</label>
+      <input name="username" required type="text" placeholder="Usuario" />
+      <label>Nombre completo:</label>
+      <input name="name" required type="text" placeholder="Nombre" />
+      <label> Tu email</label>
+      <input
+        name="email"
+        required
+        type="email"
+        placeholder="ejemplo@mail.com"
+      />
+      <label>Teléfono:</label>
+      <input name="phone" required type="number" placeholder="1199999999" />
+      <label>Tu password </label>
+      <div class="input">
         <input
-          id="usernamesignup"
-          name="usernamesignup"
-          required="required"
-          type="text"
-          placeholder="Nombre"
-        />
-      </p>
-      <p>
-        <label class="youmail"> Tu email</label>
-        <input
-          id="emailsignup"
-          name="emailsignup"
-          required="required"
-          type="email"
-          placeholder="ejemplo@mail.com"
-        />
-      </p>
-      <p>
-        <label class="phone">Teléfono:</label>
-        <input
-          id="usernamesignup"
-          name="usernamesignup"
-          required="required"
-          type="text"
-          placeholder="11 99999999"
-        />
-      </p>
-      <p>
-        <label class="password">Tu password </label>
-        <input
-          id="passwordsignup"
-          name="passwordsignup"
-          required="required"
+          name="password"
           type="password"
-          placeholder="eg. X8df!90EO"
-          pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-          title="Debe contener al menos un número y una letra minúscula y mayúscula, y al menos 8 o más caracteres"
+          placeholder="password"
+          class="search"
         />
+        <span class="password-icon"></span>
+      </div>
+      <label>Confirma tu password </label>
+      <div class="input">
+        <input
+          name="password_confirm"
+          type="password"
+          placeholder="password"
+          class="search"
+        />
+        <span class="password-icon"></span>
+      </div>
+      <button type="submit" class="primary">Registro</button>
+      <p>
+        ¿Ya tenés cuenta con Estéticas?
+        <a href="#tologin"> Click aquí </a>
       </p>
       <p>
-        <label for="passwordsignup_confirm" class="password"
-          >Confirma tu password
-        </label>
-        <input
-          id="passwordsignup_confirm"
-          name="passwordsignup_confirm"
-          required="required"
-          type="password"
-          placeholder="eg. X8df!90EO"
-        />
-      </p>
-      <p class="signin button">
-        <button type="submit">Registro</button>
-      </p>
-      <p class="change_link">
-        Ya eres miembro
-        <a href="#tologin" class="to_register"> Login </a>
+        Al continuar estás aceptando nuestros
+        <a href="#terminos_condiciones">“Términos y Condiciones”</a>
       </p>
     </form>
     <h3>Recupero de contraseña</h3>
-
     <script type="module" src="js/index.js"></script>
   </body>
 </html>
