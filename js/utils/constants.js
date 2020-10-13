@@ -3,6 +3,7 @@
 /* Regular Expressions */
 
 export const REG_EX_TEXT = /^[A-Za-z0-9]*$/;
+export const REG_EX_PASS = /^[A-Za-z0-9]*$/;
 export const REG_EX_NUMBER = /^[0-9]*$/;
 export const REG_EX_TEXTAREA = /^[A-Za-z0-9]*$/;
 export const REG_EX_EMAIL = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -35,26 +36,22 @@ export const getInnerText = (element) => element.innerText;
 export const getInnerHTML = (element) => element.innerHTML;
 export const setInnerText = (element, content) => (element.innerText = content);
 export const setInnerHTML = (element, content) => (element.innerHTML = content);
-export const getToggleValue = (id) =>
-  getById(id).classList.contains("toggle-on");
-export const getRadioValue = (id) => getById(id).classList.contains("radio-on");
-export const getRadioGroupValue = (id) => {};
-export const getCheckboxValue = (id) => getById(id).classList[1].split("-")[1];
-export const IS_SELECTED = (id) => getCheckboxValue(id) === "selected";
-export const IS_OFF = (id) => getCheckboxValue(id) === "off";
-export const UNDETERMINATED = (id) => getCheckboxValue(id) === "undeterminated";
+export const getToggleValue = (id) => getById(id).classList.contains('toggle-on');
+export const getRadioValue = (id) => getById(id).classList.contains('radio-on');
+export const getCheckboxValue = (id) => getById(id).classList[1].split('-')[1];
+export const IS_SELECTED = (id) => getCheckboxValue(id) === 'selected';
+export const IS_OFF = (id) => getCheckboxValue(id) === 'off';
+export const UNDETERMINATED = (id) => getCheckboxValue(id) === 'undeterminated';
 
 /* Form */
 
 export const getInputsFromForm = (form) => {
   const childrens = Array.from(form.children);
-  let inputs = [];
+  const inputs = [];
 
   for (const children of childrens) {
-    if (children.tagName === "INPUT" || children.tagName === "TEXTAREA")
-      inputs.push(children);
-    if (children.tagName === "DIV" && children.className === "input")
-      inputs.push(children.firstElementChild);
+    if (children.tagName === 'INPUT' || children.tagName === 'TEXTAREA') inputs.push(children);
+    if (children.tagName === 'DIV' && children.className === 'input') inputs.push(children.firstElementChild);
   }
 
   return inputs;
@@ -64,10 +61,10 @@ export const createData = (inputs) => {
   const data = {};
   inputs.forEach((input) => {
     data[input.name] = {};
-    if (input.type === "checkbox") {
+    if (input.type === 'checkbox') {
       data[input.name].name = input.name;
       data[input.name].value = input.checked;
-      data["required"] = input.required;
+      data.required = input.required;
     } else {
       data[input.name].name = input.name;
       data[input.name].value = input.value;
@@ -104,8 +101,9 @@ export const isValid = (data) => {
       case 'email':
         valid = REG_EX_EMAIL.test(value);
         break;
-      case "password":
+      case 'password':
         valid = REG_EX_PASS.test(value);
+        break;
       case 'checkbox':
         valid = value;
         break;
