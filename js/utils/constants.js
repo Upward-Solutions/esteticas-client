@@ -126,8 +126,9 @@ export const GENERAL_ERROR = 'Ocurrió un error inesperado';
 export const FORM_ERROR = 'Alguno de los campos no cumple con los requisitos esperados';
 
 export const showNotification = (status, title) => {
-// eslint-disable-next-line no-alert
+  // eslint-disable-next-line no-alert
   if (title) alert(`${status}: ${title}`);
+  // eslint-disable-next-line no-alert
   else alert(status);
 };
 
