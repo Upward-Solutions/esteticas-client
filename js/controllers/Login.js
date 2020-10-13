@@ -5,7 +5,6 @@ import {
   isValid,
   showNotification,
   SUCCESS_CODE,
-  FORM_ERROR,
 } from "../utils/constants.js";
 
 const Login = (data) => {

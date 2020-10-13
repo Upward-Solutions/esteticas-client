@@ -136,7 +136,7 @@ export const showNotification = (status, title) => {
 /* Codes */
 
 export const ERROR_CODE = 'ERROR';
-export const SUCCES_CODE = 'SUCCESS';
+export const SUCCESS_CODE = 'SUCCESS';
 export const WARNING_CODE = 'WARNING';
 export const INFO_CODE = 'INFO';
 

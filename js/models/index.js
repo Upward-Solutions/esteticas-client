@@ -1,6 +1,6 @@
 import { _Response } from '../utils/factory.js';
 import {
-  API_URL, GENERAL_ERROR, EXAMPLE_API_SUCCES, SUCCES_CODE,
+  API_URL, GENERAL_ERROR, EXAMPLE_API_SUCCES, SUCCESS_CODE,
 } from '../utils/constants.js';
 
 export const fetchData = (request, setView) => {
@@ -44,7 +44,7 @@ export const justFetch = (request, setView) => {
       return res.json();
     })
     .then((data) => {
-      response = _Response('Transacción realizada con éxito', data, SUCCES_CODE);
+      response = _Response('Transacción realizada con éxito', data, SUCCESS_CODE);
       setView(response);
     });
   return response;

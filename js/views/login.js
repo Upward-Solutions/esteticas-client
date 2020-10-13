@@ -1,6 +1,6 @@
 import controllers from "../controllers/index.js";
 import {
-  SUCCES_CODE,
+  SUCCESS_CODE,
   showNotification,
   getInputsFromForm,
   createData,
@@ -15,7 +15,7 @@ const login = (event) => {
 };
 
 export const setLoginView = (data) => {
-  if (data.code === SUCCES_CODE) {
+  if (data.code === SUCCESS_CODE) {
     redirect("/dashboard.html");
     showNotification("Bienvenido de nuevo (Nombre de usuario)");
   } else {
