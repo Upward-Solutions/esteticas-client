@@ -130,5 +130,6 @@ export const EXAMPLE_API_SUCCES = 'https://swapi.dev/api';
 
 /* STORAGE */
 
+// eslint-disable-next-line max-len
 export const editStorageItem = (item, newValue) => localStorage.setItem(item, JSON.stringify(newValue));
-export const getStorageItem = item => JSON.parse(localStorage.getItem(item));
+export const getStorageItem = (item) => JSON.parse(localStorage.getItem(item));

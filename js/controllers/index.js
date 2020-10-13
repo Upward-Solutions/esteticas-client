@@ -1,9 +1,9 @@
-import createNewUser from './NewUser.js'
-import exampleSwapi from './Swapi.js'
-import Register from './Register.js'
+import createNewUser from './NewUser.js';
+import Register from './Register.js';
+import exampleSwapi from './Swapi.js';
 
-export default { 
-    createNewUser,
-    exampleSwapi,
-    Register,
-}
+export default {
+  createNewUser,
+  exampleSwapi,
+  Register,
+};

@@ -1,25 +1,21 @@
-import { _Request, _Response } from '../utils/factory.js'
-import { isValid, FORM_ERROR, ERROR_CODE } from '../utils/constants.js'
-import { fetchData } from '../models/index.js'
-import { setUser } from '../views/newUser.js'
+import { _Request, _Response } from '../utils/factory.js';
+import { isValid, FORM_ERROR, ERROR_CODE } from '../utils/constants.js';
+import { fetchData } from '../models/index.js';
 
-const Register = async data => {
-    let request
-    let response
+const isValidNewUser = (data) => data['newUser-textarea-message'].length < 240;
 
-    if (isValid(data) && isValidNewUser(data)) {
-        request = _Request(data, 'newUser', 'POST')
-        response = await fetchData(request, setUser)
-    } else {
-        response = _Response(FORM_ERROR, {}, ERROR_CODE)
-    }
+const Register = async (data) => {
+  let request;
+  let response;
 
-    return response
-}
+  if (isValid(data) && isValidNewUser(data)) {
+    request = _Request(data, 'newUser', 'POST');
+    response = await fetchData(request);
+  } else {
+    response = _Response(FORM_ERROR, {}, ERROR_CODE);
+  }
 
-const isValidNewUser = data => {
-    //custom vallidate
-    return data['newUser-textarea-message'].length < 240
-}
+  return response;
+};
 
 export default Register;
