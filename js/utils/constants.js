@@ -1,25 +1,31 @@
+/* eslint-disable no-return-assign */
+/* eslint-disable no-param-reassign */
+/* Regular Expressions */
+
+export const REG_EX_TEXT = /^[A-Za-z0-9]*$/;
+export const REG_EX_NUMBER = /^[0-9]*$/;
+export const REG_EX_TEXTAREA = /^[A-Za-z0-9]*$/;
+export const REG_EX_EMAIL = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
 /* Custom */
 
-export const FULL_COMPANY_NAME = "Upward web and digital solutions";
-export const SHORT_COMPANY_NAME = "Upward";
+export const FULL_COMPANY_NAME = 'Upward web and digital solutions';
+export const SHORT_COMPANY_NAME = 'Upward';
 
 /* Location */
 
 export const IS_MOBILE = screen.width < 800;
 export const CURRENT_URL = document.location.pathname;
-export const IS_INDEX = CURRENT_URL.includes("index") || CURRENT_URL === "/";
-export const IS_OPERA = navigator.userAgent.toLowerCase().indexOf("opera");
-export const IS_FIREFOX =
-  navigator.userAgent.toLowerCase().indexOf("firefox") > -1;
-export const IS_CHROME =
-  navigator.userAgent.toLowerCase().indexOf("chrome") > -1;
+export const IS_INDEX = CURRENT_URL.includes('index') || CURRENT_URL === '/';
+export const IS_OPERA = navigator.userAgent.toLowerCase().indexOf('opera');
+export const IS_FIREFOX = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
+export const IS_CHROME = navigator.userAgent.toLowerCase().indexOf('chrome') > -1;
 export const redirect = (url) => (document.location.pathname = url);
 
 /* DOM Functions */
 
 export const getById = (id) => document.getElementById(id);
-export const getByClass = (nameClass) =>
-  document.getElementsByClassName(nameClass);
+export const getByClass = (nameClass) => document.getElementsByClassName(nameClass);
 export const getByTag = (tag) => document.getElementsByTagName(tag);
 
 export const hiddenElement = (element) => (element.hidden = true);
@@ -55,7 +61,7 @@ export const getInputsFromForm = (form) => {
 };
 
 export const createData = (inputs) => {
-  let data = {};
+  const data = {};
   inputs.forEach((input) => {
     data[input.name] = {};
     if (input.type === "checkbox") {
@@ -81,25 +87,27 @@ export const createData = (inputs) => {
 
 export const isValid = (data) => {
   let valid = true;
-
+  // eslint-disable-next-line guard-for-in
   for (const key in data) {
-    let type = data[key].type;
-    let value = data[key].value;
+    const type = key.split('-')[1];
+    const value = data[key];
     switch (type) {
-      case "text":
+      case 'text':
         valid = REG_EX_TEXT.test(value);
         break;
-      case "number":
+      case 'number':
         valid = REG_EX_NUMBER.test(value);
         break;
-      case "textarea":
+      case 'textarea':
         valid = REG_EX_TEXTAREA.test(value);
         break;
-      case "email":
+      case 'email':
         valid = REG_EX_EMAIL.test(value);
         break;
       case "password":
         valid = REG_EX_PASS.test(value);
+      case 'checkbox':
+        valid = value;
         break;
       default:
         break;
@@ -111,36 +119,34 @@ export const isValid = (data) => {
 
 /* Math */
 
-export const randomInt = (min, max) => parseInt(Math.random() * max) + min;
+export const randomInt = (min, max) => parseInt(Math.random() * max, 10) + min;
 
 /* Messages */
 
-export const SUCCESS_MESSAGE = "Transacción realizada con éxito";
-export const GENERAL_ERROR = "Ocurrió un error inesperado";
-export const FORM_ERROR =
-  "Alguno de los campos no cumple con los requisitos esperados";
+export const SUCCESS_MESSAGE = 'Transacción realizada con éxito';
+export const GENERAL_ERROR = 'Ocurrió un error inesperado';
+export const FORM_ERROR = 'Alguno de los campos no cumple con los requisitos esperados';
 
 export const showNotification = (status, title) => {
+// eslint-disable-next-line no-alert
   if (title) alert(`${status}: ${title}`);
   else alert(status);
 };
 
 /* Codes */
 
-export const ERROR_CODE = "ERROR";
-export const SUCCESS_CODE = "SUCCESS";
-export const WARNING_CODE = "WARNING";
-export const INFO_CODE = "INFO";
-
-/* Regular Expressions */
-
-export const REG_EX_TEXT = /^[A-Za-z0-9]*$/;
-export const REG_EX_PASS = /^[A-Za-z0-9]*$/;
-export const REG_EX_NUMBER = /^[0-9]*$/;
-export const REG_EX_TEXTAREA = /^[A-Za-z0-9]*$/;
-export const REG_EX_EMAIL = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+export const ERROR_CODE = 'ERROR';
+export const SUCCES_CODE = 'SUCCESS';
+export const WARNING_CODE = 'WARNING';
+export const INFO_CODE = 'INFO';
 
 /* API */
 
-export const API_URL = "http://localhost:8282/api/v1";
-export const EXAMPLE_API_SUCCES = "https://swapi.dev/api";
+export const API_URL = 'http://localhost:8282/api/v1';
+export const EXAMPLE_API_SUCCES = 'https://swapi.dev/api';
+
+/* STORAGE */
+
+// eslint-disable-next-line max-len
+export const editStorageItem = (item, newValue) => localStorage.setItem(item, JSON.stringify(newValue));
+export const getStorageItem = (item) => JSON.parse(localStorage.getItem(item));

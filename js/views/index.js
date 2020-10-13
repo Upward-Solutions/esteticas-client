@@ -1,8 +1,10 @@
-import newUserForm from "./newUser.js";
-import login, { validateCapitalLetter } from "./login.js";
+import newUserForm from './newUser.js';
+import register from './register.js';
+import login, { validateCapitalLetter } from './login.js';
 
-export default { 
-    newUserForm, 
-    login,
-    validateCapitalLetter,
+export default {
+  newUserForm,
+  register,
+  login,
+  validateCapitalLetter,
 };

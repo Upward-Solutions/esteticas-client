@@ -4,13 +4,13 @@ import { fetchData } from '../models/index.js';
 
 const isValidNewUser = (data) => data['newUser-textarea-message'].length < 240;
 
-const createNewUser = async (data, setUser) => {
+const Register = async (data) => {
   let request;
   let response;
 
   if (isValid(data) && isValidNewUser(data)) {
     request = _Request(data, 'newUser', 'POST');
-    response = await fetchData(request, setUser);
+    response = await fetchData(request);
   } else {
     response = _Response(FORM_ERROR, {}, ERROR_CODE);
   }
@@ -18,4 +18,4 @@ const createNewUser = async (data, setUser) => {
   return response;
 };
 
-export default createNewUser;
+export default Register;

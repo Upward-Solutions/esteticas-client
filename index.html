@@ -39,8 +39,51 @@
     <p>¿Olvidaste tu contraseña? Clic <a href="#">aquí</a></p>
 
     <h3>Registro</h3>
+    <form id="register">
+      <label>Nombre de usuario:</label>
+      <input name="username" required type="text" placeholder="Usuario" />
+      <label>Nombre completo:</label>
+      <input name="name" required type="text" placeholder="Nombre" />
+      <label> Tu email</label>
+      <input
+        name="email"
+        required
+        type="email"
+        placeholder="ejemplo@mail.com"
+      />
+      <label>Teléfono:</label>
+      <input name="phone" required type="number" placeholder="1199999999" />
+      <label>Tu password </label>
+      <div class="input">
+        <input
+          name="password"
+          type="password"
+          placeholder="password"
+          class="search"
+        />
+        <span class="password-icon"></span>
+      </div>
+      <label>Confirma tu password </label>
+      <div class="input">
+        <input
+          name="password_confirm"
+          type="password"
+          placeholder="password"
+          class="search"
+        />
+        <span class="password-icon"></span>
+      </div>
+      <button type="submit" class="primary">Registro</button>
+      <p>
+        ¿Ya tenés cuenta con Estéticas?
+        <a href="#tologin"> Click aquí </a>
+      </p>
+      <p>
+        Al continuar estás aceptando nuestros
+        <a href="#terminos_condiciones">“Términos y Condiciones”</a>
+      </p>
+    </form>
     <h3>Recupero de contraseña</h3>
-
     <script type="module" src="js/index.js"></script>
   </body>
 </html>
