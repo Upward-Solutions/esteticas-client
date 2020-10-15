@@ -12,4 +12,5 @@ const register = async (event) => {
   const response = await controllers.createNewUser(data);
   showNotification(response.message, response.code);
 };
+
 export default register;

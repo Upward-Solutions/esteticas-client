@@ -10,7 +10,11 @@
       var myHeaders = new Headers();
       myHeaders.append("Content-Type", "application/json");
 
-      var raw = JSON.stringify({ data: { email: "ramirotest20" } });
+      var raw = JSON.stringify({
+        data: {
+          email: "ramirocastrogiovanni@gmail.com",
+        },
+      });
 
       var requestOptions = {
         method: "POST",
@@ -20,7 +24,7 @@
       };
 
       fetch(
-        "https://esteticas-api.herokuapp.com/auth/verifyEmail",
+        "http://localhost:8080/auth/verifyEmail",
         requestOptions
       )
         .then((response) => response.text())

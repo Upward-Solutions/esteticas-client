@@ -125,7 +125,7 @@ export const INFO_CODE = 'INFO';
 
 /* API */
 
-export const API_URL = "https://esteticas-api.herokuapp.com";
+export const API_URL = 'http://localhost:8080';
 
 /* STORAGE */
 

@@ -1,49 +1,46 @@
-import { _Request, _Response } from "../utils/factory.js";
-import { isValid, FORM_ERROR, ERROR_CODE } from "../utils/constants.js";
-import { fetchData, justFetchWithData } from "../models/index.js";
-import { setUser } from "../views/newUser.js";
-import { USER_ENPOINTS } from "./index.js";
-
-const createNewUser = async (data) => {
-  let request, response;
-
-  if (isValid(data) && isValidNewUser(data)) {
-    request = _Request(data, "newUser", "POST");
-    // response = await fetchData(request, setUser);
-    response = _Response(FORM_ERROR, {}, ERROR_CODE);
-  } else {
-    response = _Response(FORM_ERROR, {}, ERROR_CODE);
-  }
-
-  return response;
-};
-
-const isValidNewUser = (data) => {
-  let validate = true;
-  let email, user;
-
-  email = validateEmail(data.email);
-  user = validateUser(data.user);
-
-  return true;
-};
+import { _Request, _Response } from '../utils/factory.js';
+import {
+  isValid, FORM_ERROR, ERROR_CODE, SUCCESS_MESSAGE,
+} from '../utils/constants.js';
+import { justFetchWithData } from '../models/index.js';
+import { USER_ENPOINTS } from './index.js';
 
 const validateEmail = async (email) => {
-  let request, response;
-  const data = { data: { email } };
+  const data = { email };
 
-  request = _Request(data, USER_ENPOINTS.verifyEmail, "POST");
-  response = await justFetchWithData(request);
+  const request = _Request(data, USER_ENPOINTS.verifyEmail, 'POST');
+  const response = await justFetchWithData(request);
 
   return response;
 };
 
 const validateUser = async (user) => {
-  let request, response;
-  const data = { data: { user } };
+  const data = { user };
 
-  request = _Request(data, USER_ENPOINTS.verifyUser, "POST");
-  response = await justFetchWithData(request);
+  const request = _Request(data, USER_ENPOINTS.verifyUser, 'POST');
+  const response = await justFetchWithData(request);
+
+  return response;
+};
+
+const isValidNewUser = async (data) => {
+  const email = await validateEmail(data.email);
+  const user = await validateUser(data.user);
+
+  return email.code === SUCCESS_MESSAGE && user.code === SUCCESS_MESSAGE;
+};
+
+const createNewUser = async (data) => {
+  let request;
+  let response;
+
+  if (isValid(data) && await isValidNewUser(data)) {
+    debugger;
+    request = _Request(data, 'newUser', 'POST');
+    response = await justFetchWithData(request);
+  } else {
+    response = _Response(FORM_ERROR, {}, ERROR_CODE);
+  }
 
   return response;
 };
