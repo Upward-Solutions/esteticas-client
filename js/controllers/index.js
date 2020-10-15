@@ -1,9 +1,9 @@
-import createNewUser from './NewUser.js'
-import exampleSwapi from './Swapi.js'
+import createNewUser from './NewUser.js';
+import Register from './Register.js';
 
 export default { 
     createNewUser,
-    exampleSwapi,
+    Register,
 }
 
 export const USER_ENPOINTS = {

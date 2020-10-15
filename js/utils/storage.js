@@ -1,7 +1,8 @@
 const initialStorage = {
-    'token': '',
-}
+  token: '',
+};
 
-export const setInitialLocalStorage = () => {
-    localStorage.setItem('storage_app', JSON.stringify(initialStorage));
-}
+const setInitialLocalStorage = () => {
+  localStorage.setItem('storage_app', JSON.stringify(initialStorage));
+};
+export default setInitialLocalStorage;
