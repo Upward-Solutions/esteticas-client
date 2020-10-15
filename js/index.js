@@ -4,4 +4,4 @@ import applyCustomStyles from './utils/styles.js';
 
 setInitialLocalStorage();
 applyCustomStyles();
-createEvents()
+createEvents();
