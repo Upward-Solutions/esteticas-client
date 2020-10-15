@@ -6,6 +6,9 @@ input {
     border-style: solid;
     border-width: 1px;
     width: 20%;
+    &[type=text], &[type=datetime-local], &[type=password] {
+        min-width: 250px;
+    }
     &[type=text], &[type=datetime-local], &[type=password], &[type=date], &[type=time]{
         border-radius: 100px;
         padding: 5px;
