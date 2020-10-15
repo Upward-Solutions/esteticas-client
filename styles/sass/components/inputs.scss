@@ -1,109 +1,133 @@
-@import '../vars';
+@import "../vars";
 
 input {
-    outline: none;
-    margin: 0.5%;
-    border-style: solid;
-    border-width: 1px;
-    width: 20%;
-    &[type=text], &[type=datetime-local], &[type=password] {
-        min-width: 250px;
+  outline: none;
+  margin: 0.5%;
+  border-style: solid;
+  border-width: 1px;
+  width: 20%;
+  min-width: 300px;
+  &[type="text"],
+  &[type="datetime-local"],
+  &[type="password"],
+  &[type="date"],
+  &[type="time"],
+  &[type="email"],
+  &[type="number"] {
+    border-radius: 100px;
+    padding: 5px;
+    border-color: rgb(62, 1, 78, 0.2);
+    text-indent: 15px;
+    background-position: right 10px center;
+    background-repeat: no-repeat;
+    color: $purple;
+    opacity: 1;
+    &::placeholder {
+      color: $purple;
+      opacity: 0.5;
     }
-    &[type=text], &[type=datetime-local], &[type=password], &[type=date], &[type=time]{
-        border-radius: 100px;
-        padding: 5px;
-        border-color: rgb(62, 1, 78, 0.2) ;
-        text-indent: 15px;
-        background-position: right 10px center;
-        background-repeat: no-repeat;
-        color: $purple;
-        opacity: 1;
-        &::placeholder {
-            color: $purple;
-            opacity: 0.5;
-        }
-        &:hover {
-            border: 1px solid rgb(62, 1, 78, 0.5);
-        }
-        &:focus, &:active {
-            border: 1px solid rgb(62, 1, 78, 1);
-        }
-        &:disabled {
-            background-color: $background-disabled;
-            border: 1px solid rgb(62, 1, 78, 0.2);
-        }
-        &.success {
-            background-image: url("../assets/success-icon.svg");
-            border-color: $green;
-        }
-        &.error {
-            background-image: url("../assets/error-icon.svg");
-            border-color: $red;
-        }
-        &.search, &.success, &.error {
-            color: $input-text-color-action;
-            &::placeholder {
-                color: $input-text-color-action;
-            }
-        }
+    &:hover {
+      border: 1px solid rgb(62, 1, 78, 0.5);
     }
-    &[type=date], &[type=time] {
-        width: auto;
+    &:focus,
+    &:active {
+      border: 1px solid rgb(62, 1, 78, 1);
     }
-    &[type=checkbox] {
-        -webkit-appearance: none;
-        background-color: $white;
-        border-color: $purple;
-        opacity: 0.5;
-        padding: 9px;
-        border-radius: 5px;
-        &:hover {
-            opacity: 1;
-        }
-        &:disabled {
-            opacity: 0.5;
-            background-color: $background-disabled;
-        }
-        &:selected {
-            opacity: 1;
-            border-color: $orange;
-            background-color: $orange;
-        }
+    &:disabled {
+      background-color: $background-disabled;
+      border: 1px solid rgb(62, 1, 78, 0.2);
     }
+    &.success {
+      background-image: url("../assets/success-icon.svg");
+      border-color: $green;
+    }
+    &.error {
+      background-image: url("../assets/error-icon.svg");
+      border-color: $red;
+    }
+    &.search,
+    &.success,
+    &.error {
+      color: $input-text-color-action;
+      &::placeholder {
+        color: $input-text-color-action;
+      }
+    }
+  }
+  &[type="date"],
+  &[type="time"] {
+    width: auto;
+  }
+  &[type="checkbox"] {
+    -webkit-appearance: none;
+    background-color: $white;
+    border-color: $purple;
+    opacity: 0.5;
+    padding: 9px;
+    border-radius: 5px;
+    &:hover {
+      opacity: 1;
+    }
+    &:disabled {
+      opacity: 0.5;
+      background-color: $background-disabled;
+    }
+    &:selected {
+      opacity: 1;
+      border-color: $orange;
+      background-color: $orange;
+    }
+  }
 }
 
 result {
-    border-radius: 100px;
-    padding: 2px 30px;
-    margin: 0.5%;
-    background-position: center;
-    background-repeat: no-repeat;
-    max-width: 5%;
-    &[class=success] {
-        background-image: url("../assets/span-success-icon.svg");
-        background-color: $dark-green;
-    }
-    &[class=error] {
-        background-image: url("../assets/span-error-icon.svg");
-        background-color: $orange;
-    }
+  border-radius: 100px;
+  padding: 2px 30px;
+  margin: 0.5%;
+  background-position: center;
+  background-repeat: no-repeat;
+  max-width: 5%;
+  &[class="success"] {
+    background-image: url("../assets/span-success-icon.svg");
+    background-color: $dark-green;
+  }
+  &[class="error"] {
+    background-image: url("../assets/span-error-icon.svg");
+    background-color: $orange;
+  }
 }
 
-.input{
-    display: flex;
-    span{
-        position: relative;
-        left: -40px;
-        cursor: pointer;
-        z-index: 1;
-        width: 20px;
-        background-repeat: no-repeat;
-        background-position: center;
-        &.search-icon{
-            background-image: url("../assets/search-icon.svg");
-        }
-        &.password-icon{
-            background-image: url("../assets/eyeClose-icon.svg");
-        }
+.input {
+  display: flex;
+  span {
+    position: relative;
+    left: -40px;
+    cursor: pointer;
+    z-index: 1;
+    width: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    &.search-icon {
+      background-image: url("../assets/search-icon.svg");
     }
+    &.password-icon {
+      background-image: url("../assets/eyeClose-icon.svg");
+    }
+  }
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="”number”"] {
+  -webkit-appearance: textfield !important;
+  -moz-appearance: textfield !important;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
 }

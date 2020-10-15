@@ -2,3 +2,4 @@
 
 ## Levantar el ambiente
 * `npm install`
+* `npm start`
