@@ -1,31 +1,33 @@
-import controllers from "../controllers/index.js";
+import controllers from '../controllers/index.js';
 import {
   SUCCESS_CODE,
   showNotification,
   getInputsFromForm,
   createData,
   redirect,
-} from "../utils/constants.js";
+} from '../utils/constants.js';
 
 const login = (event) => {
   event.preventDefault();
-  let inputs = getInputsFromForm(event.target);
-  let data = createData(inputs);
+  const inputs = getInputsFromForm(event.target);
+  const data = createData(inputs);
   controllers.Login(data);
 };
 
 export const setLoginView = (data) => {
   if (data.code === SUCCESS_CODE) {
-    redirect("/dashboard.html");
-    showNotification("Bienvenido de nuevo (Nombre de usuario)");
+    redirect('/dashboard.html');
+    showNotification('Bienvenido de nuevo (Nombre de usuario)');
   } else {
     showNotification(data.code, data.message);
   }
 };
 
 export const validateCapitalLetter = (event) => {
-  var mayus = event.getModifierState && event.getModifierState("CapsLock");
-  if (mayus) alert("Bloq Mayus está activado.");
+  const s = String.fromCharCode(event.which);
+  if (s.toUpperCase() === s && s.toLowerCase() !== s && !event.shiftKey) {
+    showNotification('Bloq Mayus está activado.');
+  }
 };
 
 export default login;

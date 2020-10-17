@@ -8,7 +8,8 @@
   },
   "scripts": {
     "sass": "sass --watch styles/sass:styles/css",
-    "start": "sass styles/sass:styles/css"
+    "start": "sass styles/sass:styles/css",
+    "lint": "eslint \"**/*.js\" --fix --max-warnings=0"
   },
   "repository": {
     "type": "git",
