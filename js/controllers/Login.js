@@ -7,6 +7,10 @@ import {
   SUCCESS_CODE,
 } from '../utils/constants.js';
 
+const LOGIN_ENDPOINTS = {
+  loging: '/auth/login',
+};
+
 const isValidLogin = (data) => {
   let isValidData = true;
 
@@ -24,7 +28,7 @@ const Login = (data) => {
   let response;
 
   if (isValid(data) && isValidLogin(data)) {
-    request = _Request(data, '', 'POST');
+    request = _Request(data, LOGIN_ENDPOINTS.loging, 'POST');
     // response = justFetch(request, setLoginView);
     setLoginView({ code: SUCCESS_CODE });
   } else {

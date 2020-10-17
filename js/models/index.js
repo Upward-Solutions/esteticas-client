@@ -1,6 +1,6 @@
 import { _Response } from '../utils/factory.js';
 import {
-  API_URL, ERROR_CODE, GENERAL_ERROR, SUCCESS_CODE, FORM_ERROR,
+  API_URL, ERROR_CODE, GENERAL_ERROR, FORM_ERROR,
 } from '../utils/constants.js';
 
 const getHeaders = () => {

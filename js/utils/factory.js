@@ -29,7 +29,7 @@ export const _Response = (message, data, code) => {
 
 export const _Request = (params, endpoint, method) => {
   const Request = {};
-  Request.data = { data: params};
+  Request.data = { data: params };
   Request.endpoint = endpoint;
   Request.method = method;
   return Request;

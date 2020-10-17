@@ -7,10 +7,3 @@ export default {
   CheckUserName,
   CheckEmail,
 };
-
-export const USER_ENPOINTS = {
-  register: '/auth/register',
-  loging: '/auth/login',
-  verifyEmail: '/auth/verifyEmail',
-  verifyUser: '/auth/verifyUser',
-};

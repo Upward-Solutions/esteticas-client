@@ -1,20 +1,25 @@
 import { _Request, _Response } from '../utils/factory.js';
-import { USER_ENPOINTS } from './index.js';
 import {
   isValid, FORM_ERROR, ERROR_CODE, SUCCESS_MESSAGE,
 } from '../utils/constants.js';
 import { justFetchWithData } from '../models/index.js';
 
+const REGISTER_ENDPOINTS = {
+  register: '/auth/register',
+  verifyEmail: '/auth/verifyEmail',
+  verifyUser: '/auth/verifyUser',
+};
+
 const validateEmail = async (email) => {
   const data = { email: email.value };
-  const request = _Request(data, USER_ENPOINTS.verifyEmail, 'POST');
+  const request = _Request(data, REGISTER_ENDPOINTS.verifyEmail, 'POST');
   const response = await justFetchWithData(request);
   return response;
 };
 
 const validateUser = async (user) => {
   const data = { user: user.value };
-  const request = _Request(data, USER_ENPOINTS.verifyUser, 'POST');
+  const request = _Request(data, REGISTER_ENDPOINTS.verifyUser, 'POST');
   const response = await justFetchWithData(request);
   return response;
 };
