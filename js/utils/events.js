@@ -9,6 +9,7 @@ const createEvents = () => {
     getById('login').addEventListener('submit', views.login);
     getById('register').addEventListener('submit', views.register);
     getById('check-username').addEventListener('click', views.checkUserName);
+    getById('check-email').addEventListener('click', views.checkEmail);
   } else {
     // global envents
   }

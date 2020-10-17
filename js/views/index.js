@@ -1,4 +1,4 @@
-import register, { checkUserName } from './register.js';
+import register, { checkUserName, checkEmail } from './register.js';
 import login, { validateCapitalLetter } from './login.js';
 
 export default {
@@ -6,4 +6,5 @@ export default {
   login,
   validateCapitalLetter,
   checkUserName,
+  checkEmail,
 };

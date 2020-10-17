@@ -3,6 +3,7 @@ import {
   createData,
   showNotification,
   getById,
+  SUCCESS_CODE,
 } from '../utils/constants.js';
 import controllers from '../controllers/index.js';
 
@@ -16,11 +17,35 @@ const register = async (event) => {
 
 export const checkUserName = async (event) => {
   event.preventDefault();
-  const userName = getById('username').value;
-  if (userName) {
-    const response = await controllers.CheckUserName(userName);
+  const userName = getById('username');
+  const { value } = userName;
+  if (value) {
+    const response = await controllers.CheckUserName(value);
+    if (response.code === SUCCESS_CODE) {
+      userName.classList.add('success');
+    } else {
+      userName.classList.add('error');
+    }
+    showNotification(response.message);
   } else {
-    alert('Ingresá un usuario para saber si está disponible.');
+    showNotification('Ingresá un usuario para saber si está disponible.');
+  }
+};
+
+export const checkEmail = async (event) => {
+  event.preventDefault();
+  const email = getById('email');
+  const { value } = email;
+  if (value) {
+    const response = await controllers.CheckEmail(value);
+    if (response.code === SUCCESS_CODE) {
+      email.classList.add('success');
+    } else {
+      email.classList.add('error');
+    }
+    showNotification(response.message);
+  } else {
+    showNotification('Ingresá un usuario para saber si está disponible.');
   }
 };
 

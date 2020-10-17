@@ -53,7 +53,7 @@ export const justFetchWithData = async (request) => {
   let response = {};
 
   let result = await fetch(`${API_URL}${request.endpoint}`, requestOptions);
-  if (result.ok) {
+  if (result) {
     result = await result.json();
     response = {
       message: result.message,

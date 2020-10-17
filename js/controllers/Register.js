@@ -40,9 +40,7 @@ const createNewUser = async (data) => {
   return response;
 };
 
-export const CheckUserName = async (userName) => {
-  const checked = await validateUser(userName);
-  alert(checked.message);
-};
+export const CheckUserName = async (userName) => validateUser(userName);
+export const CheckEmail = async (email) => validateEmail(email);
 
 export default createNewUser;
