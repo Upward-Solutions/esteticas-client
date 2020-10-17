@@ -1,6 +1,6 @@
 import { _Request, _Response } from '../utils/factory.js';
 import {
-  isValid, FORM_ERROR, ERROR_CODE, SUCCESS_MESSAGE,
+  isValid, FORM_ERROR, ERROR_CODE,
 } from '../utils/constants.js';
 import { justFetchWithData } from '../models/index.js';
 
@@ -25,10 +25,11 @@ const validateUser = async (user) => {
 };
 
 const isValidNewUser = async (data) => {
-  const email = await validateEmail(data.email);
-  const user = await validateUser(data.username);
-
-  return email.code === SUCCESS_MESSAGE && user.code === SUCCESS_MESSAGE;
+  /**
+   * @juanmcastillo3 acá debería estar la validación previa al registro
+   * del nuevo usuario.
+   * @description revisar documentación
+   */
 };
 
 const createNewUser = async (data) => {
@@ -36,7 +37,12 @@ const createNewUser = async (data) => {
   let response;
 
   if (isValid(data) && await isValidNewUser(data)) {
-    request = _Request(data, 'newUser', 'POST');
+    /**
+     * @juanmcastillo3 acá deberías construir el objeto data
+     * para mandar al backend
+     * @description revisar documentación
+     */
+    request = _Request(data, REGISTER_ENDPOINTS.register, 'POST');
     response = await justFetchWithData(request);
   } else {
     response = _Response(FORM_ERROR, {}, ERROR_CODE);
