@@ -2,7 +2,7 @@
 /* eslint-disable no-param-reassign */
 /* Regular Expressions */
 
-export const REG_EX_TEXT = /^[A-Za-z0-9]*$/;
+export const REG_EX_TEXT = /^[A-Za-z0-9-\s]*$/;
 export const REG_EX_PASS = /^[A-Za-z0-9]*$/;
 export const REG_EX_NUMBER = /^[0-9]*$/;
 export const REG_EX_TEXTAREA = /^[A-Za-z0-9]*$/;
@@ -76,40 +76,36 @@ export const createData = (inputs) => {
   return data;
 };
 
-/**
- * @param {Object} data Objeto data compuesto de inputs de cualquier forms
- * @description Esta función valida que los input hayan registrado un valor
- * equivalente al tipo que representan. Ej. (email == email)
- */
-
 export const isValid = (data) => {
   let valid = true;
   // eslint-disable-next-line guard-for-in
   for (const key in data) {
-    const type = key.split('-')[1];
-    const value = data[key];
-    switch (type) {
-      case 'text':
-        valid = REG_EX_TEXT.test(value);
-        break;
-      case 'number':
-        valid = REG_EX_NUMBER.test(value);
-        break;
-      case 'textarea':
-        valid = REG_EX_TEXTAREA.test(value);
-        break;
-      case 'email':
-        valid = REG_EX_EMAIL.test(value);
-        break;
-      case 'password':
-        valid = REG_EX_PASS.test(value);
-        break;
-      case 'checkbox':
-        valid = value;
-        break;
-      default:
-        break;
-    }
+    if (valid) {
+      const { value, type, required } = data[key];
+
+      switch (type) {
+        case 'text':
+          valid = REG_EX_TEXT.test(value);
+          break;
+        case 'number':
+          valid = REG_EX_NUMBER.test(value);
+          break;
+        case 'textarea':
+          valid = REG_EX_TEXTAREA.test(value);
+          break;
+        case 'email':
+          valid = REG_EX_EMAIL.test(value);
+          break;
+        case 'password':
+          valid = REG_EX_PASS.test(value);
+          break;
+        case 'checkbox':
+          if (required) { valid = value; }
+          break;
+        default:
+          break;
+      }
+    } else break;
   }
 
   return valid;
@@ -145,6 +141,7 @@ export const API_URL = 'http://localhost:8080';
 
 /* STORAGE */
 
-// eslint-disable-next-line max-len
-export const editStorageItem = (item, newValue) => localStorage.setItem(item, JSON.stringify(newValue));
+export const editStorageItem = (item, newValue) => localStorage.setItem(
+  item, JSON.stringify(newValue),
+);
 export const getStorageItem = (item) => JSON.parse(localStorage.getItem(item));

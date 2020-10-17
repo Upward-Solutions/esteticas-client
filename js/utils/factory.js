@@ -27,9 +27,9 @@ export const _Response = (message, data, code) => {
  * En caso de que no sea requerida información la data viene undefined.
  */
 
-export const _Request = (data, endpoint, method) => {
+export const _Request = (params, endpoint, method) => {
   const Request = {};
-  Request.data = data;
+  Request.data = { data: params};
   Request.endpoint = endpoint;
   Request.method = method;
   return Request;

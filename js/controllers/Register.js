@@ -1,16 +1,38 @@
 import { _Request, _Response } from '../utils/factory.js';
-import { isValid, FORM_ERROR, ERROR_CODE } from '../utils/constants.js';
-import { fetchData } from '../models/index.js';
+import { USER_ENPOINTS } from './index.js';
+import {
+  isValid, FORM_ERROR, ERROR_CODE, SUCCESS_MESSAGE,
+} from '../utils/constants.js';
+import { justFetchWithData } from '../models/index.js';
 
-const isValidNewUser = (data) => data['newUser-textarea-message'].length < 240;
+const validateEmail = async (email) => {
+  const data = { email: email.value };
+  const request = _Request(data, USER_ENPOINTS.verifyEmail, 'POST');
+  const response = await justFetchWithData(request);
+  return response;
+};
 
-const Register = async (data) => {
+const validateUser = async (user) => {
+  const data = { user: user.value };
+  const request = _Request(data, USER_ENPOINTS.verifyUser, 'POST');
+  const response = await justFetchWithData(request);
+  return response;
+};
+
+const isValidNewUser = async (data) => {
+  const email = await validateEmail(data.email);
+  const user = await validateUser(data.username);
+
+  return email.code === SUCCESS_MESSAGE && user.code === SUCCESS_MESSAGE;
+};
+
+const createNewUser = async (data) => {
   let request;
   let response;
 
-  if (isValid(data) && isValidNewUser(data)) {
+  if (isValid(data) && await isValidNewUser(data)) {
     request = _Request(data, 'newUser', 'POST');
-    response = await fetchData(request);
+    response = await justFetchWithData(request);
   } else {
     response = _Response(FORM_ERROR, {}, ERROR_CODE);
   }
@@ -18,4 +40,9 @@ const Register = async (data) => {
   return response;
 };
 
-export default Register;
+export const CheckUserName = async (userName) => {
+  const checked = await validateUser(userName);
+  alert(checked.message);
+};
+
+export default createNewUser;

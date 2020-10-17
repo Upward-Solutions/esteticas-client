@@ -1,11 +1,10 @@
-import createNewUser from './NewUser.js';
-import Register from './Register.js';
+import Register, { CheckUserName } from './Register.js';
 import Login from './Login.js';
 
 export default {
-  createNewUser,
   Login,
   Register,
+  CheckUserName,
 };
 
 export const USER_ENPOINTS = {

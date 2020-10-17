@@ -8,6 +8,7 @@ const createEvents = () => {
     document.addEventListener('keydown', views.validateCapitalLetter);
     getById('login').addEventListener('submit', views.login);
     getById('register').addEventListener('submit', views.register);
+    getById('check-username').addEventListener('click', views.checkUserName);
   } else {
     // global envents
   }
