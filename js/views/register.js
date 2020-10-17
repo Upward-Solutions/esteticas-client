@@ -49,4 +49,17 @@ export const checkEmail = async (event) => {
   }
 };
 
+export const checkPasswordConfirm = (event) => {
+  const { value: passwordConfirmValue } = event.target;
+  const passwordConfirmInput = getById('password-confirm');
+  const passwordValue = getById('password').value;
+
+  if (passwordValue === passwordConfirmValue) {
+    passwordConfirmInput.classList.remove('error');
+    passwordConfirmInput.classList.add('success');
+  } else {
+    passwordConfirmInput.classList.add('error');
+  }
+};
+
 export default register;

@@ -68,6 +68,9 @@ input[type=checkbox]:selected {
   border-color: #D75D48;
   background-color: #D75D48;
 }
+input[type=password].erorr, input[type=password].success {
+  background-image: none;
+}
 
 result {
   border-radius: 100px;

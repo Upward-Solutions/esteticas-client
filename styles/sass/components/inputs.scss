@@ -78,6 +78,11 @@ input {
       background-color: $orange;
     }
   }
+  &[type="password"]{
+    &.erorr, &.success{
+      background-image: none;
+    }
+  }
 }
 
 result {
