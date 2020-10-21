@@ -7,8 +7,9 @@
     "doc": "docs"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "pre-commit": "npm run lint"
+    "sass": "sass --watch styles/sass:styles/css",
+    "start": "sass styles/sass:styles/css",
+    "lint": "eslint \"**/*.js\" --fix --max-warnings=0"
   },
   "repository": {
     "type": "git",
@@ -21,7 +22,9 @@
     "url": "https://github.com/Upward-Solutions/esteticas-client/issues"
   },
   "homepage": "https://github.com/Upward-Solutions/esteticas-client#readme",
-  "dependencies": {},
+  "dependencies": {
+    "sass": "^1.27.0"
+  },
   "devDependencies": {
     "eslint": "^7.10.0",
     "eslint-config-airbnb-base": "^14.2.0",

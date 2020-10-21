@@ -1,4 +1,3 @@
-/* eslint-disable no-new-object */
 /* eslint-disable no-underscore-dangle */
 /**
  * @param {string} message Los mensajes están pensados para mostarse como
@@ -11,7 +10,7 @@
  */
 
 export const _Response = (message, data, code) => {
-  const Response = new Object();
+  const Response = {};
   Response.message = message;
   Response.data = data;
   Response.code = code;
@@ -28,9 +27,9 @@ export const _Response = (message, data, code) => {
  * En caso de que no sea requerida información la data viene undefined.
  */
 
-export const _Request = (data, endpoint, method) => {
-  const Request = new Object();
-  Request.data = data;
+export const _Request = (params, endpoint, method) => {
+  const Request = {};
+  Request.data = { data: params };
   Request.endpoint = endpoint;
   Request.method = method;
   return Request;
