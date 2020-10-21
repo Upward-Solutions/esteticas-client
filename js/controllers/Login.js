@@ -1,11 +1,10 @@
 import { _Request } from '../utils/factory.js';
-import { setLoginView } from '../views/login.js';
-// import { justFetch } from '../models/index.js';
+
 import {
   isValid,
   showNotification,
-  SUCCESS_CODE,
 } from '../utils/constants.js';
+import { justFetchWithData } from '../models/index.js';
 
 const LOGIN_ENDPOINTS = {
   loging: '/auth/login',
@@ -23,14 +22,18 @@ const isValidLogin = (data) => {
   return isValidData;
 };
 
-const Login = (data) => {
+const Login = (dataForm) => {
   let request;
   let response;
 
-  if (isValid(data) && isValidLogin(data)) {
+  if (isValid(dataForm) && isValidLogin(dataForm)) {
+    const data = {
+      userName: dataForm.user.value,
+      password: dataForm.password.value,
+    };
+
     request = _Request(data, LOGIN_ENDPOINTS.loging, 'POST');
-    // response = justFetch(request, setLoginView);
-    setLoginView({ code: SUCCESS_CODE });
+    response = justFetchWithData(request);
   } else {
     showNotification('El usuario o la contraseña son incorrectos, por favor intentá de nuevo.');
   }

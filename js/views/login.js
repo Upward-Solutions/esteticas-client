@@ -7,15 +7,12 @@ import {
   redirect,
 } from '../utils/constants.js';
 
-const login = (event) => {
+const login = async (event) => {
   event.preventDefault();
   const inputs = getInputsFromForm(event.target);
   const data = createData(inputs);
-  controllers.Login(data);
-};
-
-export const setLoginView = (data) => {
-  if (data.code === SUCCESS_CODE) {
+  const response = await controllers.Login(data);
+  if (response.code === SUCCESS_CODE) {
     redirect('/dashboard.html');
     showNotification('Bienvenido de nuevo (Nombre de usuario)');
   } else {

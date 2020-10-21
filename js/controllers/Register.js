@@ -10,15 +10,15 @@ const REGISTER_ENDPOINTS = {
   verifyUser: '/auth/verifyUser',
 };
 
-const validateEmail = async (email) => {
-  const data = { email: email.value };
+const validateEmail = async (correo) => {
+  const data = { email: correo };
   const request = _Request(data, REGISTER_ENDPOINTS.verifyEmail, 'POST');
   const response = await justFetchWithData(request);
   return response;
 };
 
 const validateUser = async (user) => {
-  const data = { user: user.value };
+  const data = { username: user };
   const request = _Request(data, REGISTER_ENDPOINTS.verifyUser, 'POST');
   const response = await justFetchWithData(request);
   return response;
@@ -32,11 +32,11 @@ const isValidNewUser = async (data) => {
    */
 };
 
-const createNewUser = async (data) => {
+const createNewUser = async (values) => {
   let request;
   let response;
 
-  if (isValid(data) && await isValidNewUser(data)) {
+  if (isValid(values) && await isValidNewUser(values)) {
     /**
      * @juanmcastillo3 acá deberías construir el objeto data
      * para mandar al backend

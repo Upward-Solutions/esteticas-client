@@ -130,10 +130,10 @@ export const showNotification = (status, title) => {
 
 /* Codes */
 
-export const ERROR_CODE = 'ERROR';
-export const SUCCESS_CODE = 'SUCCESS';
-export const WARNING_CODE = 'WARNING';
-export const INFO_CODE = 'INFO';
+export const ERROR_CODE = 'error';
+export const SUCCESS_CODE = 'success';
+export const WARNING_CODE = 'warning';
+export const INFO_CODE = 'info';
 
 /* API */
 

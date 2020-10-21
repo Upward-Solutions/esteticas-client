@@ -17,8 +17,9 @@ const register = async (event) => {
 
 export const checkUserName = async (event) => {
   event.preventDefault();
-  const userName = getById('username');
+  const userName = getById('username-register');
   const { value } = userName;
+
   if (value) {
     const response = await controllers.CheckUserName(value);
     if (response.code === SUCCESS_CODE) {
@@ -34,8 +35,9 @@ export const checkUserName = async (event) => {
 
 export const checkEmail = async (event) => {
   event.preventDefault();
-  const email = getById('email');
+  const email = getById('email-register');
   const { value } = email;
+
   if (value) {
     const response = await controllers.CheckEmail(value);
     if (response.code === SUCCESS_CODE) {
@@ -56,10 +58,15 @@ export const checkPasswordConfirm = (event) => {
 
   if (passwordValue === passwordConfirmValue) {
     passwordConfirmInput.classList.remove('error');
-    passwordConfirmInput.classList.add('success');
   } else {
     passwordConfirmInput.classList.add('error');
   }
+};
+
+export const changeInputValidated = (event) => {
+  const input = event.target;
+  input.classList.remove('success');
+  input.classList.remove('error');
 };
 
 export default register;

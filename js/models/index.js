@@ -51,8 +51,8 @@ export const fetchData = (request, setView) => {
 export const justFetchWithData = async (request) => {
   const requestOptions = getRequestOptions(request);
   let response = {};
-
   let result = await fetch(`${API_URL}${request.endpoint}`, requestOptions);
+
   if (result) {
     result = await result.json();
     response = {
