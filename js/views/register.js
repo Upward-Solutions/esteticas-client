@@ -11,7 +11,7 @@ const register = async (event) => {
   event.preventDefault();
   const inputs = getInputsFromForm(event.target);
   const data = createData(inputs);
-  const response = await controllers.createNewUser(data);
+  const response = await controllers.Register(data);
   showNotification(response.message, response.code);
 };
 
