@@ -1,0 +1,33 @@
+{
+  "name": "esteticas-client",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "sass": "sass --watch styles/sass:styles/css",
+    "start": "sass styles/sass:styles/css",
+    "lint": "eslint \"**/*.js\" --fix --max-warnings=0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Upward-Solutions/esteticas-client.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Upward-Solutions/esteticas-client/issues"
+  },
+  "homepage": "https://github.com/Upward-Solutions/esteticas-client#readme",
+  "dependencies": {
+    "sass": "^1.27.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.10.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.1"
+  }
+}

@@ -1,18 +1,19 @@
-const alert = (content) => {
+/* eslint-disable no-undef */
+export const alert = (content) => {
   swal(content);
 };
 
-const alertResponse = (response) => {
+export const alertResponse = (response) => {
   const { code, message } = response;
   swal(code, message, code.toLowerCase());
 };
 
-const alertDescription = (title, description) => {
+export const alertDescription = (title, description) => {
   swal(title, description);
 };
 
-const alertCustomButton = (title, description, status, buttonText) => {
+export const alertCustomButton = (title, description, status, buttonText) => {
   swal(title, description, status, {
-    button: buttonText  ,
+    button: buttonText,
   });
 };

@@ -1,9 +1,9 @@
-import createNewUser from './NewUser.js'
-import exampleSwapi from './Swapi.js'
-import RecoveryPass from './RecoveryPass.js'
+import Register, { CheckUserName, CheckEmail } from './Register.js';
+import Login from './Login.js';
 
-export default { 
-    createNewUser,
-    exampleSwapi,
-    RecoveryPass,
-}
+export default {
+  Login,
+  Register,
+  CheckUserName,
+  CheckEmail,
+};

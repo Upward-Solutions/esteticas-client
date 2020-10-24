@@ -1,9 +1,17 @@
-import newUserForm from "./newUser.js";
-import getExampleSwapi from "./swapi.js";
-import recoveryPass from "./recoveryPass.js";
+import register, {
+  checkUserName,
+  checkEmail,
+  checkPasswordConfirm,
+  changeInputValidated,
+} from './register.js';
+import login, { validateCapitalLetter } from './login.js';
 
-export default { 
-    newUserForm, 
-    getExampleSwapi,
-    recoveryPass,
+export default {
+  register,
+  login,
+  validateCapitalLetter,
+  checkUserName,
+  checkEmail,
+  checkPasswordConfirm,
+  changeInputValidated,
 };
