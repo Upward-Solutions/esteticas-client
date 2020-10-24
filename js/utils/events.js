@@ -11,6 +11,7 @@ const createEvents = () => {
     getById('username-register').addEventListener('keyup', views.changeInputValidated);
     getById('email-register').addEventListener('keyup', views.changeInputValidated);
     getById('register').addEventListener('submit', views.register);
+    getById('recovery-pass').addEventListener('submit', views.recoveryPass);
   } else {
     // global envents
   }
