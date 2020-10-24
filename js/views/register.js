@@ -4,6 +4,7 @@ import {
   showNotification,
   getById,
   SUCCESS_CODE,
+  REG_EX_PASS,
 } from '../utils/constants.js';
 import controllers from '../controllers/index.js';
 
@@ -11,8 +12,15 @@ const register = async (event) => {
   event.preventDefault();
   const inputs = getInputsFromForm(event.target);
   const data = createData(inputs);
-  const response = await controllers.createNewUser(data);
-  showNotification(response.message, response.code);
+  const { password, passwordConfirm } = data;
+  if (password.value !== passwordConfirm.value) {
+    showNotification('Las contraseñas deben coincidir.');
+  } else if (!REG_EX_PASS.test(password.value)) {
+    showNotification('La contraseña debe tener únicamente letras y números.');
+  } else {
+    const response = await controllers.Register(data);
+    showNotification(response.message);
+  }
 };
 
 export const checkUserName = async (event) => {
