@@ -3,6 +3,7 @@ import {
   SUCCESS_CODE,
   showNotification,
   getInputsFromForm,
+  editStorageItem,
   createData,
   redirect,
 } from '../utils/constants.js';
@@ -15,6 +16,7 @@ const login = async (event) => {
   if (response.code === SUCCESS_CODE) {
     redirect('/dashboard.html');
     showNotification('Bienvenido de nuevo (Nombre de usuario)');
+    editStorageItem('token', response.token);
   } else {
     showNotification(data.code, data.message);
   }

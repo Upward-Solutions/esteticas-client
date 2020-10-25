@@ -7,7 +7,8 @@ import {
 import { justFetchWithData } from '../models/index.js';
 
 const LOGIN_ENDPOINTS = {
-  loging: '/auth/login',
+  login: '/auth/login',
+  index: '/api/index',
 };
 
 const isValidLogin = (data) => {
@@ -32,7 +33,7 @@ const Login = (dataForm) => {
       password: dataForm.password.value,
     };
 
-    request = _Request(data, LOGIN_ENDPOINTS.loging, 'POST');
+    request = _Request(data, LOGIN_ENDPOINTS.login, 'POST');
     response = justFetchWithData(request);
   } else {
     showNotification('El usuario o la contraseña son incorrectos, por favor intentá de nuevo.');
