@@ -96,9 +96,6 @@ export const isValid = (data) => {
         case 'email':
           valid = REG_EX_EMAIL.test(value);
           break;
-        case 'password':
-          valid = REG_EX_PASS.test(value);
-          break;
         case 'checkbox':
           if (required) { valid = value; }
           break;

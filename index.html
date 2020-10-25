@@ -53,7 +53,7 @@
     </div>
     <label>Confirma tu password </label>
     <div class="input">
-      <input name="password_confirm" type="password" placeholder="password" required id="password-confirm" />
+      <input name="passwordConfirm" type="password" placeholder="password" required id="password-confirm" />
       <span class="password-icon"></span>
     </div>
     <button type="submit" class="primary">Registro</button>
@@ -67,6 +67,11 @@
     </p>
   </form>
   <h3>Recupero de contraseña</h3>
+  <form id="recovery-pass">
+    <label for="email">Correo electrónico</label>
+    <input type="email" name="email" required>
+    <button type="submit" class="primary">Enviar correo</button>
+  </form>
 
   <script type="module" src="js/index.js"></script>
 </body>

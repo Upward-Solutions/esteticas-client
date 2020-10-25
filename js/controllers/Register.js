@@ -1,6 +1,6 @@
 import { _Request, _Response } from '../utils/factory.js';
 import {
-  isValid, FORM_ERROR, ERROR_CODE,
+  isValid, FORM_ERROR, ERROR_CODE, SUCCESS_CODE,
 } from '../utils/constants.js';
 import { justFetchWithData } from '../models/index.js';
 
@@ -24,26 +24,43 @@ const validateUser = async (user) => {
   return response;
 };
 
-const isValidNewUser = async (data) => {
-  /**
-   * @juanmcastillo3 acá debería estar la validación previa al registro
-   * del nuevo usuario.
-   * @description revisar documentación
-   */
+const isValidNewUser = async ({ username, email }) => {
+  let response;
+  const responseUser = await validateUser(username.vale);
+  if (responseUser.code === SUCCESS_CODE) {
+    const responseEmail = await validateEmail(email.value);
+    if (responseEmail.code === SUCCESS_CODE) {
+      response = _Response('', {}, SUCCESS_CODE);
+    } else {
+      response = _Response(responseEmail.message, {}, ERROR_CODE);
+    }
+  } else {
+    response = _Response(responseUser.message, {}, ERROR_CODE);
+  }
+  return response;
 };
 
 const createNewUser = async (values) => {
   let request;
   let response;
-
-  if (isValid(values) && await isValidNewUser(values)) {
-    /**
-     * @juanmcastillo3 acá deberías construir el objeto data
-     * para mandar al backend
-     * @description revisar documentación
-     */
-    request = _Request(data, REGISTER_ENDPOINTS.register, 'POST');
-    response = await justFetchWithData(request);
+  if (isValid(values)) {
+    const newUserValidated = await isValidNewUser(values);
+    if (newUserValidated.code === SUCCESS_CODE) {
+      const {
+        email, password, username, name, phone,
+      } = values;
+      const data = {
+        email: email.value,
+        password: password.value,
+        userName: username.value,
+        fullname: name.value,
+        phone: phone.value,
+      };
+      request = _Request(data, REGISTER_ENDPOINTS.register, 'POST');
+      response = await justFetchWithData(request);
+    } else {
+      response = newUserValidated;
+    }
   } else {
     response = _Response(FORM_ERROR, {}, ERROR_CODE);
   }

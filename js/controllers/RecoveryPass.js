@@ -1,29 +1,27 @@
-import { _Request } from '../utils/factory.js';
-
+import { _Request, _Response } from '../utils/factory.js';
 import {
-  isValid,
-  showNotification,
+  isValid, FORM_ERROR, ERROR_CODE, SUCCESS_CODE,
 } from '../utils/constants.js';
-import { justFetchWithData } from '../models/index.js';
+import { fetchData } from '../models/index.js';
+import { CheckEmail } from './Register.js';
 
 const RECOVERY_ENDPOINTS = {
-  recovery: '/auth/login',
+  recovery: '/user/resetPassword',
 };
 
-const RecoveryPass = (dataForm) => {
-  let request;
+const isValidEmail = async (data) => {
+  const emailChecked = await CheckEmail(data);
+  return emailChecked.code === SUCCESS_CODE;
+};
+
+const RecoveryPass = async (values) => {
   let response;
-
-  if (isValid(dataForm)) {
-    const data = {
-      userName: dataForm.user.value,
-      password: dataForm.password.value,
-    };
-
-    request = _Request(data, RECOVERY_ENDPOINTS.recovery, 'POST');
-    response = justFetchWithData(request);
+  if (isValid(values) && isValidEmail(values)) {
+    const data = { email: values.email.value };
+    const request = _Request(data, RECOVERY_ENDPOINTS.recovery, 'POST');
+    response = await fetchData(request);
   } else {
-    showNotification('El usuario o la contraseña son incorrectos, por favor intentá de nuevo.');
+    response = _Response(FORM_ERROR, {}, ERROR_CODE);
   }
 
   return response;

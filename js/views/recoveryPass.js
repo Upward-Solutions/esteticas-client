@@ -1,9 +1,9 @@
-import controllers from '../controllers/index.js';
 import {
-  showNotification,
   getInputsFromForm,
   createData,
+  showNotification,
 } from '../utils/constants.js';
+import controllers from '../controllers/index.js';
 
 const recoveryPass = async (event) => {
   event.preventDefault();

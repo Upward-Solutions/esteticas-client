@@ -29,7 +29,7 @@ const getSessionRequestOptions = (request) => ({
 const getRequestOptions = (request) => ({
   method: request.method,
   headers: getHeaders(),
-  body: JSON.stringify(request.data),
+  body: request.data ? JSON.stringify(request.data) : {},
   redirect: 'follow',
 });
 
