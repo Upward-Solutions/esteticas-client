@@ -1,5 +1,6 @@
 import { IS_INDEX, IS_DASHBOARD, getById } from './constants.js';
 import views from '../views/index.js';
+import setInitialLocalStorage from './storage.js';
 
 const createEvents = () => {
   if (IS_INDEX) {
@@ -14,6 +15,7 @@ const createEvents = () => {
     getById('recovery-pass').addEventListener('submit', views.recoveryPass);
   } else if (IS_DASHBOARD) {
     window.addEventListener('load', views.loadDashboard);
+    window.addEventListener('unload', setInitialLocalStorage);
   } else {
     // global envents
   }
