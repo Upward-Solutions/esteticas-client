@@ -21,7 +21,6 @@ const getSessionHeaders = () => {
 const getSessionRequestOptions = (request) => ({
   method: request.method,
   headers: getSessionHeaders(),
-  body: JSON.stringify(request.data),
   redirect: 'follow',
 });
 
@@ -32,7 +31,7 @@ const getRequestOptions = (request) => ({
   redirect: 'follow',
 });
 
-export const justFetchWithData = async (request) => {
+export const justFetch = async (request) => {
   const requestOptions = getRequestOptions(request);
   let response = {};
   let result = await fetch(`${API_URL}${request.endpoint}`, requestOptions);

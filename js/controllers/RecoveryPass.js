@@ -2,7 +2,7 @@ import { _Request, _Response } from '../utils/factory.js';
 import {
   isValid, FORM_ERROR, ERROR_CODE, WARNING_CODE, REG_EX_EMAIL,
 } from '../utils/constants.js';
-import { justFetchWithData } from '../models/index.js';
+import { justFetch } from '../models/index.js';
 import { CheckEmail, CheckUserName } from './Register.js';
 
 const RECOVERY_ENDPOINTS = {
@@ -31,7 +31,7 @@ const RecoveryPass = async (values) => {
       data = { email: '', username: user.value };
     }
     const request = _Request(data, RECOVERY_ENDPOINTS.recovery, 'POST');
-    response = await justFetchWithData(request);
+    response = await justFetch(request);
   } else {
     response = _Response(FORM_ERROR, {}, ERROR_CODE);
   }

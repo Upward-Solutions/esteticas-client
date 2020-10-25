@@ -2,7 +2,7 @@ import { _Request, _Response } from '../utils/factory.js';
 import {
   isValid, FORM_ERROR, ERROR_CODE, SUCCESS_CODE,
 } from '../utils/constants.js';
-import { justFetchWithData } from '../models/index.js';
+import { justFetch } from '../models/index.js';
 
 const REGISTER_ENDPOINTS = {
   register: '/auth/register',
@@ -13,14 +13,14 @@ const REGISTER_ENDPOINTS = {
 const validateEmail = async (correo) => {
   const data = { email: correo };
   const request = _Request(data, REGISTER_ENDPOINTS.verifyEmail, 'POST');
-  const response = await justFetchWithData(request);
+  const response = await justFetch(request);
   return response;
 };
 
 const validateUser = async (user) => {
   const data = { username: user };
   const request = _Request(data, REGISTER_ENDPOINTS.verifyUser, 'POST');
-  const response = await justFetchWithData(request);
+  const response = await justFetch(request);
   return response;
 };
 
@@ -57,7 +57,7 @@ const createNewUser = async (values) => {
         phone: phone.value,
       };
       request = _Request(data, REGISTER_ENDPOINTS.register, 'POST');
-      response = await justFetchWithData(request);
+      response = await justFetch(request);
     } else {
       response = newUserValidated;
     }

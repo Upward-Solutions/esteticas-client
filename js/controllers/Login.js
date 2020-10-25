@@ -6,7 +6,7 @@ import {
   REG_EX_TEXT,
   showNotification,
 } from '../utils/constants.js';
-import { login } from '../models/index.js';
+import { login, session } from '../models/index.js';
 
 const LOGIN_ENDPOINTS = {
   login: '/auth/login',
@@ -44,6 +44,12 @@ const Login = (dataForm) => {
     showNotification('El usuario o la contraseña son incorrectos, por favor intentá de nuevo.');
   }
 
+  return response;
+};
+
+export const Index = async () => {
+  const request = _Request({}, LOGIN_ENDPOINTS.index, 'GET');
+  const response = await session(request);
   return response;
 };
 
