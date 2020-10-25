@@ -5,6 +5,7 @@ import register, {
   changeInputValidated,
 } from './register.js';
 import login, { validateCapitalLetter } from './login.js';
+import recoveryPass from './recoveryPass.js';
 
 export default {
   register,
@@ -14,4 +15,5 @@ export default {
   checkEmail,
   checkPasswordConfirm,
   changeInputValidated,
+  recoveryPass,
 };
