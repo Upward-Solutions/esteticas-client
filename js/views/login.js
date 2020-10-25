@@ -1,5 +1,4 @@
 import controllers from '../controllers/index.js';
-import { Index } from '../controllers/Login.js';
 import {
   SUCCESS_CODE,
   showNotification,
@@ -7,7 +6,6 @@ import {
   editStorageItem,
   createData,
   redirect,
-  ERROR_CODE,
 } from '../utils/constants.js';
 
 const login = async (event) => {
@@ -17,12 +15,7 @@ const login = async (event) => {
   const response = await controllers.Login(data);
   if (response.code === SUCCESS_CODE) {
     editStorageItem('token', response.token);
-    const index = await Index();
-    if (index.code === SUCCESS_CODE) {
-      redirect('/dashboard.html');
-    } else {
-      showNotification(ERROR_CODE);
-    }
+    redirect('/dashboard.html');
   } else {
     showNotification(response.message);
   }

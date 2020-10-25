@@ -1,4 +1,4 @@
-import { IS_INDEX, getById } from './constants.js';
+import { IS_INDEX, IS_DASHBOARD, getById } from './constants.js';
 import views from '../views/index.js';
 
 const createEvents = () => {
@@ -12,6 +12,8 @@ const createEvents = () => {
     getById('email-register').addEventListener('keyup', views.changeInputValidated);
     getById('register').addEventListener('submit', views.register);
     getById('recovery-pass').addEventListener('submit', views.recoveryPass);
+  } else if (IS_DASHBOARD) {
+    window.addEventListener('load', views.loadDashboard);
   } else {
     // global envents
   }

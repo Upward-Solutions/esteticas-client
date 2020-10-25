@@ -18,6 +18,7 @@ export const SHORT_COMPANY_NAME = 'Upward';
 export const IS_MOBILE = screen.width < 800;
 export const CURRENT_URL = document.location.pathname;
 export const IS_INDEX = CURRENT_URL.includes('index') || CURRENT_URL === '/';
+export const IS_DASHBOARD = CURRENT_URL.includes('dashboard');
 export const IS_OPERA = navigator.userAgent.toLowerCase().indexOf('opera');
 export const IS_FIREFOX = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
 export const IS_CHROME = navigator.userAgent.toLowerCase().indexOf('chrome') > -1;

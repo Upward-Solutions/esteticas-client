@@ -6,6 +6,7 @@ import register, {
 } from './register.js';
 import login, { validateCapitalLetter } from './login.js';
 import recoveryPass from './recoveryPass.js';
+import loadDashboard from './loadDashboard.js';
 
 export default {
   register,
@@ -16,4 +17,5 @@ export default {
   checkPasswordConfirm,
   changeInputValidated,
   recoveryPass,
+  loadDashboard,
 };
