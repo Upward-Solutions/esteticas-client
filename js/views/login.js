@@ -14,11 +14,10 @@ const login = async (event) => {
   const data = createData(inputs);
   const response = await controllers.Login(data);
   if (response.code === SUCCESS_CODE) {
-    redirect('/dashboard.html');
-    showNotification('Bienvenido de nuevo (Nombre de usuario)');
     editStorageItem('token', response.token);
+    redirect('/dashboard.html');
   } else {
-    showNotification(data.code, data.message);
+    showNotification(response.message);
   }
 };
 

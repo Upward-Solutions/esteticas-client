@@ -1,10 +1,12 @@
 import { _Request } from '../utils/factory.js';
 
 import {
-  isValid,
+  REG_EX_EMAIL,
+  REG_EX_PASS,
+  REG_EX_TEXT,
   showNotification,
 } from '../utils/constants.js';
-import { justFetchWithData } from '../models/index.js';
+import { login } from '../models/index.js';
 
 const LOGIN_ENDPOINTS = {
   login: '/auth/login',
@@ -17,6 +19,9 @@ const isValidLogin = (data) => {
   for (const key in data) {
     if (isValidData) {
       isValidData = data[key].value !== '' || data[key].value.includes(' ');
+      isValidData = REG_EX_EMAIL.test(data[key].value)
+      || REG_EX_PASS.test(data[key].value)
+      || REG_EX_TEXT.test(data[key].value);
     }
   }
 
@@ -27,14 +32,14 @@ const Login = (dataForm) => {
   let request;
   let response;
 
-  if (isValid(dataForm) && isValidLogin(dataForm)) {
+  if (isValidLogin(dataForm)) {
     const data = {
-      userName: dataForm.user.value,
+      email: dataForm.user.value,
       password: dataForm.password.value,
     };
 
     request = _Request(data, LOGIN_ENDPOINTS.login, 'POST');
-    response = justFetchWithData(request);
+    response = login(request);
   } else {
     showNotification('El usuario o la contraseña son incorrectos, por favor intentá de nuevo.');
   }

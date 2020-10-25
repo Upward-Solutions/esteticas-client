@@ -20,6 +20,7 @@ const register = async (event) => {
   } else {
     const response = await controllers.Register(data);
     showNotification(response.message);
+    if (response.code === SUCCESS_CODE) { event.target.reset(); }
   }
 };
 

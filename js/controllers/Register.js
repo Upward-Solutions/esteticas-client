@@ -26,7 +26,7 @@ const validateUser = async (user) => {
 
 const isValidNewUser = async ({ username, email }) => {
   let response;
-  const responseUser = await validateUser(username.vale);
+  const responseUser = await validateUser(username.value);
   if (responseUser.code === SUCCESS_CODE) {
     const responseEmail = await validateEmail(email.value);
     if (responseEmail.code === SUCCESS_CODE) {
@@ -47,13 +47,13 @@ const createNewUser = async (values) => {
     const newUserValidated = await isValidNewUser(values);
     if (newUserValidated.code === SUCCESS_CODE) {
       const {
-        email, password, username, name, phone,
+        email, password, username, fullname, phone,
       } = values;
       const data = {
         email: email.value,
         password: password.value,
-        userName: username.value,
-        fullname: name.value,
+        username: username.value,
+        fullname: fullname.value,
         phone: phone.value,
       };
       request = _Request(data, REGISTER_ENDPOINTS.register, 'POST');

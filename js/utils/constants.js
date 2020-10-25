@@ -138,7 +138,14 @@ export const API_URL = 'https://esteticas-api.herokuapp.com';
 
 /* STORAGE */
 
-export const editStorageItem = (item, newValue) => localStorage.setItem(
-  item, JSON.stringify(newValue),
-);
-export const getStorageItem = (item) => JSON.parse(localStorage.getItem(item));
+export const editStorageItem = (item, newValue) => {
+  const storageApp = JSON.parse(localStorage.getItem('storage_app'));
+  storageApp[item] = newValue;
+  localStorage.removeItem('storage_app');
+  localStorage.setItem('storage_app', JSON.stringify(storageApp));
+};
+
+export const getStorageItem = (item) => {
+  const storageApp = JSON.parse(localStorage.getItem('storage_app'));
+  return storageApp[item];
+};
