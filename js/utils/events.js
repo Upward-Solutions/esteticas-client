@@ -9,6 +9,7 @@ const createEvents = () => {
     getById('check-username').addEventListener('click', views.checkUserName);
     getById('check-email').addEventListener('click', views.checkEmail);
     getById('password-confirm').addEventListener('keyup', views.checkPasswordConfirm);
+    getById('password').addEventListener('keyup', views.checkPasswordConfirm);
     getById('username-register').addEventListener('keyup', views.changeInputValidated);
     getById('email-register').addEventListener('keyup', views.changeInputValidated);
     getById('register').addEventListener('submit', views.register);

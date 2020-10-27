@@ -5,8 +5,11 @@ import {
   getById,
   SUCCESS_CODE,
   REG_EX_PASS,
+  REG_EX_TEXT,
+  REG_EX_EMAIL,
 } from '../utils/constants.js';
 import controllers from '../controllers/index.js';
+import { setInputError } from '../utils/styles.js';
 
 const register = async (event) => {
   event.preventDefault();
@@ -30,13 +33,18 @@ export const checkUserName = async (event) => {
   const { value } = userName;
 
   if (value) {
-    const response = await controllers.CheckUserName(value);
-    if (response.code === SUCCESS_CODE) {
-      userName.classList.add('success');
+    if (REG_EX_TEXT.test(value)) {
+      const response = await controllers.CheckUserName(value);
+      if (response.code === SUCCESS_CODE) {
+        userName.classList.add('success');
+      } else {
+        setInputError(userName);
+      }
+      showNotification(response.message);
     } else {
-      userName.classList.add('error');
+      setInputError(userName);
+      showNotification('El nombre de usuario solo acepta letras y números.');
     }
-    showNotification(response.message);
   } else {
     showNotification('Ingresá un usuario para saber si está disponible.');
   }
@@ -48,27 +56,32 @@ export const checkEmail = async (event) => {
   const { value } = email;
 
   if (value) {
-    const response = await controllers.CheckEmail(value);
-    if (response.code === SUCCESS_CODE) {
-      email.classList.add('success');
+    if (REG_EX_EMAIL.test(value)) {
+      const response = await controllers.CheckEmail(value);
+      if (response.code === SUCCESS_CODE) {
+        email.classList.add('success');
+      } else {
+        setInputError(email);
+      }
+      showNotification(response.message);
     } else {
-      email.classList.add('error');
+      setInputError(email);
+      showNotification('El correo ingresado debe ser un email válido.');
     }
-    showNotification(response.message);
   } else {
     showNotification('Ingresá un usuario para saber si está disponible.');
   }
 };
 
-export const checkPasswordConfirm = (event) => {
-  const { value: passwordConfirmValue } = event.target;
+export const checkPasswordConfirm = () => {
   const passwordConfirmInput = getById('password-confirm');
+  const passwordConfirmValue = passwordConfirmInput.value;
   const passwordValue = getById('password').value;
 
   if (passwordValue === passwordConfirmValue) {
     passwordConfirmInput.classList.remove('error');
   } else {
-    passwordConfirmInput.classList.add('error');
+    setInputError(passwordConfirmInput);
   }
 };
 
