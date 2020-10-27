@@ -1,9 +1,14 @@
 import controllers from '../../controllers/index.js';
 import {
-  getById, getStorageItem, setInnerHTML, showElement, showNotification, SUCCESS_CODE,
+  getById, getStorageItem, showElement, showNotification, SUCCESS_CODE,
 } from '../../utils/constants.js';
 
-const setClients = () => {};
+const setClients = (response) => {
+  /** @todo
+   * cargar tabla con la data del response
+   */
+};
+
 const withoutClients = () => {
   const message = getById('without-clients');
   showElement(message);
@@ -11,7 +16,7 @@ const withoutClients = () => {
 
 const renderResponseClient = (response) => {
   if (response && response.data) {
-    setClients();
+    setClients(response);
   } else {
     withoutClients();
   }
@@ -23,7 +28,7 @@ const loadClients = () => {
   if (response && response.code === SUCCESS_CODE) {
     renderResponseClient(response);
   } else {
-    // showNotification(response.message);
+    showNotification(response.message);
     renderResponseClient();
   }
 };
