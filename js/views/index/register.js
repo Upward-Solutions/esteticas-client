@@ -5,8 +5,8 @@ import {
   getById,
   SUCCESS_CODE,
   REG_EX_PASS,
-} from '../utils/constants.js';
-import controllers from '../controllers/index.js';
+} from '../../utils/constants.js';
+import controllers from '../../controllers/index.js';
 
 const register = async (event) => {
   event.preventDefault();

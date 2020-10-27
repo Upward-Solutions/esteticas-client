@@ -1,6 +1,7 @@
-import Register, { CheckUserName, CheckEmail } from './Register.js';
-import Login from './Login.js';
-import RecoveryPass from './RecoveryPass.js';
+import Register, { CheckUserName, CheckEmail } from './index/Register.js';
+import Login from './index/Login.js';
+import RecoveryPass from './index/RecoveryPass.js';
+import LoadClients from './clients/LoadClients.js';
 
 export default {
   Login,
@@ -8,4 +9,5 @@ export default {
   CheckUserName,
   CheckEmail,
   RecoveryPass,
+  LoadClients,
 };

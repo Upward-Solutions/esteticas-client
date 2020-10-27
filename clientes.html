@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- LIBRARIES -->
+    <script src="./js/utils/plugins/currency/currency.min.js"></script>
+    <script src="./js/utils/plugins/moment/moment.min.js"></script>
+    <script src="./js/utils/plugins/sweetAlert/sweetalert.min.js"></script>
+    <script src="./js/utils/plugins/chart/chart.min.js"></script>
+    <script src="./js/utils/plugins/popper/popper.min.js"></script>
+    <link rel="stylesheet" href="./js/utils/plugins/loader/loaders.min.css" />
+    <link rel="stylesheet" href="styles/css/index.css" />
+
+    <title>Proyecto Estéticas</title>
+  </head>
+
+  <body>
+    <a href="./dashboard.html">Volver al dashboard</a>
+    <h1>Grilla de clientes</h1>
+    <button class="primary">Crear nuevo cliente</button>
+    <button class="secondary">Eliminar masivamente</button>
+    <div class="container" id="clients-container">
+      <span class="message" id="without-clients" hidden
+        >No hay clientes cargados todavía,
+        <a href="#">¿desea cargar uno?</a></span
+      >
+      <table>
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Teléfono</th>
+          <th>Email</th>
+          <th>Acciones</th>
+        </tr>
+        <tr>
+          <td>Jill</td>
+          <td>Smith</td>
+          <td>50</td>
+          <td>50</td>
+          <td>
+            <button class="primary">Modificar cliente</button>
+            <button class="primary">Eliminar cliente</button>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <script type="module" src="js/index.js"></script>
+  </body>
+</html>

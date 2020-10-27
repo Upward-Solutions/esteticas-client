@@ -1,8 +1,8 @@
-import { _Request, _Response } from '../utils/factory.js';
+import { _Request, _Response } from '../../utils/factory.js';
 import {
   isValid, FORM_ERROR, ERROR_CODE, SUCCESS_CODE,
-} from '../utils/constants.js';
-import { justFetch } from '../models/index.js';
+} from '../../utils/constants.js';
+import { justFetch } from '../../models/index.js';
 
 const REGISTER_ENDPOINTS = {
   register: '/auth/register',

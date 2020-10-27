@@ -3,10 +3,11 @@ import register, {
   checkEmail,
   checkPasswordConfirm,
   changeInputValidated,
-} from './register.js';
-import login, { validateCapitalLetter } from './login.js';
-import recoveryPass from './recoveryPass.js';
-import loadDashboard from './loadDashboard.js';
+} from './index/register.js';
+import login, { validateCapitalLetter } from './index/login.js';
+import recoveryPass from './index/recoveryPass.js';
+import loadDashboard from './dashboard/loadDashboard.js';
+import loadClients from './clients/loadClients.js';
 
 export default {
   register,
@@ -18,4 +19,5 @@ export default {
   changeInputValidated,
   recoveryPass,
   loadDashboard,
+  loadClients,
 };
