@@ -1,4 +1,4 @@
-import { getByClass, getByTag, IS_FIREFOX } from './constants.js';
+import { getByClass, getByTag, hiddenElement, IS_FIREFOX } from './constants.js';
 
 const createToggle = () => {
   const toggles = getByClass('toggle');
@@ -140,6 +140,13 @@ const applyCustomStyles = () => {
   createCheckbox();
   createPasswordInput();
   createDateInput();
+};
+
+export const setInputError = (input) => {
+  input.classList.add('error');
+  if (input.nextElementSibling.tagName === 'SPAN') {
+    input.style.backgroundImage = 'none';
+  }
 };
 
 export default applyCustomStyles;
