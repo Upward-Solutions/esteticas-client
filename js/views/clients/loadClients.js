@@ -1,6 +1,11 @@
 import controllers from '../../controllers/index.js';
 import {
-  getById, getStorageItem, showElement, showNotification, SUCCESS_CODE,
+  getById,
+  getStorageItem,
+  redirect,
+  showElement,
+  showNotification,
+  SUCCESS_CODE,
 } from '../../utils/constants.js';
 
 const setClients = (response) => {
@@ -24,12 +29,16 @@ const renderResponseClient = (response) => {
 
 const loadClients = () => {
   const token = getStorageItem('token');
-  const response = controllers.LoadClients(token);
-  if (response && response.code === SUCCESS_CODE) {
-    renderResponseClient(response);
+  if (token) {
+    const response = controllers.LoadClients(token);
+    if (response && response.code === SUCCESS_CODE) {
+      renderResponseClient(response);
+    } else {
+      showNotification(response.message);
+      renderResponseClient();
+    }
   } else {
-    showNotification(response.message);
-    renderResponseClient();
+    redirect('/index.html');
   }
 };
 

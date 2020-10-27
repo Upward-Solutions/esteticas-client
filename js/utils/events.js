@@ -8,6 +8,7 @@ import views from '../views/index.js';
 import setInitialLocalStorage from './storage.js';
 
 const createEvents = () => {
+  window.addEventListener('unload', setInitialLocalStorage);
   if (IS_INDEX) {
     getById('login-password').addEventListener('keypress', views.validateCapitalLetter);
     getById('login').addEventListener('submit', views.login);
@@ -23,9 +24,6 @@ const createEvents = () => {
     window.addEventListener('load', views.loadDashboard);
   } else if (IS_CLIENTS) {
     window.addEventListener('load', views.loadClients);
-    window.addEventListener('unload', setInitialLocalStorage);
-  } else {
-    // global envents
   }
 };
 
