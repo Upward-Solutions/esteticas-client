@@ -7,7 +7,6 @@ input {
   border-width: 1px;
   width: 20%;
   min-width: 300px;
-  display: block;
   &[type="text"],
   &[type="datetime-local"],
   &[type="password"],
@@ -42,7 +41,7 @@ input {
       background-image: url("../assets/success-icon.svg");
       border-color: $green;
     }
-    &.error {
+    &.error{
       background-image: url("../assets/error-icon.svg");
       border-color: $red;
     }
@@ -136,4 +135,29 @@ input[type="”number”"] {
 
 input[type="number"] {
   -moz-appearance: textfield;
+}
+
+textarea {
+  outline: none;
+  border-radius: 10px;
+  border-color: rgb(62, 1, 78, 0.2);
+  text-indent: 15px;
+  color: $purple;
+  resize: vertical;
+  margin: 0.5%;
+  opacity: 1;
+    &::placeholder {
+      color: $purple;
+      opacity: 0.5;
+    }
+    &:hover {
+      border: 1px solid rgb(62, 1, 78, 0.5);
+    }
+    &:focus,
+    &:active {
+      border: 1px solid rgb(62, 1, 78, 1);
+    }
+    &.error{
+      border-color: $red;
+    }
 }

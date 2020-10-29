@@ -6,7 +6,6 @@ input {
   border-width: 1px;
   width: 20%;
   min-width: 300px;
-  display: block;
 }
 input[type=text], input[type=datetime-local], input[type=password], input[type=date], input[type=time], input[type=email], input[type=number] {
   border-radius: 100px;
@@ -123,6 +122,30 @@ input[type=”number”] {
 
 input[type=number] {
   -moz-appearance: textfield;
+}
+
+textarea {
+  outline: none;
+  border-radius: 10px;
+  border-color: rgba(62, 1, 78, 0.2);
+  text-indent: 15px;
+  color: #3E014E;
+  resize: vertical;
+  margin: 0.5%;
+  opacity: 1;
+}
+textarea::placeholder {
+  color: #3E014E;
+  opacity: 0.5;
+}
+textarea:hover {
+  border: 1px solid rgba(62, 1, 78, 0.5);
+}
+textarea:focus, textarea:active {
+  border: 1px solid #3e014e;
+}
+textarea.error {
+  border-color: #EB5757;
 }
 
 /*# sourceMappingURL=inputs.css.map */
