@@ -1,8 +1,8 @@
-import { _Request, _Response } from '../utils/factory.js';
+import { _Request, _Response } from '../../utils/factory.js';
 import {
   isValid, FORM_ERROR, ERROR_CODE, WARNING_CODE, REG_EX_EMAIL,
-} from '../utils/constants.js';
-import { justFetch } from '../models/index.js';
+} from '../../utils/constants.js';
+import { justFetch } from '../../models/index.js';
 import { CheckEmail, CheckUserName } from './Register.js';
 
 const RECOVERY_ENDPOINTS = {

@@ -1,8 +1,14 @@
-import { IS_INDEX, IS_DASHBOARD, getById } from './constants.js';
+import {
+  IS_INDEX,
+  IS_DASHBOARD,
+  getById,
+  IS_CLIENTS,
+} from './constants.js';
 import views from '../views/index.js';
 import setInitialLocalStorage from './storage.js';
 
 const createEvents = () => {
+  window.addEventListener('unload', setInitialLocalStorage);
   if (IS_INDEX) {
     getById('login-password').addEventListener('keypress', views.validateCapitalLetter);
     getById('login').addEventListener('submit', views.login);
@@ -16,9 +22,8 @@ const createEvents = () => {
     getById('recovery-pass').addEventListener('submit', views.recoveryPass);
   } else if (IS_DASHBOARD) {
     window.addEventListener('load', views.loadDashboard);
-    window.addEventListener('unload', setInitialLocalStorage);
-  } else {
-    // global envents
+  } else if (IS_CLIENTS) {
+    window.addEventListener('load', views.loadClients);
   }
 };
 

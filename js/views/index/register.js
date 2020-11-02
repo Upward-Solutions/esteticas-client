@@ -7,9 +7,9 @@ import {
   REG_EX_PASS,
   REG_EX_TEXT,
   REG_EX_EMAIL,
-} from '../utils/constants.js';
-import controllers from '../controllers/index.js';
-import { setInputError } from '../utils/styles.js';
+} from '../../utils/constants.js';
+import controllers from '../../controllers/index.js';
+import { setInputError } from '../../utils/styles.js';
 
 const register = async (event) => {
   event.preventDefault();

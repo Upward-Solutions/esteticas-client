@@ -1,4 +1,4 @@
-import controllers from '../controllers/index.js';
+import controllers from '../../controllers/index.js';
 import {
   SUCCESS_CODE,
   showNotification,
@@ -6,7 +6,7 @@ import {
   editStorageItem,
   createData,
   redirect,
-} from '../utils/constants.js';
+} from '../../utils/constants.js';
 
 const login = async (event) => {
   event.preventDefault();

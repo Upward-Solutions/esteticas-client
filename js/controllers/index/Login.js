@@ -1,12 +1,12 @@
-import { _Request } from '../utils/factory.js';
+import { _Request } from '../../utils/factory.js';
 
 import {
   REG_EX_EMAIL,
   REG_EX_PASS,
   REG_EX_TEXT,
   showNotification,
-} from '../utils/constants.js';
-import { login, session } from '../models/index.js';
+} from '../../utils/constants.js';
+import { login, session } from '../../models/index.js';
 
 const LOGIN_ENDPOINTS = {
   login: '/auth/login',
