@@ -1,5 +1,5 @@
-import { Index } from '../controllers/Login.js';
-import { redirect, SUCCESS_CODE, showNotification } from '../utils/constants.js';
+import { Index } from '../../controllers/index/Login.js';
+import { redirect, SUCCESS_CODE, showNotification } from '../../utils/constants.js';
 
 const loadDashboard = async () => {
   const index = await Index();
