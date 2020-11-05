@@ -8,7 +8,6 @@ import views from '../views/index.js';
 import setInitialLocalStorage from './storage.js';
 
 const createEvents = () => {
-  window.addEventListener('unload', setInitialLocalStorage);
   if (IS_INDEX) {
     getById('login-password').addEventListener('keypress', views.validateCapitalLetter);
     getById('login').addEventListener('submit', views.login);
@@ -22,8 +21,10 @@ const createEvents = () => {
     getById('recovery-pass').addEventListener('submit', views.recoveryPass);
   } else if (IS_DASHBOARD) {
     window.addEventListener('load', views.loadDashboard);
+    window.addEventListener('unload', setInitialLocalStorage);
   } else if (IS_CLIENTS) {
     window.addEventListener('load', views.loadClients);
+    window.addEventListener('unload', setInitialLocalStorage);
   }
 };
 
