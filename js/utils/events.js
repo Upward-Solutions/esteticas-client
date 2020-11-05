@@ -25,6 +25,7 @@ const createEvents = () => {
   } else if (IS_CLIENTS) {
     window.addEventListener('load', views.loadClients);
     window.addEventListener('unload', setInitialLocalStorage);
+    getById('new-client').addEventListener('submit', views.newClient);
   }
 };
 
