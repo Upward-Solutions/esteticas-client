@@ -7,8 +7,15 @@
         {
             "type": "pwa-chrome",
             "request": "launch",
-            "name": "Launch Chrome against localhost",
+            "name": "Live server plugin",
             "url": "http://localhost:5500",
+            "webRoot": "${workspaceFolder}"
+        },
+        {
+            "type": "pwa-chrome",
+            "request": "launch",
+            "name": "Live server npm",
+            "url": "http://localhost:8080",
             "webRoot": "${workspaceFolder}"
         }
     ]
