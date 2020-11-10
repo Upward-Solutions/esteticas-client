@@ -2,13 +2,14 @@
   "name": "esteticas-client",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.hml",
   "directories": {
     "doc": "docs"
   },
   "scripts": {
-    "sass": "sass --watch styles/sass:styles/css",
-    "start": "sass styles/sass:styles/css",
+    "start": "live-server",
+    "sass-watch": "sass --watch src/styles/sass:src/styles/css",
+    "sass": "sass src/styles/sass:src/styles/css",
     "lint": "eslint \"**/*.js\" --fix --max-warnings=0"
   },
   "repository": {
@@ -22,12 +23,12 @@
     "url": "https://github.com/Upward-Solutions/esteticas-client/issues"
   },
   "homepage": "https://github.com/Upward-Solutions/esteticas-client#readme",
-  "dependencies": {
-    "sass": "^1.27.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "eslint": "^7.10.0",
     "eslint-config-airbnb-base": "^14.2.0",
-    "eslint-plugin-import": "^2.22.1"
+    "eslint-plugin-import": "^2.22.1",
+    "live-server": "^1.2.1",
+    "sass": "^1.29.0"
   }
 }

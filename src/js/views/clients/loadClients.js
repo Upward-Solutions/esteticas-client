@@ -38,7 +38,7 @@ const loadClients = () => {
       renderResponseClient();
     }
   } else {
-    redirect('/index.html');
+    // redirect('/index.html');
   }
 };
 

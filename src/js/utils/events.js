@@ -5,6 +5,7 @@ import {
   IS_CLIENTS,
 } from './constants.js';
 import views from '../views/index.js';
+// import setInitialLocalStorage from './storage.js';
 
 const createEvents = () => {
   if (IS_INDEX) {

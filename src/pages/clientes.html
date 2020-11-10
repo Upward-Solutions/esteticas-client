@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- LIBRARIES -->
+    <script src="../js/utils/plugins/currency/currency.min.js"></script>
+    <script src="../js/utils/plugins/moment/moment.min.js"></script>
+    <script src="../js/utils/plugins/sweetAlert/sweetalert.min.js"></script>
+    <script src="../js/utils/plugins/chart/chart.min.js"></script>
+    <script src="../js/utils/plugins/popper/popper.min.js"></script>
+    <link rel="stylesheet" href="../js/utils/plugins/loader/loaders.min.css" />
+    <link rel="stylesheet" href="../styles/css/index.css" />
+
+    <title>Proyecto Estéticas</title>
+  </head>
+
+  <body>
+    <a href="./dashboard.html">Volver al dashboard</a>
+    <h1>Grilla de clientes</h1>
+    <button class="secondary">Eliminar masivamente</button>
+    <div class="container" id="clients-container">
+      <span class="message" id="without-clients" hidden
+        >No hay clientes cargados todavía,
+        <a href="#">¿desea cargar uno?</a></span
+      >
+      <table hidden>
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Teléfono</th>
+          <th>Email</th>
+          <th>Acciones</th>
+        </tr>
+        <tr>
+          <td>Jill</td>
+          <td>Smith</td>
+          <td>50</td>
+          <td>50</td>
+          <td>
+            <button class="primary">Modificar cliente</button>
+            <button class="primary">Eliminar cliente</button>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <h2>Nuevo cliente</h2>
+    <form id="new-client">
+      <label for="id-custom">Identificador</label>
+      <input type="text" name="id-custom" placeholder="ej.: GLOPEZ2" required>
+      <a href="#">Check id</a>
+      <label for="name">Nombre completo</label>
+      <input type="text" name="name" placeholder="ej.: María Celeste Fernandez" required>
+      <label for="phone">Teléfono de contacto</label>
+      <input type="number" name="phone" placeholder="ej.: 1111111111">
+      <label for="email">Correo de contacto</label>
+      <input type="email" name="email" placeholder="ej.: email@correo.com">
+      <label for="adress">Dirección</label>
+      <input type="text" name="adress" placeholder="ej.: Av esteticas 125 5° 'F'">
+      <label for="description">Más información opcional</label>
+      <textarea name="description" cols=50" rows="5" placeholder="Cualquier otra información que te interese guardar sobre este cliente"></textarea>
+      <button class="primary" type="submit">Crear nuevo cliente</button>
+    </form>
+    <script type="module" src="../js/index.js"></script>
+  </body>
+</html>
