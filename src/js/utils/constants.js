@@ -5,7 +5,7 @@
 export const REG_EX_TEXT = /^[A-Za-z0-9-\s]*$/;
 export const REG_EX_PASS = /^[A-Za-z0-9]*$/;
 export const REG_EX_NUMBER = /^[0-9]*$/;
-export const REG_EX_TEXTAREA = /^[A-Za-z0-9]*$/;
+export const REG_EX_TEXTAREA = /^[A-Za-z0-9-\s]*$/;
 export const REG_EX_EMAIL = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
 /* Custom */

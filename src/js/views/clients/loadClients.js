@@ -28,18 +28,18 @@ const renderResponseClient = (response) => {
 };
 
 const loadClients = () => {
-  const token = getStorageItem('token');
-  if (token) {
-    const response = controllers.LoadClients(token);
-    if (response && response.code === SUCCESS_CODE) {
-      renderResponseClient(response);
-    } else {
-      showNotification(response.message);
-      renderResponseClient();
-    }
-  } else {
-    // redirect('/index.html');
-  }
+  // const token = getStorageItem('token');
+  // if (token) {
+  //   const response = controllers.LoadClients(token);
+  //   if (response && response.code === SUCCESS_CODE) {
+  //     renderResponseClient(response);
+  //   } else {
+  //     showNotification(response.message);
+  //     renderResponseClient();
+  //   }
+  // } else {
+  //   // redirect('/index.html');
+  // }
 };
 
 export default loadClients;
