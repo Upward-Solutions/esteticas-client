@@ -1,0 +1,10 @@
+table {
+  margin: 1%;
+}
+table td, table th {
+  border: 1px solid #0B3C49;
+  text-align: center;
+  padding: 0.5rem;
+}
+
+/*# sourceMappingURL=table.css.map */

@@ -23,7 +23,13 @@ export const IS_CLIENTS = CURRENT_URL.includes('clientes');
 export const IS_OPERA = navigator.userAgent.toLowerCase().indexOf('opera') > -1;
 export const IS_FIREFOX = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
 export const IS_CHROME = navigator.userAgent.toLowerCase().indexOf('chrome') > -1;
-export const redirect = (url) => (document.location.pathname = url);
+export const redirect = (url) => {
+  if (url.includes('index')) {
+    document.location.pathname = '';
+  } else {
+    document.location.pathname = `src/pages${url}`;
+  }
+};
 
 /* DOM Functions */
 
