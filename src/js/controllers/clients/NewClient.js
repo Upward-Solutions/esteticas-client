@@ -30,4 +30,8 @@ const NewClient = async (values) => {
   return response;
 };
 
+export const CheckIdExternal = (value) => {
+
+};
+
 export default NewClient;

@@ -3,4 +3,8 @@ export default {
     endpoint: '/api/newclient',
     method: 'POST',
   },
+  editClient: {
+    endpoint: '/api/editClient/:id',
+    method: 'PUT',
+  },
 };
