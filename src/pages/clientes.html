@@ -48,19 +48,20 @@
     <h2>Nuevo cliente</h2>
     <form id="new-client">
       <label for="id-custom">Identificador</label>
-      <input type="text" name="id-custom" placeholder="ej.: GLOPEZ2" required>
+      <input type="text" name="id-custom" placeholder="ej.: GLOPEZ2" id="clients-newClient-input-idExternal" required>
       <a href="#">Check id</a>
       <label for="name">Nombre completo</label>
-      <input type="text" name="name" placeholder="ej.: María Celeste Fernandez" required>
+      <input type="text" name="name" placeholder="ej.: María Celeste Fernandez" id="clients-newClient-input-name" required>
       <label for="phone">Teléfono de contacto</label>
-      <input type="number" name="phone" placeholder="ej.: 1111111111">
+      <input type="number" name="phone" placeholder="ej.: 1111111111" id="clients-newClient-input-phone">
       <label for="email">Correo de contacto</label>
-      <input type="email" name="email" placeholder="ej.: email@correo.com">
+      <input type="email" name="email" placeholder="ej.: email@correo.com" id="clients-newClient-input-email">
       <label for="adress">Dirección</label>
-      <input type="text" name="adress" placeholder="ej.: Av esteticas 125 5° 'F'">
+      <input type="text" name="adress" placeholder="ej.: Av esteticas 125 5° 'F'" id="clients-newClient-input-address">
       <label for="description">Más información opcional</label>
-      <textarea name="description" cols=50" rows="5" placeholder="Cualquier otra información que te interese guardar sobre este cliente"></textarea>
-      <button class="primary" type="submit">Crear nuevo cliente</button>
+      <textarea name="description" cols=50" rows="5" placeholder="Cualquier otra información que te interese guardar sobre este cliente" 
+      id="clients-newClient-textArea-description"></textarea>
+      <button class="primary" type="submit" id="clients-newClient-btn-submit">Crear nuevo cliente</button>
     </form>
     <script type="module" src="../js/index.js"></script>
   </body>
