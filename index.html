@@ -1,79 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- LIBRARIES -->
+    <script src="src/js/utils/plugins/currency/currency.min.js"></script>
+    <script src="src/js/utils/plugins/moment/moment.min.js"></script>
+    <script src="src/js/utils/plugins/sweetAlert/sweetalert.min.js"></script>
+    <script src="src/js/utils/plugins/chart/chart.min.js"></script>
+    <script src="src/js/utils/plugins/popper/popper.min.js"></script>
+    <link rel="stylesheet" href="src/js/utils/plugins/loader/loaders.min.css" />
+    <link rel="stylesheet" href="src/styles/css/index.css" />
 
-  <!-- LIBRARIES -->
-  <script src="src/js/utils/plugins/currency/currency.min.js"></script>
-  <script src="src/js/utils/plugins/moment/moment.min.js"></script>
-  <script src="src/js/utils/plugins/sweetAlert/sweetalert.min.js"></script>
-  <script src="src/js/utils/plugins/chart/chart.min.js"></script>
-  <script src="src/js/utils/plugins/popper/popper.min.js"></script>
-  <link rel="stylesheet" href="src/js/utils/plugins/loader/loaders.min.css" />
-  <link rel="stylesheet" href="src/styles/css/index.css" />
+    <title>Proyecto Estéticas</title>
+  </head>
 
-  <title>Proyecto Estéticas</title>
-</head>
+  <body>
+    <h1>Centro de estéticas</h1>
+    <a href="./docs/html/components.html" target="_self">Docs</a>
+    <h3>Login</h3>
+    <form id="login">
+      <label>Correo o nombre de usuario</label>
+      <input
+        type="text"
+        name="user"
+        placeholder="usuario o email"
+        required
+        id="index-login-input-user"
+      />
+      <label>Contraseña</label>
+      <div class="input">
+        <input
+          name="password"
+          type="password"
+          class="search"
+          required
+          id="index-login-input-password"
+        />
+        <span class="password-icon"></span>
+      </div>
+      <button type="submit" class="primary" id="index-login-btn-submit">
+        Ingresar
+      </button>
+    </form>
+    <p>¿Todavía no tenés cuenta en Estéticas? Click <a href="#">aquí</a></p>
+    <p>¿Olvidaste tu contraseña? Click <a href="#">aquí</a></p>
 
-<body>
-  <h1>Centro de estéticas</h1>
-  <a href="./docs/html/components.html" target="_self">Docs</a>
-  <h3>Login</h3>
-  <form id="login">
-    <label>Correo o nombre de usuario</label>
-    <input type="text" name="user" placeholder="usuario o email" required />
-    <label>Contraseña</label>
-    <div class="input">
-      <input name="password" type="password" class="search" required id="login-password" />
-      <span class="password-icon"></span>
-    </div>
-    <button type="submit" class="primary">Ingresar</button>
-  </form>
-  <p>¿Todavía no tenés cuenta en Estéticas? Click <a href="#">aquí</a></p>
-  <p>¿Olvidaste tu contraseña? Click <a href="#">aquí</a></p>
-
-  <h3>Registro</h3>
-  <form id="register">
-    <label>Nombre de usuario:</label>
-    <input name="username" id="username-register" required type="text" placeholder="Usuario12" />
-    <a href="#" id="check-username">Check username</a>
-    <label>Nombre completo:</label>
-    <input name="fullname" required type="text" placeholder="Nombre Completo" />
-    <label> Tu email</label>
-    <input name="email" id="email-register" required type="email" placeholder="ejemplo@mail.com" />
-    <a href="#" id="check-email">Check email</a>
-    <label>Teléfono:</label>
-    <input name="phone" type="number" placeholder="1199999999" />
-    <label>Tu password </label>
-    <div class="input">
-      <input name="password" type="password" placeholder="Solo números y letras mayúsculas y minúsculas" required id="password" />
-      <span class="password-icon"></span>
-    </div>
-    <label>Confirma tu password </label>
-    <div class="input">
-      <input name="passwordConfirm" type="password" placeholder="Repetí la contraseña" required id="password-confirm" />
-      <span class="password-icon"></span>
-    </div>
-    <button type="submit" class="primary">Registro</button>
-    <p>
-      ¿Ya tenés cuenta con Estéticas?
-      <a href="#tologin"> Click aquí </a>
-    </p>
-    <p>
-      Al continuar estás aceptando nuestros
-      <a href="#terminos_condiciones">“Términos y Condiciones”</a>
-    </p>
-  </form>
-  <h3>Recupero de contraseña</h3>
-  <form id="recovery-pass">
-    <label for="email">Correo electrónico o nombre de usuario</label>
-    <input type="text" name="user" placeholder="usuario o email" required>
-    <button type="submit" class="primary">Enviar correo</button>
-  </form>
-
-  <script type="module" src="src/js/index.js"></script>
-</body>
-
+    <h3>Registro</h3>
+    <form id="register">
+      <label>Nombre de usuario:</label>
+      <input
+        name="username"
+        id="index-register-input-username"
+        required
+        type="text"
+        placeholder="Usuario12"
+      />
+      <a href="#" id="check-username">Check username</a>
+      <label>Nombre completo:</label>
+      <input
+        name="fullname"
+        required
+        type="text"
+        placeholder="Nombre Completo"
+        id="index-register-input-name"
+      />
+      <label> Tu email</label>
+      <input
+        name="email"
+        id="index-register-input-email"
+        required
+        type="email"
+        placeholder="ejemplo@mail.com"
+      />
+      <a href="#" id="check-email">Check email</a>
+      <label>Teléfono:</label>
+      <input
+        name="phone"
+        type="number"
+        placeholder="1199999999"
+        id="index-register-input-number"
+      />
+      <label>Tu password </label>
+      <div class="input">
+        <input
+          name="password"
+          type="password"
+          placeholder="Solo números y letras mayúsculas y minúsculas"
+          required
+          id="index-register-input-password"
+        />
+        <span class="password-icon"></span>
+      </div>
+      <label>Confirma tu password </label>
+      <div class="input">
+        <input
+          name="passwordConfirm"
+          type="password"
+          placeholder="Repetí la contraseña"
+          required
+          id="index-register-input-passwordConfirm"
+        />
+        <span class="password-icon"></span>
+      </div>
+      <button type="submit" class="primary" id="index-register-btn-submit">
+        Registro
+      </button>
+      <p>
+        ¿Ya tenés cuenta con Estéticas?
+        <a href="#tologin"> Click aquí </a>
+      </p>
+      <p>
+        Al continuar estás aceptando nuestros
+        <a href="#terminos_condiciones">“Términos y Condiciones”</a>
+      </p>
+    </form>
+    <h3>Recupero de contraseña</h3>
+    <form id="recovery-pass">
+      <label for="email">Correo electrónico o nombre de usuario</label>
+      <input
+        type="text"
+        name="user"
+        placeholder="usuario o email"
+        required
+        id="index-recoveryPass-input-user"
+      />
+      <button type="submit" class="primary" id="index-recoverPass-btn-submit">
+        Enviar correo
+      </button>
+    </form>
+    <script type="module" src="src/js/index.js"></script>
+  </body>
 </html>
