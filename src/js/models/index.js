@@ -31,6 +31,13 @@ const getRequestOptions = (request) => ({
   redirect: 'follow',
 });
 
+const getSessionWithBodyRequestOptions = (request) => ({
+  method: request.method,
+  headers: getSessionHeaders(),
+  body: request.data ? JSON.stringify(request.data) : {},
+  redirect: 'follow',
+});
+
 export const justFetch = async (request) => {
   const requestOptions = getRequestOptions(request);
   let response = {};
@@ -76,5 +83,28 @@ export const session = async (request) => {
       data: result.data || {},
     };
   }
+  return response || _Response(FORM_ERROR, {}, ERROR_CODE);
+};
+
+export const fetchSession = async (request) => {
+  const requestOptions = getSessionWithBodyRequestOptions(request);
+  let response = {};
+  fetch(`${API_URL}${request.endpoint}`, requestOptions)
+    .then((res) => {
+      res.json();
+    })
+    .then((data) => {
+      if (data) {
+        response = {
+          message: data.message,
+          code: data.code,
+          data: data.data || {},
+        };
+      }
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+
   return response || _Response(FORM_ERROR, {}, ERROR_CODE);
 };

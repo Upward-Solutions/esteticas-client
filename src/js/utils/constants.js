@@ -5,7 +5,7 @@
 export const REG_EX_TEXT = /^[A-Za-z0-9-\s]*$/;
 export const REG_EX_PASS = /^[A-Za-z0-9]*$/;
 export const REG_EX_NUMBER = /^[0-9]*$/;
-export const REG_EX_TEXTAREA = /^[A-Za-z0-9-\s]*$/;
+export const REG_EX_TEXTAREA = /^[A-Za-z0-9.á-úÁ-ÚÑñüÜ()\s]*$/;
 export const REG_EX_EMAIL = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
 /* Custom */
@@ -73,6 +73,11 @@ export const createData = (inputs) => {
       data[input.name].name = input.name;
       data[input.name].value = input.checked;
       data.required = input.required;
+    } else if (input.name.includes('address')) {
+      data[input.name].name = input.name;
+      data[input.name].value = input.value;
+      data[input.name].type = 'adress';
+      data[input.name].required = input.required;
     } else {
       data[input.name].name = input.name;
       data[input.name].value = input.value;
@@ -106,6 +111,9 @@ export const isValid = (data) => {
           break;
         case 'checkbox':
           if (required) { valid = value; }
+          break;
+        case 'adress':
+          valid = REG_EX_TEXTAREA.test(value);
           break;
         default:
           break;

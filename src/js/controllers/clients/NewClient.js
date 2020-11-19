@@ -1,4 +1,4 @@
-import { session } from '../../models/index.js';
+import { fetchSession } from '../../models/index.js';
 import { isValid, FORM_ERROR, ERROR_CODE } from '../../utils/constants.js';
 import { _Request, _Response } from '../../utils/factory.js';
 import Endpoints from './Endpoints.js';
@@ -9,20 +9,23 @@ const NewClient = async (values) => {
 
   if (isValid(values)) {
     const {
-      idExternal, phone, email, adress, description, name,
+      idExternal, phone, email, address, description, name,
     } = values;
     const data = {
       id_external: idExternal.value,
       name: name.value,
-      phone: phone.value,
       email: email.value,
-      adress: adress.value,
+      address: address.value,
+      phone: phone.value,
       description: description.value,
     };
-    const { newClient: { endpoint, method } } = Endpoints;
+
+    const {
+      newClient: { endpoint, method },
+    } = Endpoints;
 
     request = _Request(data, endpoint, method);
-    response = await session(request);
+    response = await fetchSession(request);
   } else {
     response = _Response(FORM_ERROR, {}, ERROR_CODE);
   }
@@ -30,8 +33,6 @@ const NewClient = async (values) => {
   return response;
 };
 
-export const CheckIdExternal = (value) => {
-
-};
+export const CheckIdExternal = (value) => {};
 
 export default NewClient;
