@@ -9,10 +9,9 @@
     <script src="src/js/utils/plugins/moment/moment.min.js"></script>
     <script src="src/js/utils/plugins/sweetAlert/sweetalert.min.js"></script>
     <script src="src/js/utils/plugins/chart/chart.min.js"></script>
-    <script src="src/js/utils/plugins/popper/popper.min.js"></script>
+    <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
     <link rel="stylesheet" href="src/js/utils/plugins/loader/loaders.min.css" />
     <link rel="stylesheet" href="src/styles/css/index.css" />
-
     <title>Proyecto Estéticas</title>
   </head>
 
@@ -20,7 +19,7 @@
     <h1>Centro de estéticas</h1>
     <a href="./docs/html/components.html" target="_self">Docs</a>
     <h3>Login</h3>
-    <form id="login">
+    <form id="login" novalidate>
       <label>Correo o nombre de usuario</label>
       <input
         type="text"
@@ -28,6 +27,7 @@
         placeholder="usuario o email"
         required
         id="index-login-input-user"
+        autocomplete="username"
       />
       <label>Contraseña</label>
       <div class="input">
@@ -37,6 +37,7 @@
           class="search"
           required
           id="index-login-input-password"
+          autocomplete="current-password"
         />
         <span class="password-icon"></span>
       </div>
@@ -48,7 +49,7 @@
     <p>¿Olvidaste tu contraseña? Click <a href="#">aquí</a></p>
 
     <h3>Registro</h3>
-    <form id="register">
+    <form id="register" novalidate>
       <label>Nombre de usuario:</label>
       <input
         name="username"
@@ -56,6 +57,7 @@
         required
         type="text"
         placeholder="Usuario12"
+        autocomplete="nickname"
       />
       <a href="#" id="check-username">Check username</a>
       <label>Nombre completo:</label>
@@ -73,6 +75,7 @@
         required
         type="email"
         placeholder="ejemplo@mail.com"
+        autocomplete="email"
       />
       <a href="#" id="check-email">Check email</a>
       <label>Teléfono:</label>
@@ -90,6 +93,7 @@
           placeholder="Solo números y letras mayúsculas y minúsculas"
           required
           id="index-register-input-password"
+          autocomplete="new-password"
         />
         <span class="password-icon"></span>
       </div>
@@ -101,6 +105,7 @@
           placeholder="Repetí la contraseña"
           required
           id="index-register-input-passwordConfirm"
+          autocomplete="new-password"
         />
         <span class="password-icon"></span>
       </div>

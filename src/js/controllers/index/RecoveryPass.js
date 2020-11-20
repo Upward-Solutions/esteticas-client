@@ -1,13 +1,11 @@
-import { _Request, _Response } from '../../utils/factory.js';
+import { $Request } from '../../models/Request.js';
+import { $Response } from '../../models/Response.js';
 import {
   isValid, FORM_ERROR, ERROR_CODE, WARNING_CODE, REG_EX_EMAIL,
 } from '../../utils/constants.js';
 import { justFetch } from '../../models/index.js';
 import { CheckEmail, CheckUserName } from './Register.js';
-
-const RECOVERY_ENDPOINTS = {
-  recovery: '/user/resetPassword',
-};
+import Endpoints from './Endpoints.js';
 
 const isValidEmail = async (data) => {
   const { user } = data;
@@ -30,10 +28,12 @@ const RecoveryPass = async (values) => {
     } else {
       data = { email: '', username: user.value };
     }
-    const request = _Request(data, RECOVERY_ENDPOINTS.recovery, 'POST');
+    const { endpoint, method } = Endpoints.recovery;
+    const request = new $Request(data, endpoint, method);
+
     response = await justFetch(request);
   } else {
-    response = _Response(FORM_ERROR, {}, ERROR_CODE);
+    response = new $Response(FORM_ERROR, {}, ERROR_CODE);
   }
 
   return response;

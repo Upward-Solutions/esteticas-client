@@ -31,7 +31,6 @@ export const checkUserName = async (event) => {
   event.preventDefault();
   const userName = getById('index-register-input-username');
   const { value } = userName;
-
   if (value) {
     if (REG_EX_TEXT.test(value)) {
       const response = await controllers.CheckUserName(value);

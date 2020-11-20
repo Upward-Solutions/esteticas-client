@@ -1,4 +1,4 @@
-import { _Response } from '../utils/factory.js';
+import { $Response } from './Response.js';
 import {
   API_URL, ERROR_CODE,
   FORM_ERROR,
@@ -44,7 +44,7 @@ export const justFetch = async (request) => {
       data: result.data || {},
     };
   }
-  return response || _Response(FORM_ERROR, {}, ERROR_CODE);
+  return response || $Response(FORM_ERROR, {}, ERROR_CODE);
 };
 
 export const login = async (request) => {
@@ -60,7 +60,7 @@ export const login = async (request) => {
       token: result.token,
     };
   }
-  return response || _Response(FORM_ERROR, {}, ERROR_CODE);
+  return response || $Response(FORM_ERROR, {}, ERROR_CODE);
 };
 
 export const session = async (request) => {
@@ -76,5 +76,5 @@ export const session = async (request) => {
       data: result.data || {},
     };
   }
-  return response || _Response(FORM_ERROR, {}, ERROR_CODE);
+  return response || $Response(FORM_ERROR, {}, ERROR_CODE);
 };
