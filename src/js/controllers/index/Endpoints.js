@@ -1,28 +1,30 @@
 import HTTPHelper from '../../models/HTTPHelper.js';
 
+const head = '/api/user';
+
 const Endpoints = {
   register: {
-    endpoint: '/auth/register',
+    endpoint: `${head}/new`,
     method: HTTPHelper.POST,
   },
   verifyEmail: {
-    endpoint: '/auth/verifyEmail',
+    endpoint: `${head}/verifyEmail`,
     method: HTTPHelper.POST,
   },
   verifyUser: {
-    endpoint: '/auth/verifyUser',
+    endpoint: `${head}/verifyUser`,
     method: HTTPHelper.POST,
   },
   recovery: {
-    endpoint: '/user/resetPassword',
+    endpoint: `${head}/resetPassword`,
     method: HTTPHelper.POST,
   },
   login: {
-    endpoint: '/auth/login',
+    endpoint: `${head}/login`,
     method: HTTPHelper.POST,
   },
   index: {
-    endpoint: '/index/index',
+    endpoint: `${head}/index`,
     method: HTTPHelper.POST,
   },
 };

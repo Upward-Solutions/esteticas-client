@@ -1,34 +1,35 @@
-import { $Response } from './Response.js';
+import { $Response } from "./Response.js";
 import {
-  API_URL, ERROR_CODE,
+  API_URL,
+  ERROR_CODE,
   FORM_ERROR,
   getStorageItem,
-} from '../utils/constants.js';
+} from "../utils/constants.js";
 
 const getHeaders = () => {
   const headers = new Headers();
-  headers.append('Content-Type', 'application/json');
+  headers.append("Content-Type", "application/json");
   return headers;
 };
 
 const getSessionHeaders = () => {
   const headers = new Headers();
-  headers.append('Content-Type', 'application/json');
-  headers.append('Authorization', `Bearer ${getStorageItem('token')}`);
+  headers.append("Content-Type", "application/json");
+  headers.append("Authorization", `Bearer ${getStorageItem("token")}`);
   return headers;
 };
 
 const getSessionRequestOptions = (request) => ({
   method: request.method,
   headers: getSessionHeaders(),
-  redirect: 'follow',
+  redirect: "follow",
 });
 
 const getRequestOptions = (request) => ({
   method: request.method,
   headers: getHeaders(),
   body: request.data ? JSON.stringify(request.data) : {},
-  redirect: 'follow',
+  redirect: "follow",
 });
 
 export const justFetch = async (request) => {

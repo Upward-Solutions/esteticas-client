@@ -13,19 +13,10 @@ export class $Request {
   }
 
   _isMethodValid(method) {
-    debugger;
     if (HTTPHelper[method]) {
       return method;
     }
     throw new Error(`El método HTTP ${method} no es correcto.`);
   }
 
-  setMethod(method) {
-    try {
-      isMethodValid(method);
-      this.method = method;
-    } catch (error) {
-      console.error(error);
-    }
-  }
 }
