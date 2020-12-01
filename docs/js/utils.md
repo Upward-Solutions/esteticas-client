@@ -10,10 +10,6 @@
 
 > En este archivo se encuentran las funciones que realizan el formateo de los valores que circulan por la aplicación. Ej.: fechas, importes, etc. La intención de centralizar todos los formateos en un solo lugar es que la aplicación sea escalable con mayor facilidad.
 
-## Factory
-
-> Aquí se crean los objetos que requiera la aplicación. Escencialmente los objetos `_Request` y `_Response` necesarios para la comunicación con el backend.
-
 ## Events
 
 > En este archivo comienza el flujo de ida y vuelta desde el frontend hasta el backend. Este archivo tiene la intención de liberar de código al HTML para hacerlo más mantenible y además mejora la performance. No se deben desarrollar funcionalidades en este archivo, solo asociar eventos del `DOM` con funciones de las `Views`.

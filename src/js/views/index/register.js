@@ -29,9 +29,8 @@ const register = async (event) => {
 
 export const checkUserName = async (event) => {
   event.preventDefault();
-  const userName = getById('username-register');
+  const userName = getById('index-register-input-username');
   const { value } = userName;
-
   if (value) {
     if (REG_EX_TEXT.test(value)) {
       const response = await controllers.CheckUserName(value);
@@ -52,7 +51,7 @@ export const checkUserName = async (event) => {
 
 export const checkEmail = async (event) => {
   event.preventDefault();
-  const email = getById('email-register');
+  const email = getById('index-register-input-email');
   const { value } = email;
 
   if (value) {
@@ -74,9 +73,9 @@ export const checkEmail = async (event) => {
 };
 
 export const checkPasswordConfirm = () => {
-  const passwordConfirmInput = getById('password-confirm');
+  const passwordConfirmInput = getById('index-register-input-passwordConfirm');
   const passwordConfirmValue = passwordConfirmInput.value;
-  const passwordValue = getById('password').value;
+  const passwordValue = getById('index-register-input-password').value;
 
   if (passwordValue === passwordConfirmValue) {
     passwordConfirmInput.classList.remove('error');

@@ -10,7 +10,9 @@
     "start": "live-server",
     "sass-watch": "sass --watch src/styles/sass:src/styles/css",
     "sass": "sass src/styles/sass:src/styles/css",
-    "lint": "eslint \"**/*.js\" --fix --max-warnings=0"
+    "lint": "eslint \"**/*.js\" --fix --max-warnings=0",
+    "storybook": "start-storybook -p 6006 --no-dll",
+    "build-storybook": "build-storybook --no-dll"
   },
   "repository": {
     "type": "git",
@@ -25,10 +27,17 @@
   "homepage": "https://github.com/Upward-Solutions/esteticas-client#readme",
   "dependencies": {},
   "devDependencies": {
+    "@babel/core": "^7.12.3",
+    "@storybook/addon-actions": "^6.0.28",
+    "@storybook/addon-essentials": "^6.0.28",
+    "@storybook/addon-links": "^6.0.28",
+    "@storybook/html": "^6.0.28",
+    "babel-loader": "^8.2.1",
     "eslint": "^7.10.0",
     "eslint-config-airbnb-base": "^14.2.0",
     "eslint-plugin-import": "^2.22.1",
     "live-server": "^1.2.1",
+    "react-is": "^17.0.1",
     "sass": "^1.29.0"
   }
 }

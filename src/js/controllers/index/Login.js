@@ -1,5 +1,5 @@
-import { _Request } from '../../utils/factory.js';
-
+import { $Request } from '../../models/Request.js';
+import Endpoints from './Endpoints.js';
 import {
   REG_EX_EMAIL,
   REG_EX_PASS,
@@ -8,11 +8,6 @@ import {
 } from '../../utils/constants.js';
 import { login, session } from '../../models/index.js';
 
-const LOGIN_ENDPOINTS = {
-  login: '/auth/login',
-  index: '/api/index',
-};
-
 const isValidLogin = (data) => {
   let isValidData = true;
 
@@ -20,8 +15,8 @@ const isValidLogin = (data) => {
     if (isValidData) {
       isValidData = data[key].value !== '' || data[key].value.includes(' ');
       isValidData = REG_EX_EMAIL.test(data[key].value)
-      || REG_EX_PASS.test(data[key].value)
-      || REG_EX_TEXT.test(data[key].value);
+        || REG_EX_PASS.test(data[key].value)
+        || REG_EX_TEXT.test(data[key].value);
     }
   }
 
@@ -34,21 +29,26 @@ const Login = (dataForm) => {
 
   if (isValidLogin(dataForm)) {
     const data = {
-      email: dataForm.user.value,
-      password: dataForm.password.value,
+      data: {
+        email: dataForm.user.value,
+        password: dataForm.password.value,
+      },
     };
-
-    request = _Request(data, LOGIN_ENDPOINTS.login, 'POST');
+    const { endpoint, method } = Endpoints.login;
+    request = new $Request(data, endpoint, method);
     response = login(request);
   } else {
-    showNotification('El usuario o la contraseña son incorrectos, por favor intentá de nuevo.');
+    showNotification(
+      'El usuario o la contraseña son incorrectos, por favor intentá de nuevo.',
+    );
   }
 
   return response;
 };
 
 export const Index = async () => {
-  const request = _Request({}, LOGIN_ENDPOINTS.index, 'GET');
+  const { method, endpoint } = Endpoints.index;
+  const request = new $Request({}, endpoint, method);
   const response = await session(request);
   return response;
 };
