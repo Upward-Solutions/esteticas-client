@@ -1,22 +1,23 @@
 import { showNotification } from '../utils/constants.js';
 import HTTPHelper from './HTTPHelper.js';
 
-export class $Request {
+class $Request {
   constructor(data, endpoint, method) {
     try {
       this.data = data;
       this.endpoint = endpoint;
-      this.method = this._isMethodValid(method);
+      this.isMethodValid(method);
     } catch (error) {
       showNotification(error);
     }
   }
 
-  _isMethodValid(method) {
-    if (HTTPHelper[method]) {
-      return method;
+  isMethodValid(inputMethod) {
+    if (HTTPHelper[inputMethod]) {
+      this.method = inputMethod;
     }
-    throw new Error(`El método HTTP ${method} no es correcto.`);
+    throw new Error(`El método HTTP ${inputMethod} no es correcto.`);
   }
-
 }
+
+export default $Request;

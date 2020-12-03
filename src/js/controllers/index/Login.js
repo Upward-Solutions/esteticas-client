@@ -1,4 +1,4 @@
-import { $Request } from '../../models/Request.js';
+import $Request from '../../models/Request.js';
 import Endpoints from './Endpoints.js';
 import {
   REG_EX_EMAIL,
@@ -11,6 +11,7 @@ import { login, session } from '../../models/index.js';
 const isValidLogin = (data) => {
   let isValidData = true;
 
+  // eslint-disable-next-line no-restricted-syntax
   for (const key in data) {
     if (isValidData) {
       isValidData = data[key].value !== '' || data[key].value.includes(' ');

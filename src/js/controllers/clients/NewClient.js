@@ -1,6 +1,7 @@
 import { fetchSession } from '../../models/index.js';
 import { isValid, FORM_ERROR, ERROR_CODE } from '../../utils/constants.js';
-import { _Request, _Response } from '../../utils/factory.js';
+import $Request from '../../models/Request.js';
+import $Response from '../../models/Response.js';
 import Endpoints from './Endpoints.js';
 
 const NewClient = async (values) => {
@@ -9,25 +10,27 @@ const NewClient = async (values) => {
 
   if (isValid(values)) {
     const {
-      idExternal, phone, email, address, description, name,
+      idCustom, phone, email, address, description, name,
     } = values;
     const data = {
-      id_external: idExternal.value,
-      name: name.value,
-      email: email.value,
-      address: address.value,
-      phone: phone.value,
-      description: description.value,
+      data: {
+        id_external: idCustom.value,
+        name: name.value,
+        email: email.value,
+        address: address.value,
+        phone: phone.value,
+        description: description.value,
+      },
     };
 
     const {
-      newClient: { endpoint, method },
+      new: { endpoint, method },
     } = Endpoints;
 
-    request = _Request(data, endpoint, method);
+    request = new $Request(data, endpoint, method);
     response = await fetchSession(request);
   } else {
-    response = _Response(FORM_ERROR, {}, ERROR_CODE);
+    response = new $Response(FORM_ERROR, {}, ERROR_CODE);
   }
 
   return response;

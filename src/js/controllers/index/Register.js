@@ -1,5 +1,5 @@
-import { $Request } from '../../models/Request.js';
-import { $Response } from '../../models/Response.js';
+import $Request from '../../models/Request.js';
+import $Response from '../../models/Response.js';
 import {
   isValid,
   FORM_ERROR,

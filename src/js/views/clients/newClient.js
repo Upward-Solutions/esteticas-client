@@ -24,7 +24,7 @@ const newClient = (event) => {
 
 export const checkClientId = async (event) => {
   event.preventDefault();
-  const input = getById('id-external');
+  const input = getById('clients-newClient-input-idExternal');
   const { value } = input;
 
   if (value) {

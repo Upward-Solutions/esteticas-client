@@ -22,17 +22,18 @@
             "error",
             "windows"
         ],
-        "no-restricted-syntax": [
-            "error",
-            "FunctionExpression",
-            "WithStatement",
-            "BinaryExpression[operator='in']"
-        ],
+        // "no-restricted-syntax": [
+        //     "error",
+        //     "FunctionExpression",
+        //     "WithStatement",
+        //     "BinaryExpression[operator='in']"
+        // ],
         "no-restricted-globals": [
             "error",
             "event",
             "fdescribe"
-        ],
-        "import/prefer-default-export": false
+        ]
+        // "allowArrowFunctions": true
+        // "import/prefer-default-export": false
     }
 }

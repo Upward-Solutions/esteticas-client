@@ -1,15 +1,15 @@
-import { $Request } from "../../models/Request.js";
-import { $Response } from "../../models/Response.js";
+import $Request from '../../models/Request.js';
+import $Response from '../../models/Response.js';
 import {
   isValid,
   FORM_ERROR,
   ERROR_CODE,
   WARNING_CODE,
   REG_EX_EMAIL,
-} from "../../utils/constants.js";
-import { justFetch } from "../../models/index.js";
-import { CheckEmail, CheckUserName } from "./Register.js";
-import Endpoints from "./Endpoints.js";
+} from '../../utils/constants.js';
+import { justFetch } from '../../models/index.js';
+import { CheckEmail, CheckUserName } from './Register.js';
+import Endpoints from './Endpoints.js';
 
 const isValidEmail = async (data) => {
   const { user } = data;
@@ -28,9 +28,9 @@ const RecoveryPass = async (values) => {
     const { user } = values;
     let data = {};
     if (REG_EX_EMAIL.test(user.value)) {
-      data = { username: "", email: user.value };
+      data = { username: '', email: user.value };
     } else {
-      data = { username: user.value, email: "" };
+      data = { username: user.value, email: '' };
     }
     const { endpoint, method } = Endpoints.recovery;
     const request = new $Request(data, endpoint, method);
