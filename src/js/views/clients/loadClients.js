@@ -1,8 +1,6 @@
 import controllers from '../../controllers/index.js';
 import {
   getById,
-  getStorageItem,
-  redirect,
   showElement,
   showNotification,
   SUCCESS_CODE,
@@ -27,19 +25,14 @@ const renderResponseClient = (response) => {
   }
 };
 
-const loadClients = () => {
-  // const token = getStorageItem('token');
-  // if (token) {
-  //   const response = controllers.LoadClients(token);
-  //   if (response && response.code === SUCCESS_CODE) {
-  //     renderResponseClient(response);
-  //   } else {
-  //     showNotification(response.message);
-  //     renderResponseClient();
-  //   }
-  // } else {
-  //   // redirect('/index.html');
-  // }
+const loadClients = async () => {
+  const response = await controllers.LoadClients();
+  if (response && response.code === SUCCESS_CODE) {
+    renderResponseClient(response);
+  } else {
+    showNotification(response.message);
+    renderResponseClient();
+  }
 };
 
 export default loadClients;

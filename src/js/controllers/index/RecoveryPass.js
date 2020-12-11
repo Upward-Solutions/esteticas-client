@@ -1,5 +1,6 @@
 import $Request from '../../models/Request.js';
 import $Response from '../../models/Response.js';
+import Fetch from '../../models/Fetch.js';
 import {
   isValid,
   FORM_ERROR,
@@ -7,7 +8,6 @@ import {
   WARNING_CODE,
   REG_EX_EMAIL,
 } from '../../utils/constants.js';
-import { justFetch } from '../../models/index.js';
 import { CheckEmail, CheckUserName } from './Register.js';
 import Endpoints from './Endpoints.js';
 
@@ -32,10 +32,11 @@ const RecoveryPass = async (values) => {
     } else {
       data = { username: user.value, email: '' };
     }
-    const { endpoint, method } = Endpoints.recovery;
-    const request = new $Request(data, endpoint, method);
+    const { endpoint, method, session } = Endpoints.recovery;
+    const request = new $Request(data, endpoint, method, session);
 
-    response = await justFetch(request);
+    const fetch = new Fetch(request);
+    response = await fetch.fetch();
   } else {
     response = new $Response(FORM_ERROR, {}, ERROR_CODE);
   }

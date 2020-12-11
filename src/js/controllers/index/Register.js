@@ -1,12 +1,12 @@
 import $Request from '../../models/Request.js';
 import $Response from '../../models/Response.js';
+import Fetch from '../../models/Fetch.js';
 import {
   isValid,
   FORM_ERROR,
   ERROR_CODE,
   SUCCESS_CODE,
 } from '../../utils/constants.js';
-import { justFetch } from '../../models/index.js';
 import Endpoints from './Endpoints.js';
 
 const validateEmail = async (correo) => {
@@ -15,9 +15,10 @@ const validateEmail = async (correo) => {
       email: correo,
     },
   };
-  const { method, endpoint } = Endpoints.verifyEmail;
-  const request = new $Request(data, endpoint, method);
-  const response = await justFetch(request);
+  const { method, endpoint, session } = Endpoints.verifyEmail;
+  const request = new $Request(data, endpoint, method, session);
+  const fetch = new Fetch(request);
+  const response = await fetch.fetch();
   return response;
 };
 
@@ -27,9 +28,10 @@ const validateUser = async (user) => {
       username: user,
     },
   };
-  const { method, endpoint } = Endpoints.verifyUser;
-  const request = new $Request(data, endpoint, method);
-  const response = await justFetch(request);
+  const { method, endpoint, session } = Endpoints.verifyUser;
+  const request = new $Request(data, endpoint, method, session);
+  const fetch = new Fetch(request);
+  const response = await fetch.fetch();
   return response;
 };
 
@@ -67,9 +69,10 @@ const createNewUser = async (values) => {
           phone: phone.value,
         },
       };
-      const { endpoint, method } = Endpoints.register;
-      request = new $Request(data, endpoint, method);
-      response = await justFetch(request);
+      const { endpoint, method, session } = Endpoints.register;
+      request = new $Request(data, endpoint, method, session);
+      const fetch = new Fetch(request);
+      response = await fetch.fetch();
     } else {
       response = newUserValidated;
     }

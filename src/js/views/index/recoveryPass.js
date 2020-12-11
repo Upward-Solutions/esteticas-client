@@ -11,7 +11,7 @@ const recoveryPass = async (event) => {
   const data = createData(inputs);
   const { value } = data.user;
   if (value.includes('@')) {
-    data.user.type = 'email'
+    data.user.type = 'email';
   }
   const response = await controllers.RecoveryPass(data);
   showNotification(response.message);
