@@ -1,5 +1,6 @@
 const initialStorage = {
   token: '',
+  user: {},
 };
 
 const setInitialLocalStorage = () => {

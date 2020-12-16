@@ -4,6 +4,7 @@ import {
   FORM_ERROR,
   getStorageItem,
 } from '../utils/constants.js';
+import HTTPHelper from './HTTPHelper.js';
 import $Response from './Response.js';
 
 class Fetch {
@@ -32,7 +33,7 @@ class Fetch {
       headers: this.headers,
       redirect: 'follow',
     };
-    if (data) {
+    if (data && this.method !== HTTPHelper.GET) {
       this.requestOptions.body = data ? JSON.stringify(data) : {};
     }
   }
