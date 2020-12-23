@@ -19,6 +19,10 @@ const createEvents = () => {
     getById('index-register-input-email').addEventListener('keyup', views.changeInputValidated);
     getById('register').addEventListener('submit', views.register);
     getById('recovery-pass').addEventListener('submit', views.recoveryPass);
+    getById('index-nav-button-login').addEventListener('click', views.showLogin);
+    getById('index-login-close').addEventListener('click', views.hiddenLogin);
+    getById('index-login-btn-register').addEventListener('click', views.showRegisterFromLogin);
+    getById('index-login-btn-recoveryPass').addEventListener('click', views.showRecoveryPassFromLogin);
   } else if (IS_DASHBOARD) {
     window.addEventListener('load', views.loadDashboard);
   } else if (IS_CLIENTS) {
