@@ -24,6 +24,7 @@ const createEvents = () => {
   } else if (IS_CLIENTS) {
     window.addEventListener('load', views.loadClients);
     getById('new-client').addEventListener('submit', views.newClient);
+    getById('check-clientId').addEventListener('click', views.checkClientId);
   }
 };
 

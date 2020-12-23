@@ -9,20 +9,20 @@ button {
   cursor: pointer;
   text-transform: uppercase;
 }
-button[class=primary] {
+button.primary {
   background-color: #3E014E;
   color: #FFFDFD;
 }
-button[class=primary]:hover {
+button.primary:hover {
   background-color: #D75D48;
   border-color: #D75D48;
 }
-button[class=primary]:active {
+button.primary:active {
   background-color: #FFFDFD;
   border-color: #3E014E;
   color: #3E014E;
 }
-button[class=secondary] {
+button.secondary {
   background-color: #0B3C49;
   border-color: #0B3C49;
   color: #FFFDFD;
@@ -35,6 +35,26 @@ button:active {
   background-color: #FFFDFD;
   border-color: #0B3C49;
   color: #0B3C49;
+}
+button.submiting {
+  animation: submiting 10s linear;
+}
+
+@keyframes submiting {
+  15% {
+    padding-right: 50px;
+    background-image: url("../../assets/Spinner-0.7s-147px.gif");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right;
+  }
+  100% {
+    padding-right: 50px;
+    background-image: url("../../assets/Spinner-0.7s-147px.gif");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right;
+  }
 }
 
 /*# sourceMappingURL=buttons.css.map */

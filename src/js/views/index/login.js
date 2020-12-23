@@ -14,7 +14,7 @@ const login = async (event) => {
   const data = createData(inputs);
   const response = await controllers.Login(data);
   if (response.code === SUCCESS_CODE) {
-    editStorageItem('token', response.token);
+    editStorageItem('token', response.data);
     redirect('/dashboard.html');
   } else {
     showNotification(response.message);

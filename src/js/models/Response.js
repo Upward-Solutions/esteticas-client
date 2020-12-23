@@ -1,6 +1,6 @@
 import { SUCCESS_CODE } from '../utils/constants.js';
 
-export class $Response {
+class $Response {
   constructor(message, data, code) {
     this.message = message;
     this.data = data;
@@ -19,3 +19,5 @@ export class $Response {
     return this.data;
   }
 }
+
+export default $Response;

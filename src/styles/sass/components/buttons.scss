@@ -10,7 +10,7 @@ button {
   border-color: $purple;
   cursor: pointer;
   text-transform: uppercase;
-  &[class="primary"] {
+  &.primary {
     background-color: $purple;
     color: $white;
     &:hover {
@@ -23,7 +23,7 @@ button {
       color: $purple;
     }
   }
-  &[class="secondary"] {
+  &.secondary {
     background-color: $dark-green;
     border-color: $dark-green;
     color: $white;
@@ -36,5 +36,25 @@ button {
     background-color: $white;
     border-color: $dark-green;
     color: $dark-green;
+  }
+  &.submiting {
+    animation: submiting 10s linear;
+  }
+}
+
+@keyframes submiting {
+  15% {
+    padding-right: 50px;
+    background-image: url("../../assets/Spinner-0.7s-147px.gif");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right;
+  }
+  100% {
+    padding-right: 50px;
+    background-image: url("../../assets/Spinner-0.7s-147px.gif");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right;
   }
 }
