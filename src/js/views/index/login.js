@@ -6,6 +6,9 @@ import {
   editStorageItem,
   createData,
   redirect,
+  showElement,
+  getById,
+  hiddenElement,
 } from '../../utils/constants.js';
 
 const login = async (event) => {
@@ -19,6 +22,18 @@ const login = async (event) => {
   } else {
     showNotification(response.message);
   }
+};
+
+export const showLogin = () => {
+  const modalLogin = getById('index-modal-login');
+  document.body.style.overflow = 'hidden';
+  showElement(modalLogin);
+};
+
+export const hiddenLogin = () => {
+  const modalLogin = getById('index-modal-login');
+  document.body.style.overflow = 'visible';
+  hiddenElement(modalLogin);
 };
 
 export const validateCapitalLetter = (event) => {

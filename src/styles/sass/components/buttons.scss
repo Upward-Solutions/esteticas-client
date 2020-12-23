@@ -40,6 +40,21 @@ button {
   &.submiting {
     animation: submiting 10s linear;
   }
+  &.link {
+    color: #936f1e;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+  }
+  &.link-soft {
+    color: #000000;
+    padding: 0;
+    border: none;
+    text-transform: lowercase;
+    font-weight: normal;
+    font-style: italic;
+    background-color: transparent;
+  }
 }
 
 @keyframes submiting {

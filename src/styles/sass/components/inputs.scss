@@ -16,7 +16,7 @@ input {
   &[type="number"] {
     border-radius: 100px;
     padding: 5px;
-    border-color: rgb(62, 1, 78, 0.2);
+    border-color: rgb(0, 161, 155, 0.2);
     text-indent: 15px;
     background-position: right 10px center;
     background-repeat: no-repeat;
@@ -27,15 +27,15 @@ input {
       opacity: 0.5;
     }
     &:hover {
-      border: 1px solid rgb(62, 1, 78, 0.5);
+      border: 1px solid rgb(0, 161, 155, 0.5);
     }
     &:focus,
     &:active {
-      border: 1px solid rgb(62, 1, 78, 1);
+      border: 1px solid rgb(0, 161, 155, 1);
     }
     &:disabled {
       background-color: $background-disabled;
-      border: 1px solid rgb(62, 1, 78, 0.2);
+      border: 1px solid rgb(0, 161, 155, 0.2);
     }
     &.success {
       background-image: url("../assets/success-icon.svg");
@@ -85,23 +85,6 @@ input {
   }
 }
 
-result {
-  border-radius: 100px;
-  padding: 2px 30px;
-  margin: 0.5%;
-  background-position: center;
-  background-repeat: no-repeat;
-  max-width: 5%;
-  &[class="success"] {
-    background-image: url("../assets/span-success-icon.svg");
-    background-color: $dark-green;
-  }
-  &[class="error"] {
-    background-image: url("../assets/span-error-icon.svg");
-    background-color: $orange;
-  }
-}
-
 .input {
   display: flex;
   span {
@@ -140,7 +123,7 @@ input[type="number"] {
 textarea {
   outline: none;
   border-radius: 10px;
-  border-color: rgb(62, 1, 78, 0.2);
+  border-color: rgb(0, 161, 155, 0.2);
   text-indent: 15px;
   color: $purple;
   resize: vertical;
@@ -151,13 +134,30 @@ textarea {
       opacity: 0.5;
     }
     &:hover {
-      border: 1px solid rgb(62, 1, 78, 0.5);
+      border: 1px solid rgb(0, 161, 155, 0.5);
     }
     &:focus,
     &:active {
-      border: 1px solid rgb(62, 1, 78, 1);
+      border: 1px solid rgb(0, 161, 155, 1);
     }
     &.error{
       border-color: $red;
     }
+}
+
+result {
+  border-radius: 100px;
+  padding: 2px 30px;
+  margin: 0.5%;
+  background-position: center;
+  background-repeat: no-repeat;
+  max-width: 5%;
+  &[class="success"] {
+    background-image: url("../assets/span-success-icon.svg");
+    background-color: $dark-green;
+  }
+  &[class="error"] {
+    background-image: url("../assets/span-error-icon.svg");
+    background-color: $orange;
+  }
 }

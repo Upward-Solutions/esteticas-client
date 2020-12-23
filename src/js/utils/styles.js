@@ -1,4 +1,5 @@
-import { getByClass, getByTag, hiddenElement, IS_FIREFOX } from './constants.js';
+/* eslint-disable no-restricted-syntax */
+import { getByClass, getByTag, IS_FIREFOX } from './constants.js';
 
 const createToggle = () => {
   const toggles = getByClass('toggle');
@@ -145,6 +146,7 @@ const applyCustomStyles = () => {
 export const setInputError = (input) => {
   input.classList.add('error');
   if (input.nextElementSibling.tagName === 'SPAN') {
+    // eslint-disable-next-line no-param-reassign
     input.style.backgroundImage = 'none';
   }
 };

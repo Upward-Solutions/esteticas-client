@@ -7,6 +7,8 @@ import {
   REG_EX_PASS,
   REG_EX_TEXT,
   REG_EX_EMAIL,
+  hiddenElement,
+  showElement,
 } from '../../utils/constants.js';
 import controllers from '../../controllers/index.js';
 import { setInputError } from '../../utils/styles.js';
@@ -88,6 +90,13 @@ export const changeInputValidated = (event) => {
   const input = event.target;
   input.classList.remove('success');
   input.classList.remove('error');
+};
+
+export const showRegisterFromLogin = () => {
+  const modalLogin = getById('index-modal-login');
+  const modalRegister = getById('index-modal-register');
+  hiddenElement(modalLogin);
+  showElement(modalRegister);
 };
 
 export default register;

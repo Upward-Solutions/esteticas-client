@@ -12,41 +12,69 @@
     <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
     <link rel="stylesheet" href="src/js/utils/plugins/loader/loaders.min.css" />
     <link rel="stylesheet" href="src/styles/css/index.css" />
-    <title>Proyecto Estéticas</title>
+    <title>Beauty app</title>
   </head>
 
   <body>
-    <h1>Centro de estéticas</h1>
     <a href="./docs/html/components.html" target="_self">Docs</a>
-    <h3>Login</h3>
-    <form id="login" novalidate>
-      <label>Correo o nombre de usuario</label>
-      <input
-        type="text"
-        name="user"
-        placeholder="usuario o email"
-        required
-        id="index-login-input-user"
-        autocomplete="username"
+    <button class="primary" id="index-nav-button-login">Login</button>
+    <div class="modal-full" id="index-modal-login" hidden>
+      <img
+        src="/src/styles/assets/clear-button.svg"
+        alt="close"
+        class="close-modal"
+        id="index-login-close"
       />
-      <label>Contraseña</label>
-      <div class="input">
-        <input
-          name="password"
-          type="password"
-          class="search"
-          required
-          id="index-login-input-password"
-          autocomplete="current-password"
-        />
-        <span class="password-icon"></span>
+      <div class="modal-content">
+        <img src="./src/styles/assets/marca.svg" alt="logo" width="250" />
+        <p class="center">
+          ¡Bienvenido al <b>inicio de sesión</b> de Bueaty up! <br />
+          Ingresá los datos de tu cuenta para acceder a tu perfil
+        </p>
+        <form id="login" novalidate>
+          <label>Correo o nombre de usuario</label>
+          <input
+            type="text"
+            name="user"
+            placeholder="usuario o email"
+            required
+            id="index-login-input-user"
+            autocomplete="username"
+          />
+          <label>Contraseña</label>
+          <div class="input">
+            <input
+              name="password"
+              type="password"
+              class="search"
+              required
+              id="index-login-input-password"
+              autocomplete="current-password"
+            />
+            <span class="password-icon"></span>
+          </div>
+          <div id="action-place" class="mf-4">
+            <button type="submit" class="primary" id="index-login-btn-submit">
+              Ingresar
+            </button>
+            <button
+              class="link ml-2"
+              id="index-login-btn-register"
+              type="button"
+            >
+              Registrarme
+            </button>
+          </div>
+        </form>
+        <button
+          class="link-soft mf-2"
+          id="index-login-btn-recoveryPass"
+          type="button"
+        >
+          No me acuerdo la contraseña
+        </button>
       </div>
-      <button type="submit" class="primary" id="index-login-btn-submit">
-        Ingresar
-      </button>
-    </form>
-    <p>¿Todavía no tenés cuenta en Estéticas? Click <a href="#">aquí</a></p>
-    <p>¿Olvidaste tu contraseña? Click <a href="#">aquí</a></p>
+    </div>
     <h3>Registro</h3>
     <form id="register" novalidate>
       <label>Nombre de usuario:</label>
