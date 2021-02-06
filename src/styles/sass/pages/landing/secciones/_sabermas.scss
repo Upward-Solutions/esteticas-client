@@ -1,0 +1,59 @@
+@import "../colores";
+@import "../tipografia";
+
+
+.queres_saber{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 70px;
+    flex-wrap: wrap;
+
+    h2{
+        text-align: center;
+        color:black;
+    }
+    
+    p{
+        text-align: center;
+        color:black;
+    }
+
+    a{
+         
+
+        background: none;
+        color: inherit;
+    
+        background: $color-primario;
+        border-radius: 24px;
+        border: none;
+    
+        width: 278px;
+        padding: 10px 0;
+      
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    
+        font-family: Mukta;
+        font-size: 25px;
+        font-style: normal;  
+        margin-top: 1rem; 
+    
+        align-self: center;
+        text-align: center;
+        text-decoration: none;
+        color: white; 
+    }
+
+
+    a:hover{
+
+        background-color: $color-secundario;
+        transition: all .3s ease;
+    }
+    
+    
+
+
+}
+

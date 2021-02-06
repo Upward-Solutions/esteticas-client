@@ -1,0 +1,76 @@
+.video__contenido{
+    display: flex;
+    justify-content:center;
+    margin: 50px 0;
+
+    .video__texto{
+        width: 446px;
+        height: 140px;
+        padding-right: 50px;
+
+        h2{
+            display: flex;
+            text-align: left;
+            color:$color-secundario;
+        }
+
+
+        p{
+            display: flex;
+            text-align: left;
+            color:black;
+        }
+
+        button{
+
+            background: none;
+            color: inherit;
+
+            padding: 10px 20px;
+            background:$color-primario;
+            border-radius: 24px;
+            border: none;
+
+            margin-top: 20px;
+
+            width: 278px;
+            height: 62px;
+        
+            filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+
+            font-family: Mukta;
+            font-size: 25px;
+            font-style: normal; 
+
+            text-decoration: none;
+            color: white;
+        
+        }
+
+        button:hover{
+
+            background-color: var(--secundario);
+            transition: all .3s ease;
+        }
+
+
+    }
+
+    .video__video{
+        width: 696px;
+        height: 480px;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+

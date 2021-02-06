@@ -1,0 +1,36 @@
+@import "../colores";
+@import "../tipografia";
+
+
+
+
+.testimonios{
+
+    border: none;
+    margin: 5rem 0;
+    padding: 3rem 0;
+
+
+    .testimonio__contenido{
+
+
+        align-items: center;
+
+        .card{
+            
+            border: none;
+        }
+
+        .testimonios__cards{
+            padding: 1rem 0;
+            
+            img{
+                border-radius: 40px;
+            }
+            
+        }
+
+    }
+
+}
+

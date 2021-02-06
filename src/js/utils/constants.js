@@ -59,7 +59,7 @@ export const getInputsFromForm = (form) => {
 
   for (const children of childrens) {
     if (children.tagName === 'INPUT' || children.tagName === 'TEXTAREA') inputs.push(children);
-    if (children.tagName === 'DIV' && children.className === 'input') inputs.push(children.firstElementChild);
+    if (children.tagName === 'DIV' && children.classList.contains('input')) inputs.push(children.firstElementChild);
   }
 
   return inputs;

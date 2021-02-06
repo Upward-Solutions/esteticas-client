@@ -1,171 +1,404 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="descripcion" content="sistema de gestion para centros de estetica">
+    <title>Beauty Up, sistema para esteticas</title>
 
-    <!-- LIBRARIES -->
-    <script src="src/js/utils/plugins/currency/currency.min.js"></script>
-    <script src="src/js/utils/plugins/moment/moment.min.js"></script>
-    <script src="src/js/utils/plugins/sweetAlert/sweetalert.min.js"></script>
-    <script src="src/js/utils/plugins/chart/chart.min.js"></script>
-    <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
-    <link rel="stylesheet" href="src/js/utils/plugins/loader/loaders.min.css" />
+    <!-- Bootstrap Css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+    <!-- Mi CSS -->
+    <link rel="stylesheet" href="src/styles/css/pages/landing.css">
     <link rel="stylesheet" href="src/styles/css/index.css" />
-    <title>Beauty app</title>
-  </head>
 
-  <body>
-    <a href="./docs/html/components.html" target="_self">Docs</a>
-    <button class="primary" id="index-nav-button-login">Login</button>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <header class="header ">
+       
+        <nav class="header__nav">
+            
+            <figure class="nav__logo">
+                <img src="src/styles/assets/Marca entera 250x105[4242].png" alt="LOGO"> 
+            </figure>
+
+            <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#0099ff" fill-opacity="1" d="M0,64L80,64C160,64,320,64,480,101.3C640,139,800,213,960,229.3C1120,245,1280,203,1360,181.3L1440,160L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path></svg> -->
+
+            <div class="nav__menu">
+                <ul>
+                    <li>
+                        <a href="index.html"> INICIO </a>
+                    </li>
+                    <li>
+                        <a href="src/pages/landing/servicios.html">SERVICIOS</a>
+                    </li>
+                    <li>
+                        <a href="src/pages/landing/precios.html">PRECIOS</a>
+                    </li>
+                    <li>
+                        <a href="src/pages/landing/contacto.html">CONTACTO</a>
+                    </li>
+                    <li>
+                       <button class="primary" id="index-nav-button-login">INGRESAR</button>
+                    </li>
+                </ul>
+            </div>
+           
+        </nav>
+
+        <div class="header__texto container">
+
+            <h1>Una Solución Integral Para Tu Negocio</h1>
+            <h2>Te invitamos a conocer nuestro sistema de gestión especializado en el rubro de la estetica. Encontrá todo lo que necesitas en un solo lugar.</h2>
+
+            <div class="header__boton row">
+                
+                <button col-lg-6 > <a href="#">PRUEBA GRATUITA</a></button>
+                <button col-lg-6 > <a href="#">CHARLEMOS</a></button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+    <!-- ------------------------------------------------- -->
+
+    <section class="video container">
+    
+        <div class="video__contenido">
+
+            <div class="video__texto">
+                <h2>Conocé BEAUTY UP y organizá tu empresa.</h2>
+                <p>Te traemos un pequeño vistazo de la gran cantidad de funcionalidedes que tienen nuestros sistema y que van a ayudar a potenciar tu empresa.</p>
+                <button> <a href="#"></a>PROBAR AHORA</button>
+            </div> 
+                        
+            <iframe class="video__video" width="900" height="600" src="https://www.youtube.com/embed/4YkezqWBcrc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> <!-- ESTE NO ES MIO, ME LO ROBE XD -->
+             
+        </div>
+
+    </section>
+
+    <!-- --------------------------------------------------------- -->
+
+    <section class="funcionalidades"> 
+
+        <div class="funcionalidades__contenido container">
+            <h2>FUNCIONALIDADES</h2>
+
+            <div class="funcionalidades__card">
+
+                <div class="card">
+                    <img src="" alt="">
+                    <h3>GESTIÓN DE TURNOS</h3>
+                    <p>Llevá un registro de todos los turnos agendados, maneja los tiempos libres y reduci las perdidas por turnos cancelados.</p>
+                </div>
+
+
+                <div class="card">
+                    <img src="" alt="">
+                    <h3>RECORDATORIOS</h3>
+                    <p>Al agendar un turno, envia una notificacion directamente al correo de tu cliente para crearle un recordatorio en su calendario.</p>
+                </div>
+
+
+                <div class="card">
+                    <img src="" alt="">
+                    <h3>FICHA CLINICA</h3>
+                    <p>Brinda un servicio personalizado con el seguimiento de los tratamientos que realiza tu cliente.</p>
+                </div>
+
+
+                <div class="card">
+                    <img src="" alt="">
+                    <h3>PERSONAL Y SERVICIOS</h3>
+                    <p>ALleva un control de tu personal y de los servicios que más se realizan y son mas rentables para tu empresa.</p>
+                </div>
+
+            </div>
+
+            <button> <a href="#">VER MÁS</a></button>
+
+        </div>
+
+    </section>
+
+    <!-- ------------------------------------------------------------------ -->
+
+    <section class="iconos">
+
+        <div class="iconos__contenido container"> 
+             
+            <div class="row">           
+
+                <div class="card col-lg-2">
+                    <img src="src/styles/assets/calendar-6 1.png" alt="calendario" width="88"> 
+                    <h4>CONTROL DE TURNOS</h4>
+                </div>
+
+
+                <div class="card col-lg-2">
+                    <img src="src/styles/assets/cloud 1.png" alt="nube" width="88">
+                    <h4>TU INFORMACIÓN EN CUALQUIER LUGAR</h4>
+                </div>
+
+
+                <div class="card col-lg-2">
+                    <img src="src/styles/assets/folder-14 1.png" alt="carpeta" width="88">
+                    <h4>FICHA CLINICA DE TUS PACIENTES</h4>
+                </div>
+
+                
+
+                <div class="col-lg-6">
+
+                    <h2>Un sistema con todo lo que necesitás.</h2>
+
+                </div>
+                
+
+            </div>   
+                       
+            <div class="row"> 
+                
+                <div class="card col-lg-2">
+                    <img src="src/styles/assets/smartphone-10 1.png" alt="celular" width="88">
+                    <h4>LLEVÁ REGISTRO EN TU CELULAR</h4>
+                </div>
+
+
+                <div class="card col-lg-2">
+                    <img src="src/styles/assets/users 1.png" alt="usuarios" width="88">
+                    <h4>TRABAJÁ JUNTO A TU EQUIPO</h4>
+                </div>
+
+
+                <div class="card col-lg-2">
+                    <img src="src/styles/assets/notepad 1.png" alt="cuaderno" width="88">
+                    <h4>INFORMACIÓN DETALLADA</h4>
+                </div>
+
+
+                <div class="col-lg-6">
+
+                    <p>Organizá tu trabajo, llevá un registro de tus clientes y de los tratamientos que  realizaron. Controlá el trabajo de tu personal. Todo en un solo lugar.</p>
+
+                    
+                </div>
+
+            </div>
+
+            <div class="row"> 
+
+                <div class="col-lg-6"></div>
+
+                <button class="col-lg-6"><a href="">CONTACTANOS</a></button>
+
+            </div>
+
+        </div>
+            
+
+            
+        <!-- <div class="texto">
+
+            <h2>Un sistema con todo lo que necesitás.</h2>
+            <p>Organizá tu trabajo, llevá un registro de tus clientes y de los tratamientos que  realizaron. Controlá el trabajo de tu personal. Todo en un solo lugar.</p>
+            <button><a href="">CONTACTANOS</a></button>
+
+        </div> -->
+
+        
+
+    </section>
+
+
+    <!-- ----------------------------------------------------- -->
+
+    <section class="testimonios">
+
+        <div class="testimonio__contenido container">
+
+            <div class="testimonios__cards row">
+
+                <div class="card col-lg-2">
+
+                    <img src="src/styles/assets/Claudia-Defeo.jpg" alt="Claudia Defeo" width="170">
+
+                </div>
+                    
+
+                <div class="testimoniosTexto col-lg-10">
+                    <h3>Juliana Defeo</h3>
+                    <p>“Muy intuitivo, ayudo a potenciar mi negocio y a llevar un mayor control  y seguimiento de mis clientes”</p>
+                </div>               
+
+            </div>
+
+            <div class="testimonios__cards row">
+
+                <div class=" col-lg-10">
+                    <h3>Julian Domingues</h3>
+                    <p>“Me permitió poder organizar los turnos de mi empresa y aprovechar los tiempos muertos o las cancelaciones de ultimo minuto”.</p>
+                </div>
+
+                <div class="card col-lg-2">
+                    <img src="src/styles/assets/Julian Domingues.jpg" alt="Julian Domingues" width="170">
+                </div>
+
+            </div>
+
+
+            <div class="testimonios__cards row">
+
+                <div class="card col-lg-2">
+                    <img src="src/styles/assets/Micaela-Rodriguez.jpg" alt="Micaela-Rodriguez" width="170">
+                </div>
+
+                <div class="col-lg-10">
+                    <h3>Micaela Rodriguez</h3>
+                    <p>“Gracias a Beauty Up, pude mejorar la relación con mis clientes ya que me permite hacer un seguimiento personalizado de cada caso, asi como tambien mejorar la comunicación”</p>
+                </div>
+
+            </div>
+    
+        </div>
+
+    </section>
+
+    <!-- ------------------------------------------------- -->
+
+    <section>
+
+        <div class="queres_saber container">
+
+            <h2>¿Querés saber más?</h2>
+            <p>No dudes en comunicarte con nosotros y sacarte todas las dudas que tengas. Aprovechá los 30 dias de prueba gratis.</p>
+            <a href="">EMPECEMOS</a>
+
+        </div>
+
+    </section>
+
+    <!-- ----------------------------------------------------------------------- -->
+
+    <footer class="footer container-fluid">
+
+        <div class= "footer__div row">
+        
+            <div class="col-lg-4 redes">
+
+                <img src="src/styles/assets/facebook-01 1.png" alt="facebook-01" width="50">
+                <img src="src/styles/assets/instagram-01 1.png" alt="instagram-01" width="50">
+                <img src="src/styles/assets/linkedin-01 1.png" alt="linkedin-01" width="50">
+                
+            </div>
+
+            <div class="col-lg-4 menu">
+
+                <ul class="menuFooter">
+                    <li>
+                        <a href="index.html"> INICIO </a>
+                    </li>
+                    <li>
+                        <a href="pages/servicios.html">SERVICIOS</a>
+                    </li>
+                    <li>
+                        <a href="pages/precios.html">PRECIOS</a>
+                    </li>
+                    <li>
+                        <a href="pages/contacto.html">CONTACTO</a>
+                    </li>
+                
+                </ul>
+            </div>  
+
+
+            <div class="col-lg-4 extra" >      
+                                
+                <a href="">Terminos y Condiciones</a>
+
+                <a href="">Politica de Privacidad</a>
+
+                <a href="">Sistema desarrollado por UPWARD</a>
+            
+            </div>    
+        
+        </div>
+
+    </footer>
+
+    <!-- Modales -->
     <div class="modal-full" id="index-modal-login" hidden>
-      <img
-        src="/src/styles/assets/clear-button.svg"
-        alt="close"
-        class="close-modal"
-        id="index-login-close"
-      />
-      <div class="modal-content">
-        <img src="./src/styles/assets/marca.svg" alt="logo" width="250" />
-        <p class="center">
-          ¡Bienvenido al <b>inicio de sesión</b> de Bueaty up! <br />
-          Ingresá los datos de tu cuenta para acceder a tu perfil
-        </p>
-        <form id="login" novalidate>
-          <label>Correo o nombre de usuario</label>
-          <input
-            type="text"
-            name="user"
-            placeholder="usuario o email"
-            required
-            id="index-login-input-user"
-            autocomplete="username"
-          />
-          <label>Contraseña</label>
-          <div class="input">
+        <img
+          src="/src/styles/assets/clear-button.svg"
+          alt="close"
+          class="close-modal"
+          id="index-login-close"
+        />
+        <div class="modal-content">
+          <img src="./src/styles/assets/marca.svg" alt="logo" width="250" />
+          <p class="center">
+            ¡Bienvenido al <b>inicio de sesión</b> de Bueaty up! <br />
+            Ingresá los datos de tu cuenta para acceder a tu perfil
+          </p>
+          <form id="login" novalidate>
+            <label>Correo o nombre de usuario</label>
             <input
-              name="password"
-              type="password"
-              class="search"
+              type="text"
+              name="user"
+              placeholder="usuario o email"
               required
-              id="index-login-input-password"
-              autocomplete="current-password"
+              id="index-login-input-user"
+              autocomplete="username"
             />
-            <span class="password-icon"></span>
-          </div>
-          <div id="action-place" class="mf-4">
-            <button type="submit" class="primary" id="index-login-btn-submit">
-              Ingresar
-            </button>
-            <button
-              class="link ml-2"
-              id="index-login-btn-register"
-              type="button"
-            >
-              Registrarme
-            </button>
-          </div>
-        </form>
-        <button
-          class="link-soft mf-2"
-          id="index-login-btn-recoveryPass"
-          type="button"
-        >
-          No me acuerdo la contraseña
-        </button>
+            <label>Contraseña</label>
+            <div class="input">
+              <input
+                name="password"
+                type="password"
+                class="search"
+                required
+                id="index-login-input-password"
+                autocomplete="current-password"
+              />
+              <span class="password-icon"></span>
+            </div>
+            <div id="action-place" class="mf-4">
+              <button type="submit" class="primary" id="index-login-btn-submit">
+                Ingresar
+              </button>
+              <button
+                class="link ml-2"
+                id="index-login-btn-register"
+                type="button"
+              >
+                Registrarme
+              </button>
+            </div>
+          </form>
+          <button
+            class="link-soft mf-2"
+            id="index-login-btn-recoveryPass"
+            type="button"
+          >
+            No me acuerdo la contraseña
+          </button>
+        </div>
       </div>
-    </div>
-    <h3>Registro</h3>
-    <form id="register" novalidate>
-      <label>Nombre de usuario:</label>
-      <input
-        name="username"
-        id="index-register-input-username"
-        required
-        type="text"
-        placeholder="Usuario12"
-        autocomplete="nickname"
-      />
-      <a href="#" id="check-username">Check username</a>
-      <label>Nombre completo:</label>
-      <input
-        name="fullname"
-        required
-        type="text"
-        placeholder="Nombre Completo"
-        id="index-register-input-name"
-      />
-      <label> Tu email</label>
-      <input
-        name="email"
-        id="index-register-input-email"
-        required
-        type="email"
-        placeholder="ejemplo@mail.com"
-        autocomplete="email"
-      />
-      <a href="#" id="check-email">Check email</a>
-      <label>Teléfono:</label>
-      <input
-        name="phone"
-        type="number"
-        placeholder="1199999999"
-        id="index-register-input-number"
-      />
-      <label>Tu password </label>
-      <div class="input">
-        <input
-          name="password"
-          type="password"
-          placeholder="Solo números y letras mayúsculas y minúsculas"
-          required
-          id="index-register-input-password"
-          autocomplete="new-password"
-        />
-        <span class="password-icon"></span>
-      </div>
-      <label for="index-register-input-passwordConfirm"
-        >Confirma tu password
-      </label>
-      <div class="input">
-        <input
-          name="passwordConfirm"
-          type="password"
-          placeholder="Repetí la contraseña"
-          required
-          id="index-register-input-passwordConfirm"
-          autocomplete="new-password"
-        />
-        <span class="password-icon"></span>
-      </div>
-      <button type="submit" class="primary" id="index-register-btn-submit">
-        Registro
-      </button>
-      <p>
-        ¿Ya tenés cuenta con Estéticas?
-        <a href="#tologin"> Click aquí </a>
-      </p>
-      <p>
-        Al continuar estás aceptando nuestros
-        <a href="#terminos_condiciones">“Términos y Condiciones”</a>
-      </p>
-    </form>
-    <h3>Recupero de contraseña</h3>
-    <form id="recovery-pass">
-      <label for="index-recoveryPass-input-user"
-        >Correo electrónico o nombre de usuario</label
-      >
-      <input
-        type="text"
-        name="user"
-        placeholder="usuario o email"
-        required
-        id="index-recoveryPass-input-user"
-      />
-      <button type="submit" class="primary" id="index-recoverPass-btn-submit">
-        Enviar correo
-      </button>
-    </form>
+
+    <!-- Script de Bootstrap -->
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
     <script type="module" src="src/js/index.js"></script>
-  </body>
+
+
+</body>
 </html>
